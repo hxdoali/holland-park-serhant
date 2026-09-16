@@ -3,412 +3,745 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Holland Park | SERHANT.</title>
-<meta name="description" content="A visual first Holland Park vision site prepared by SERHANT. for Lincoln Equities Group.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Holland Park — SERHANT.</title>
+<meta name="description" content="Holland Park. A new connected district between Jersey City and Hoboken. Prepared by SERHANT. for Lincoln Equities Group.">
+<meta name="theme-color" content="#0b0b0c">
+<meta property="og:title" content="Holland Park — A new district between Jersey City and Hoboken">
+<meta property="og:description" content="Prepared by SERHANT. for Lincoln Equities Group.">
+<meta property="og:image" content="assets/renderings/hp-2.jpg">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-normal.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/renderings/hp-2.jpg">
 <style>
+/* Self-hosted latin subsets. Inter and Instrument Serif, SIL Open Font License 1.1. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/inter-normal.woff2') format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/instrument-serif-normal.woff2') format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/instrument-serif-italic.woff2') format('woff2')}
+
 :root{
-  --navy:#07184e;
-  --navy2:#0f349e;
-  --ink:#11182d;
-  --gold:#d6b071;
-  --soft:#f5f7fc;
-  --line:#dbe4f0;
-  --muted:#667489;
-  --white:#ffffff;
+  --ink:#0b0b0c;
+  --bone:#efebe4;
+  --bone-2:#e6e1d8;
+  --paper:#f7f5f1;
+  --line:rgba(11,11,12,.16);
+  --line-light:rgba(255,255,255,.18);
+  --muted:rgba(11,11,12,.56);
+  --muted-light:rgba(255,255,255,.62);
+  --accent:#9c7a45;
+  --gut:clamp(20px,5.2vw,96px);
+  --ease:cubic-bezier(.16,.84,.24,1);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--soft);color:var(--ink);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bone);color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-weight:400;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
 img{display:block;max-width:100%}
-button{font:inherit}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:999;background:#fff;border-radius:10px;padding:12px 14px}
-.nav{position:fixed;inset:0 0 auto 0;height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 4.5vw;z-index:100;background:rgba(7,24,78,.48);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);transition:.35s ease}
-.nav.scrolled{height:70px;background:rgba(7,24,78,.82)}
-.logo{font-size:28px;font-weight:900;letter-spacing:-.06em;color:#fff}
-.logo span{color:var(--gold)}
-.links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-.links a{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#dce6ff;opacity:.92;transition:.2s ease}
-.links a:hover{opacity:1;transform:translateY(-1px)}
-.progress{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--gold),#fff);width:0;z-index:120}
-.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:.92fr 1.08fr;padding-top:78px;background:linear-gradient(135deg,#061549 0%,#0c2f91 100%);color:#fff;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:-15%;background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.14),transparent 28%),radial-gradient(circle at 88% 10%,rgba(214,176,113,.18),transparent 22%);pointer-events:none}
-.hero-copy{padding:8vw 4.7vw;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.eyebrow{font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#bfd2ff;margin-bottom:18px}
-.hero h1{margin:0;font-size:clamp(74px,8.8vw,148px);line-height:.8;letter-spacing:-.085em;max-width:760px}
-.hero .lead{margin:18px 0 0;max-width:720px;font-size:clamp(21px,2.2vw,31px);line-height:1.35;color:#e2e9ff}
-.hero .sub{margin:18px 0 0;max-width:640px;font-size:15px;line-height:1.72;color:#d3ddfb}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 20px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;transition:.25s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(0,0,0,.16)}
-.btn.primary{background:#fff;color:var(--navy)}
-.btn.ghost{background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.16)}
-.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
-.h-stat{padding:18px;border-radius:20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
-.h-stat b{display:block;font-size:29px;letter-spacing:-.05em}
-.h-stat span{display:block;margin-top:5px;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#c7d4f4}
-.hero-visual{position:relative;background:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676859254-KMEZA4WVAP1JUMZ8TSI5/Hollandpark_image1.png') center/cover no-repeat;overflow:hidden}
-.hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,24,78,.02) 10%,rgba(7,24,78,.14) 40%,rgba(7,24,78,.86) 100%)}
-.hero-note{position:absolute;right:28px;left:28px;bottom:30px;z-index:2;padding:22px 24px;background:rgba(7,24,78,.58);backdrop-filter:blur(12px);border-radius:24px;border:1px solid rgba(255,255,255,.08)}
-.hero-note strong{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#c6d7ff;margin-bottom:8px}
-.hero-note p{margin:0;font-size:15px;line-height:1.65;color:#eef2ff}
-.section{padding:110px 4.7vw}
-.white{background:#fff}.soft{background:#f7f9fd}.dark{background:linear-gradient(135deg,#07164b,#1039a0);color:#fff}
-.heading{display:grid;grid-template-columns:1.12fr .88fr;gap:30px;align-items:end;margin-bottom:36px}
-.heading h2{margin:0;font-size:clamp(44px,5vw,86px);line-height:.92;letter-spacing:-.06em;color:var(--navy)}
-.heading p{margin:0;font-size:16px;line-height:1.66;color:var(--muted)}
-.dark .heading h2{color:#fff}.dark .heading p{color:#d4def9}
-.fullbleed{position:relative;min-height:92svh;border-radius:36px;overflow:hidden;background-size:cover;background-position:center;display:flex;align-items:flex-end;box-shadow:0 30px 70px rgba(7,24,78,.16)}
-.fullbleed:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,24,78,.04),rgba(7,24,78,.16) 40%,rgba(7,24,78,.9) 100%)}
-.fullbleed .content{position:relative;z-index:2;max-width:760px;padding:0 42px 42px;color:#fff}
-.kicker{font-size:10px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:#c7d8ff}
-.fullbleed h3{margin:12px 0;font-size:clamp(44px,5.3vw,78px);line-height:.92;letter-spacing:-.06em}
-.fullbleed p{margin:0;font-size:17px;line-height:1.66;color:#e3eaff;max-width:620px}
-.visual-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.card-visual,.card-copy{border-radius:34px;overflow:hidden;min-height:560px;position:relative}
-.card-visual{background-size:cover;background-position:center;box-shadow:0 20px 48px rgba(7,24,78,.11)}
-.card-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,24,78,.86),rgba(7,24,78,0) 58%)}
-.overlay{position:absolute;left:28px;right:28px;bottom:28px;z-index:2;color:#fff}
-.overlay small{display:block;font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:#c4d5ff}
-.overlay b{display:block;margin:10px 0;font-size:36px;line-height:.96;letter-spacing:-.05em}
-.overlay span{display:block;font-size:14px;line-height:1.58;color:#e8efff}
-.card-copy{background:#fff;border:1px solid var(--line);padding:34px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 16px 38px rgba(7,24,78,.06)}
-.card-copy h3{margin:0 0 16px;font-size:42px;line-height:.96;letter-spacing:-.055em;color:var(--navy)}
-.card-copy p{margin:0;font-size:15px;line-height:1.68;color:var(--muted)}
-.points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
-.point{padding:15px;border-radius:18px;background:#f8fbff;border:1px solid var(--line);font-size:12px;line-height:1.5;color:#58667c}
-.point strong{display:block;font-size:12px;color:var(--navy);margin-bottom:4px}
-.gallery{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:360px 360px;gap:16px}
-.tile{position:relative;border-radius:32px;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 18px 44px rgba(7,24,78,.1)}
-.tile.big{grid-row:1/3}
-.tile:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,24,78,.84),rgba(7,24,78,0) 56%)}
-.tile .overlay b{font-size:30px}
-.mini-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-.mini{height:280px;border-radius:28px;background-size:cover;background-position:center;box-shadow:0 16px 36px rgba(7,24,78,.08)}
-.quote{padding:30px 32px;border-left:3px solid var(--gold);background:rgba(255,255,255,.07);backdrop-filter:blur(10px);border-radius:24px;max-width:980px;font-size:20px;line-height:1.65;color:#eef3ff}
-.filmstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.film-card{min-height:520px;border-radius:32px;overflow:hidden;position:relative;background-size:cover;background-position:center;box-shadow:0 18px 44px rgba(7,24,78,.1)}
-.film-card:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,24,78,.86),rgba(7,24,78,.14) 45%,rgba(7,24,78,0) 70%)}
-.film-card .overlay b{font-size:32px}
-.band{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
-.band .metric{padding:18px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
-.band .metric b{display:block;font-size:30px;letter-spacing:-.05em}
-.band .metric span{display:block;margin-top:5px;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#ccdaf7}
-.promise{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.box,.box-dark{border-radius:34px;padding:34px}
-.box{background:#fff;border:1px solid var(--line);box-shadow:0 16px 40px rgba(7,24,78,.06)}
-.box-dark{background:linear-gradient(135deg,#07164b,#1039a0);color:#fff;box-shadow:0 20px 46px rgba(7,24,78,.18)}
-.box h3,.box-dark h3{margin:0 0 14px;font-size:42px;line-height:.96;letter-spacing:-.055em}
-.box p{margin:0;font-size:15px;line-height:1.7;color:var(--muted)}
-.box-dark p{margin:0;font-size:15px;line-height:1.7;color:#d7e3ff}
-.engine{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
-.e{padding:22px;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
-.e small{display:block;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#b9d4ff}
-.e h4{margin:10px 0 8px;font-size:20px;letter-spacing:-.03em}
-.e p{margin:0;font-size:12px;line-height:1.58;color:#dbe5fb}
-.map-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.map-box,.focus-box{background:#fff;border:1px solid var(--line);border-radius:30px;padding:28px;box-shadow:0 14px 34px rgba(7,24,78,.05)}
-.map-box h3,.focus-box h3{margin:0 0 12px;font-size:34px;line-height:.98;letter-spacing:-.045em;color:var(--navy)}
-.map-box p,.focus-box p{margin:0 0 16px;font-size:14px;line-height:1.66;color:var(--muted)}
-.svg-map{width:100%;height:auto;display:block;border-radius:22px;background:linear-gradient(180deg,#f2f6fd,#fff)}
-.legend{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-.legend-item{padding:12px;border-radius:16px;background:#f8fbff;border:1px solid var(--line);font-size:11px;line-height:1.45;color:#5c6a81}
-.legend-item strong{display:block;color:var(--navy);font-size:12px;margin-bottom:4px}
-.focus-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.focus-points div{padding:14px;border-radius:16px;background:#f8fbff;border:1px solid var(--line);font-size:12px;line-height:1.48;color:#5d6a80}
-.cta{padding:120px 4.7vw;background:#fff;text-align:center}
-.cta h2{margin:0 auto;max-width:980px;font-size:clamp(48px,5vw,86px);line-height:.92;letter-spacing:-.06em;color:var(--navy)}
-.cta p{margin:18px auto 0;max-width:760px;font-size:17px;line-height:1.7;color:var(--muted)}
-.footer{padding:28px 4.7vw;background:#071349;color:#b8c7df;font-size:11px;line-height:1.6}
-.footer strong{display:block;font-size:22px;color:#fff;letter-spacing:-.05em;margin-bottom:8px}
-.reveal{opacity:0;transform:translateY(34px) scale(.985);transition:opacity .9s cubic-bezier(.2,.65,.2,1),transform .9s cubic-bezier(.2,.65,.2,1)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
-.parallax{will-change:transform}
-@media (max-width:1160px){
-  .hero,.heading,.visual-duo,.gallery,.filmstrip,.promise,.map-wrap{grid-template-columns:1fr}
-  .gallery{grid-template-rows:400px 300px 300px}.tile.big{grid-row:auto}
-  .engine,.band,.hero-grid{grid-template-columns:1fr 1fr}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--ink);color:var(--bone)}
+
+/* ───────── type primitives ───────── */
+.serif{font-family:"Instrument Serif",Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.015em}
+.label{
+  font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--muted);
+}
+.on-dark .label,.dark .label{color:var(--muted-light)}
+.rule{height:1px;background:var(--line);width:100%;border:0;margin:0}
+.dark .rule,.plate .rule{background:var(--line-light)}
+
+/* ───────── chrome ───────── */
+.progress{position:fixed;left:0;top:0;height:2px;width:0;background:var(--ink);z-index:200;transition:background .4s ease}
+.progress.inv{background:#fff}
+.masthead{
+  position:fixed;top:0;left:0;right:0;z-index:150;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px var(--gut);pointer-events:none;
+  color:var(--ink);transition:color .45s ease;
+}
+body.over-dark .masthead{color:#fff}
+.masthead:before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.24) 45%,rgba(11,11,12,0) 100%);height:130px;bottom:auto;
+  opacity:0;transition:opacity .45s ease;
+}
+body.over-dark .masthead:before{opacity:1}
+.masthead *{pointer-events:auto}
+.wordmark{font-size:19px;font-weight:800;letter-spacing:-.05em;line-height:1}
+.chapter-readout{
+  display:flex;align-items:center;gap:12px;
+  font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+}
+.chapter-readout .num{font-variant-numeric:tabular-nums;opacity:.6}
+.chapter-readout .name{transition:opacity .45s var(--ease)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:300;background:#fff;color:#000;padding:12px 16px;border-radius:2px}
+
+/* ───────── cover ───────── */
+.cover{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#0b0b0c;color:#fff}
+.cover-media{position:absolute;inset:-6%;background-size:cover;background-position:center 42%;will-change:transform}
+.cover:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,11,12,.62) 0%,rgba(11,11,12,.18) 30%,rgba(11,11,12,.42) 62%,rgba(11,11,12,.92) 100%);
+}
+.grain{
+  position:absolute;inset:0;opacity:.055;pointer-events:none;z-index:3;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.cover-inner{
+  position:relative;z-index:4;height:100%;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 var(--gut) clamp(28px,4.6vh,54px);
+}
+.cover-kicker{
+  font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);margin-bottom:clamp(18px,3vh,34px);
+}
+.cover h1{
+  margin:0;font-family:Inter,sans-serif;font-weight:800;
+  font-size:clamp(52px,13.4vw,236px);line-height:.82;letter-spacing:-.05em;
+  text-transform:uppercase;
+}
+.cover h1 .l{display:block;overflow:hidden}
+.cover h1 .l i{display:block;font-style:normal;transform:translateY(102%);transition:transform 1.25s var(--ease)}
+.cover.ready h1 .l:nth-child(1) i{transform:none;transition-delay:.15s}
+.cover.ready h1 .l:nth-child(2) i{transform:none;transition-delay:.27s}
+.cover-foot{
+  margin-top:clamp(22px,4vh,44px);padding-top:20px;border-top:1px solid rgba(255,255,255,.2);
+  display:grid;grid-template-columns:1.6fr 1fr auto;gap:28px;align-items:end;
+}
+.cover-foot p{
+  margin:0;max-width:30ch;font-size:clamp(15px,1.45vw,20px);line-height:1.42;
+  color:rgba(255,255,255,.9);
+}
+.cover-foot .meta{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.62);line-height:2}
+.scroll-cue{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.scroll-cue span.bar{display:block;width:44px;height:1px;background:rgba(255,255,255,.4);position:relative;overflow:hidden}
+.scroll-cue span.bar:after{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-100%);animation:sweep 2.6s var(--ease) infinite}
+@keyframes sweep{0%{transform:translateX(-100%)}55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+
+/* ───────── generic section shells ───────── */
+section{position:relative}
+.sheet{padding:clamp(88px,15vh,190px) var(--gut)}
+.sheet.tight{padding-top:clamp(56px,8vh,110px)}
+.dark{background:var(--ink);color:#fff}
+.paper{background:var(--paper)}
+.bone2{background:var(--bone-2)}
+
+.chapter-head{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,5vw,80px);align-items:start;margin-bottom:clamp(40px,7vh,96px)}
+.chapter-head .idx{font-family:"Instrument Serif",serif;font-size:clamp(34px,4.4vw,72px);line-height:.8;opacity:.28}
+.chapter-head .title{margin:0;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding-top:.6em}
+
+/* big statements */
+.statement{max-width:min(100%,1080px)}
+.statement h2{
+  margin:0;font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(40px,6.4vw,118px);line-height:.96;letter-spacing:-.022em;
+}
+.statement h2 em{font-style:italic;color:var(--accent)}
+.dark .statement h2 em{color:#d9bb88}
+.statement.wide{max-width:min(100%,1340px)}
+.say{
+  margin:clamp(28px,5vh,56px) 0 0;max-width:min(100%,660px);
+  font-size:clamp(16px,1.35vw,20px);line-height:1.6;color:var(--muted);
+}
+.dark .say{color:var(--muted-light)}
+
+/* ───────── typographic interlude ───────── */
+.interlude{min-height:78svh;display:flex;align-items:center;padding:clamp(70px,12vh,150px) var(--gut)}
+.interlude-inner{width:100%}
+.interlude .label{margin-bottom:clamp(22px,4vh,44px);color:var(--muted-light)}
+.interlude h3{
+  margin:0;max-width:min(100%,1280px);font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(38px,6.2vw,116px);line-height:.98;letter-spacing:-.022em;
+}
+
+/* ───────── full-bleed plates ───────── */
+.plate{position:relative;height:100svh;min-height:560px;overflow:hidden;background:#0b0b0c;color:#fff}
+.plate.tall{height:118svh}
+.plate-media{position:absolute;inset:-8%;background-size:cover;background-position:center;will-change:transform}
+.plate:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.44) 0%,rgba(11,11,12,.08) 26%,rgba(11,11,12,.30) 52%,rgba(11,11,12,.72) 78%,rgba(11,11,12,.95) 100%)}
+.plate-inner{
+  position:relative;z-index:4;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 var(--gut) clamp(34px,6vh,74px);
+}
+.plate-inner .label{color:rgba(255,255,255,.66);margin-bottom:16px}
+.plate h3{
+  margin:0;max-width:17ch;font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(34px,5.2vw,96px);line-height:1;letter-spacing:-.02em;
+  text-shadow:0 2px 40px rgba(11,11,12,.35);
+}
+.plate p{margin:18px 0 0;max-width:40ch;font-size:clamp(14px,1.25vw,18px);line-height:1.56;color:rgba(255,255,255,.8)}
+.plate .corner{
+  position:absolute;top:64px;right:var(--gut);z-index:4;text-align:right;
+  font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.55);line-height:2.1;
+}
+
+/* ───────── editorial spreads ───────── */
+.spread{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3.4vw,64px);align-items:end}
+.spread.offset{grid-template-columns:1.62fr .38fr}
+.spread.reverse{grid-template-columns:.38fr 1.62fr}
+.spread.detail{grid-template-columns:minmax(0,.52fr) minmax(0,.48fr);gap:clamp(24px,5vw,110px)}
+.bleed{margin-left:calc(var(--gut) * -1);margin-right:calc(var(--gut) * -1)}
+.bleed img{width:100%;height:clamp(300px,62vh,660px);object-fit:cover}
+.bleed figcaption{margin-left:var(--gut);margin-right:var(--gut)}
+figure{margin:0}
+figure img{width:100%;height:auto;object-fit:cover}
+/* technical drawings presented as deck exhibits */
+.exhibits{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.4vw,58px)}
+.exhibits .mat{display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;overflow:hidden}
+.exhibits .mat img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.mat{background:#fff;padding:clamp(12px,1.8vw,30px);border:1px solid var(--line)}
+.dark .mat{border-color:var(--line-light)}
+figure figcaption{
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:20px;
+  font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+}
+.dark figure figcaption{border-color:var(--line-light);color:var(--muted-light)}
+.frame{overflow:hidden}
+.frame img{transform:scale(1.08);transition:transform 1.6s var(--ease)}
+.frame.in img{transform:scale(1)}
+
+.col-note{max-width:min(100%,460px)}
+.col-note h4{margin:0 0 16px;font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(24px,2.5vw,42px);line-height:1.06;letter-spacing:-.02em}
+.col-note p{margin:0;font-size:15px;line-height:1.66;color:var(--muted)}
+.dark .col-note p{color:var(--muted-light)}
+
+/* ───────── figures / numerals ───────── */
+.figures{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.dark .figures{border-color:var(--line-light)}
+.figures .fig{padding:clamp(22px,3vw,40px) 24px clamp(22px,3vw,40px) 0;border-bottom:1px solid var(--line)}
+.dark .figures .fig{border-color:var(--line-light)}
+.figures .fig b{
+  display:block;font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(38px,4.6vw,78px);line-height:.9;letter-spacing:-.03em;
+}
+.figures .fig span{display:block;margin-top:14px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);line-height:1.8;max-width:min(100%,200px)}
+.dark .figures .fig span{color:var(--muted-light)}
+
+/* ───────── district ───────── */
+.map-sheet{display:grid;grid-template-columns:1.72fr .58fr;gap:clamp(22px,4vw,72px);align-items:start}
+.map-sheet .map-img{background:#fff;padding:clamp(10px,1.6vw,26px);border:1px solid var(--line)}
+.walkline{border-top:1px solid var(--line);margin-top:8px}
+.walkline .row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.walkline .row .who{font-size:13px;font-weight:500;letter-spacing:-.01em;max-width:min(100%,230px)}
+.walkline .row .who small{display:block;margin-top:5px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.walkline .row .val{font-family:"Instrument Serif",serif;font-size:clamp(22px,2.2vw,34px);line-height:1;white-space:nowrap}
+
+/* ───────── neighbours index ───────── */
+.index{border-top:1px solid var(--line-light)}
+.index .row{
+  display:grid;grid-template-columns:auto 1.5fr 1.2fr auto;gap:clamp(16px,3vw,52px);
+  align-items:baseline;padding:clamp(26px,3.6vh,44px) 0;border-bottom:1px solid var(--line-light);
+}
+.index .row .n{font-size:10px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.4);font-variant-numeric:tabular-nums}
+.index .row h4{
+  margin:0;font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(26px,3.3vw,54px);line-height:1;letter-spacing:-.02em;
+}
+.index .row h4 small{display:block;margin-top:10px;font-family:Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.48)}
+.index .row .who{font-size:13px;line-height:1.6;color:rgba(255,255,255,.72);max-width:min(100%,380px)}
+.index .row .who b{display:block;font-weight:600;color:#fff;margin-bottom:5px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.index .row .ask{text-align:right;white-space:nowrap}
+.index .row .ask b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(26px,2.9vw,46px);line-height:1;letter-spacing:-.02em}
+.index .row .ask span{display:block;margin-top:9px;font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+/* ───────── rent bars ───────── */
+.bars{margin-top:clamp(28px,5vh,56px);border-top:1px solid var(--line)}
+.bars .b{display:grid;grid-template-columns:clamp(130px,17vw,230px) 1fr auto;gap:clamp(14px,2.4vw,40px);align-items:center;padding:clamp(14px,2.1vh,24px) 0;border-bottom:1px solid var(--line)}
+.bars .b .nm{font-size:12px;font-weight:500;letter-spacing:-.005em;line-height:1.35}
+.bars .b .nm small{display:block;margin-top:4px;font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.bars .b .track{height:2px;background:rgba(11,11,12,.12);position:relative}
+.bars .b .track i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:0;transition:width 1.5s var(--ease)}
+.bars .b:nth-child(2) .track i{transition-delay:.06s}
+.bars .b:nth-child(3) .track i{transition-delay:.12s}
+.bars .b:nth-child(4) .track i{transition-delay:.18s}
+.bars .b:nth-child(5) .track i{transition-delay:.24s}
+.bars .b:nth-child(6) .track i{transition-delay:.3s}
+.bars .b .amt{font-family:"Instrument Serif",serif;font-size:clamp(20px,2vw,30px);line-height:1;white-space:nowrap}
+.source{margin-top:26px;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:2}
+
+/* ───────── serhant pillars ───────── */
+.pillars{border-top:1px solid var(--line-light);margin-top:clamp(30px,6vh,70px)}
+.pillars .p{
+  display:grid;grid-template-columns:auto clamp(160px,18vw,300px) 1fr;gap:clamp(16px,3vw,56px);
+  align-items:baseline;padding:clamp(26px,3.8vh,46px) 0;border-bottom:1px solid var(--line-light);
+}
+.pillars .p .n{font-size:10px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.4)}
+.pillars .p h4{margin:0;font-size:clamp(20px,2.3vw,34px);font-weight:700;letter-spacing:-.035em;line-height:1}
+.pillars .p p{margin:0;max-width:min(100%,640px);font-size:15px;line-height:1.66;color:rgba(255,255,255,.74)}
+.reach{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,70px);margin-top:clamp(40px,7vh,90px);align-items:end}
+.reach .big{font-family:"Instrument Serif",serif;font-size:clamp(64px,11vw,190px);line-height:.82;letter-spacing:-.04em}
+.reach .cap{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:18px;line-height:2}
+
+/* ───────── close ───────── */
+.close{position:relative;height:100svh;min-height:620px;overflow:hidden;background:#0b0b0c;color:#fff}
+.close .plate-media{position:absolute;inset:-6%;background-size:cover;background-position:center 40%}
+.close:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.72),rgba(11,11,12,.44) 42%,rgba(11,11,12,.94))}
+.close-inner{position:relative;z-index:4;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut)}
+.close h2{
+  margin:0;max-width:15ch;font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(40px,7.4vw,140px);line-height:.96;letter-spacing:-.022em;
+}
+.close h2 em{font-style:italic;color:#d9bb88}
+.sign{
+  position:absolute;left:var(--gut);right:var(--gut);bottom:clamp(28px,5vh,56px);z-index:5;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+  padding-top:20px;border-top:1px solid rgba(255,255,255,.22);
+}
+.sign .mk{font-size:clamp(22px,3vw,44px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.sign .mt{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:2;text-align:right}
+.colophon{background:var(--ink);color:rgba(255,255,255,.44);padding:26px var(--gut) 34px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;line-height:2.2;border-top:1px solid rgba(255,255,255,.1)}
+
+/* ───────── reveal ───────── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.09s}.rv.d2{transition-delay:.18s}.rv.d3{transition-delay:.27s}.rv.d4{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  .cover h1 .l i{transform:none}
+  .frame img{transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ───────── responsive ───────── */
+@media (max-width:1080px){
+  .figures{grid-template-columns:1fr 1fr}
+  .map-sheet{grid-template-columns:1fr}
+  .index .row{grid-template-columns:auto 1fr;row-gap:16px}
+  .index .row .who{grid-column:2}
+  .index .row .ask{grid-column:2;text-align:left}
+  .index .row .ask b{font-size:32px}
+  .pillars .p{grid-template-columns:auto 1fr;row-gap:12px}
+  .pillars .p p{grid-column:2}
+  .reach{grid-template-columns:1fr;gap:38px}
+  .cover-foot{grid-template-columns:1fr;gap:18px}
+  .cover-foot .scroll-cue{display:none}
 }
 @media (max-width:760px){
-  .links{display:none}
-  .hero{grid-template-columns:1fr}
-  .hero-copy{padding:90px 22px 52px}
-  .hero h1{font-size:58px}
-  .hero .lead,.hero .sub{max-width:none}
-  .hero-visual{min-height:54svh}
-  .section,.cta,.footer{padding-left:22px;padding-right:22px}
-  .heading h2,.cta h2{font-size:46px}
-  .fullbleed{min-height:78svh;border-radius:28px}
-  .fullbleed .content{padding:0 22px 24px}
-  .points,.engine,.legend,.focus-points,.mini-strip,.band,.hero-grid{grid-template-columns:1fr}
-  .card-visual,.card-copy,.film-card{min-height:450px}
+  .spread,.spread.offset,.spread.reverse,.spread.detail,.exhibits{grid-template-columns:1fr;gap:34px;align-items:start}
+  .spread .col-note,.spread figure{margin-top:0!important;padding-top:0!important}
+  .bleed img{height:clamp(260px,46vh,380px)}
+  .chapter-head{grid-template-columns:1fr;gap:10px}
+  .chapter-head .idx{font-size:30px}
+  .chapter-head .title{padding-top:0}
+  .bars .b{grid-template-columns:1fr auto;row-gap:10px}
+  .bars .b .track{grid-column:1/-1;order:3}
+  .plate .corner{display:none}
+  .statement,.statement.wide{max-width:none}
+  .chapter-readout .name{display:none}
+  .index .row h4{font-size:30px}
+  .plate.tall{height:100svh}
+  .sign{flex-direction:column;align-items:flex-start;gap:14px}
+  .sign .mt{text-align:left}
+  .interlude{min-height:64svh}
 }
 </style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
-<a class="skip" href="#content">Skip to content</a>
-<header class="nav" id="nav">
-  <a class="logo" href="#top">SERHANT<span>.</span></a>
-  <nav class="links" aria-label="Main navigation">
-    <a href="#vision">Vision</a>
-    <a href="#possibility">Possibility</a>
-    <a href="#district">District</a>
-    <a href="#serhant">Why SERHANT.</a>
-  </nav>
+<a class="skip" href="#vision">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="#cover">SERHANT.</a>
+  <div class="chapter-readout"><span class="num" id="chNum">01</span><span class="name" id="chName">Holland Park</span></div>
 </header>
 
-<section class="hero" id="top">
-  <div class="hero-copy reveal in">
-    <div class="eyebrow">Prepared for Lincoln Equities Group</div>
-    <h1>What Holland Park can become.</h1>
-    <p class="lead">A visual first pitch designed to make the project feel like Jersey City's next aspirational address from the very first frame.</p>
-    <p class="sub">Built to feel less like a deck and more like a luxury launch experience. Larger visuals. Cleaner pacing. More aspiration. More belief in the scale of what Holland Park can become.</p>
-    <div class="hero-actions">
-      <a class="btn primary" href="#vision">Enter the vision</a>
-      <a class="btn ghost" href="#serhant">See the SERHANT. close</a>
-    </div>
-    <div class="hero-grid">
-      <div class="h-stat"><b>Visual</b><span>First impression first</span></div>
-      <div class="h-stat"><b>Luxury</b><span>Transition and tone</span></div>
-      <div class="h-stat"><b>Identity</b><span>Memorable positioning</span></div>
-      <div class="h-stat"><b>Hopeful</b><span>Future facing story</span></div>
-    </div>
-  </div>
-  <div class="hero-visual parallax" data-speed="0.14">
-    <div class="hero-note">
-      <strong>The goal</strong>
-      <p>To help the project feel like a destination in the making, not simply another residential page. Every visual moment should reinforce confidence, excitement, and the sense that Holland Park can launch at a higher level.</p>
+<!-- ══════════ COVER ══════════ -->
+<section class="cover" id="cover">
+  <div class="cover-media" data-par="0.16" style="background-image:url('assets/renderings/hp-2.jpg')"></div>
+  <div class="grain"></div>
+  <div class="cover-inner">
+    <div class="cover-kicker">Jersey City · Hoboken Line · 18th Street &amp; Jersey Avenue</div>
+    <h1><span class="l"><i>Holland</i></span><span class="l"><i>Park</i></span></h1>
+    <div class="cover-foot">
+      <p>A new connected district between Jersey City and Hoboken.</p>
+      <div class="meta">Lincoln Equities Group<br>Presented by SERHANT.</div>
+      <div class="scroll-cue"><span class="bar"></span>Begin</div>
     </div>
   </div>
 </section>
 
-<main id="content">
-  <section class="section white" id="vision">
-    <div class="heading reveal">
-      <h2>Lead with atmosphere. Let the future feel irresistible.</h2>
-      <p>The strongest reference Enrique shared had one big advantage: it created desire before it explained anything. This direction pushes Holland Park further into that same premium feeling with larger imagery, cleaner pacing, and a stronger sense of arrival.</p>
-    </div>
-    <div class="fullbleed reveal" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676858449-EPGICS8177NJG1FEPNXL/Hollandpark_image2.png')">
-      <div class="content">
-        <div class="kicker">Chapter one</div>
-        <h3>The first impression should feel unforgettable.</h3>
-        <p>Holland Park already has the architecture, the public realm, and the visual material to support a more elevated story. The site should make that story feel inevitable.</p>
-      </div>
-    </div>
-  </section>
+<main>
 
-  <section class="section soft">
-    <div class="visual-duo">
-      <div class="card-visual reveal" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676859073-ACC1EBAUR5LGXM44MV75/Hollandpark_image3.png')">
-        <div class="overlay">
-          <small>Arrival</small>
-          <b>A front door with confidence.</b>
-          <span>The entry sequence should announce that this is the next address people want to experience.</span>
-        </div>
-      </div>
-      <div class="card-copy reveal d1">
-        <h3>Luxury lives in the pacing.</h3>
-        <p>More breathing room. More full screen moments. More clean captions. More confidence in the visuals. That shift alone makes the experience feel more premium and more emotionally persuasive.</p>
-        <div class="points">
-          <div class="point"><strong>Big image storytelling</strong>Let the renderings do the heavy lifting.</div>
-          <div class="point"><strong>Cleaner motion</strong>Gentle reveals create a calmer, more polished feel.</div>
-          <div class="point"><strong>Less copy</strong>Shorter language keeps the energy high and the site memorable.</div>
-          <div class="point"><strong>Stronger aspiration</strong>The project reads as a future lifestyle, not just available housing.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ══════════ 01 · THE VISION ══════════ -->
+<section class="sheet" id="vision" data-ch="01" data-name="The Vision">
+  <div class="chapter-head rv"><div class="idx serif">01</div><h2 class="title">The Vision</h2></div>
+  <div class="statement rv d1">
+    <h2>A neighborhood arrives <em>between</em> two cities.</h2>
+  </div>
+  <p class="say rv d2">Holland Park sits on the last great connective parcel on the Jersey City–Hoboken line. What rises here will not read as a building with an address. It will read as the place where the two cities finally meet.</p>
+</section>
 
-  <section class="section dark" id="possibility">
-    <div class="heading reveal">
-      <h2>Sell the future, not just the project.</h2>
-      <p>This project has the ingredients to become one of the most memorable new residential addresses in the district. The job of the site is to make that future feel visible now.</p>
-    </div>
-    <div class="quote reveal">“The site should make people feel that Holland Park is already becoming something important. More than a building. More than units. A new residential identity with its own energy, rhythm, and sense of destination.”</div>
-    <div class="band reveal d1">
-      <div class="metric"><b>Arrival</b><span>Make the opening sequence feel important</span></div>
-      <div class="metric"><b>Identity</b><span>Give the project a clear emotional point of view</span></div>
-      <div class="metric"><b>Momentum</b><span>Build excitement with cleaner visual rhythm</span></div>
-      <div class="metric"><b>Launch</b><span>Position the project like a premium debut</span></div>
-    </div>
-  </section>
+<section class="plate" data-ch="01" data-name="The Vision">
+  <div class="plate-media" data-par="0.12" style="background-image:url('assets/renderings/hp-1.jpg')"></div>
+  <div class="grain"></div>
+  <div class="corner">Holland Park<br>Public plaza &amp; light rail</div>
+  <div class="plate-inner">
+    <div class="label rv">The ground floor of a district</div>
+    <h3 class="serif rv d1">A plaza where a rail line becomes a front door.</h3>
+    <p class="rv d2">An elevated Hudson–Bergen Light Rail station, funded by the developer, lands directly into public space.</p>
+  </div>
+</section>
 
-  <section class="section white">
-    <div class="gallery">
-      <div class="tile big reveal" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676854137-CZAX9MS0BGIB03D4X6KC/Hollandpark_image4.png')">
-        <div class="overlay">
-          <small>Vision</small>
-          <b>A destination with its own gravity.</b>
-          <span>Position Holland Park as an address people will want to talk about, visit, and choose.</span>
-        </div>
-      </div>
-      <div class="tile reveal d1" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676854371-XCYXGLEQ3CTPCSWA6420/Hollandpark_image5.png')">
-        <div class="overlay">
-          <small>Energy</small>
-          <b>Public spaces that feel alive.</b>
-          <span>Create a stronger emotional read on how the project lives and breathes at ground level.</span>
-        </div>
-      </div>
-      <div class="tile reveal d2" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676859696-ME7YGBDWNOGPTB86T2VZ/Hollandpark_image6.png')">
-        <div class="overlay">
-          <small>Debut</small>
-          <b>Ready for a stronger market entrance.</b>
-          <span>Sharper imagery and smoother sequencing make the project feel launch ready.</span>
-        </div>
-      </div>
+<section class="sheet paper" data-ch="01" data-name="The Vision">
+  <figure class="frame bleed rv">
+    <img src="assets/renderings/hp-3.jpg" alt="Street-level retail, cafe seating and landscaped terraces at Holland Park" loading="lazy">
+    <figcaption><span>Retail street &amp; terraces</span><span>Holland Park</span></figcaption>
+  </figure>
+  <div class="spread" style="margin-top:clamp(40px,6vh,80px);align-items:start">
+    <div class="col-note rv d1">
+      <h4 class="serif">Districts are made at eye level.</h4>
+      <p>Cafés with tables outside. Shade, steps, planting, a reason to stop. The public realm here is designed to be used before it is admired, and that is exactly how a neighborhood earns its name.</p>
     </div>
-    <div class="mini-strip">
-      <div class="mini reveal" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676855174-7V4WIPIBU6KNSKSWF9K3/Hollandpark_image7.png')"></div>
-      <div class="mini reveal d1" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676860218-SFP2YX1TSFB78TPOPEL2/Hollandpark_image8.png')"></div>
-      <div class="mini reveal d2" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676858225-7DVHAV2M5HCKYJ0JK5YY/Hollandpark_image9.png')"></div>
+    <div class="col-note rv d2">
+      <h4 class="serif">And the ground floor does the introducing.</h4>
+      <p>Retail frontage, a community room, a plaza that reads as a destination from the street. Long before the first residence is leased, this is what makes people say they were at Holland Park.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section soft">
-    <div class="heading reveal">
-      <h2>Frame the lifestyle in cinematic chapters.</h2>
-      <p>Instead of one long explanation, move through memorable moments. Each section should feel like a premium scene in the project story.</p>
-    </div>
-    <div class="filmstrip">
-      <div class="film-card reveal" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676859073-ACC1EBAUR5LGXM44MV75/Hollandpark_image3.png')">
-        <div class="overlay">
-          <small>01</small>
-          <b>Arrival chapter</b>
-          <span>Confident entry, immediate presence, and a sense of anticipation from the first scroll.</span>
-        </div>
-      </div>
-      <div class="film-card reveal d1" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676854371-XCYXGLEQ3CTPCSWA6420/Hollandpark_image5.png')">
-        <div class="overlay">
-          <small>02</small>
-          <b>Life chapter</b>
-          <span>Show the rhythm of everyday living through public realm, movement, and atmosphere.</span>
-        </div>
-      </div>
-      <div class="film-card reveal d2" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676860218-SFP2YX1TSFB78TPOPEL2/Hollandpark_image8.png')">
-        <div class="overlay">
-          <small>03</small>
-          <b>Future chapter</b>
-          <span>Finish with ambition and possibility so the project feels bigger at the end than it did at the start.</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="interlude dark" data-ch="01" data-name="The Vision">
+  <div class="interlude-inner">
+    <div class="label rv">Chapter one</div>
+    <h3 class="serif rv d1">Not another apartment building. A new part of the city.</h3>
+    <div class="rule rv d2" style="margin-top:clamp(32px,6vh,64px)"></div>
+  </div>
+</section>
 
-  <section class="section white">
-    <div class="fullbleed reveal" style="background-image:url('https://images.squarespace-cdn.com/content/v1/5d277c8dd1dcf100011a829b/1573676858225-7DVHAV2M5HCKYJ0JK5YY/Hollandpark_image9.png')">
-      <div class="content">
-        <div class="kicker">Signature moment</div>
-        <h3>Show the address the market will aspire to live in.</h3>
-        <p>Every transition should reinforce beauty, confidence, and momentum so that Holland Park feels like a premium residential debut with real presence in market.</p>
-      </div>
-    </div>
-  </section>
+<!-- ══════════ 02 · LINCOLN'S VISION ══════════ -->
+<section class="sheet" id="plan" data-ch="02" data-name="Lincoln’s Vision">
+  <div class="chapter-head rv"><div class="idx serif">02</div><h2 class="title">Lincoln’s Vision</h2></div>
+  <div class="statement wide rv d1">
+    <h2>Lincoln Equities is building the <em>connection</em>, not just the address.</h2>
+  </div>
+  <p class="say rv d2">Two buildings on either side of a north–south pedestrian plaza. A four-storey podium carrying parking, amenity, retail and community space. And a new light rail station stitched into the plaza, with pedestrian connections out to 18th Street and Grove Street. This is civic infrastructure delivered by a private developer, and it is the reason Holland Park reads as a district.</p>
 
-  <section class="section white" id="district">
-    <div class="heading reveal">
-      <h2>Keep the district story. Make it feel curated.</h2>
-      <p>The location section should support the vision without slowing the experience down. It should communicate confidence, context, and momentum around the project in a cleaner way.</p>
-    </div>
-    <div class="map-wrap">
-      <div class="map-box reveal">
-        <h3>Nearby development context</h3>
-        <p>A softer, more elegant district read that supports the pitch while keeping the visual polish intact.</p>
-        <svg class="svg-map" viewBox="0 0 700 460" role="img" aria-label="Concept map of Holland Park and nearby residential properties">
-          <rect width="700" height="460" fill="#f4f7fc"></rect>
-          <path d="M0 120 C140 145 235 110 355 132 C475 155 585 108 700 128 L700 460 L0 460 Z" fill="#eef3fb"></path>
-          <path d="M135 0 L165 460" stroke="#cdd9ea" stroke-width="4"></path>
-          <path d="M355 0 L385 460" stroke="#d9e2ee" stroke-width="2"></path>
-          <path d="M0 248 L700 248" stroke="#d4deed" stroke-width="4"></path>
-          <path d="M0 335 L700 335" stroke="#dde5f1" stroke-width="2"></path>
-          <g font-family="Inter, Arial" text-anchor="middle">
-            <circle cx="340" cy="222" r="16" fill="#d6b071"></circle>
-            <text x="340" y="226" font-size="10" font-weight="800" fill="#07184e">HP</text>
-            <text x="340" y="195" font-size="12" font-weight="800" fill="#07184e">Holland Park</text>
-            <circle cx="260" cy="142" r="12" fill="#07184e"></circle><text x="260" y="146" font-size="9" font-weight="800" fill="#fff">1</text><text x="260" y="120" font-size="11" font-weight="700" fill="#07184e">Soho Lofts</text>
-            <circle cx="430" cy="142" r="12" fill="#07184e"></circle><text x="430" y="146" font-size="9" font-weight="800" fill="#fff">2</text><text x="430" y="120" font-size="11" font-weight="700" fill="#07184e">Cast Iron Lofts</text>
-            <circle cx="492" cy="248" r="12" fill="#07184e"></circle><text x="492" y="252" font-size="9" font-weight="800" fill="#fff">3</text><text x="492" y="276" font-size="11" font-weight="700" fill="#07184e">Hudson House</text>
-            <circle cx="238" cy="295" r="12" fill="#07184e"></circle><text x="238" y="299" font-size="9" font-weight="800" fill="#fff">4</text><text x="238" y="323" font-size="11" font-weight="700" fill="#07184e">Embankment House</text>
-          </g>
-        </svg>
-        <div class="legend">
-          <div class="legend-item"><strong>Why it stays</strong>It proves local awareness and reinforces that the story is grounded in real context.</div>
-          <div class="legend-item"><strong>Why it changes</strong>It feels lighter, cleaner, and more aligned with the luxury visual direction.</div>
-        </div>
-      </div>
-      <div class="focus-box reveal d1">
-        <h3>How to use the district section</h3>
-        <p>The district should be presented as momentum around the address. Not as a dense research page. The point is to create confidence that Holland Park belongs in a rising, connected residential cluster while still feeling distinct.</p>
-        <div class="focus-points">
-          <div><strong style="display:block;color:var(--navy);margin-bottom:4px">Connection</strong>Reinforce proximity and ease without over explaining.</div>
-          <div><strong style="display:block;color:var(--navy);margin-bottom:4px">Positioning</strong>Make the project feel like a standout address in the district story.</div>
-          <div><strong style="display:block;color:var(--navy);margin-bottom:4px">Caliber</strong>Use clean design to signal a more premium reading of the market.</div>
-          <div><strong style="display:block;color:var(--navy);margin-bottom:4px">Momentum</strong>Show that the project belongs in the next wave of neighborhood energy.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="figures rv d3" style="margin-top:clamp(50px,8vh,110px)">
+    <div class="fig"><b class="serif">800</b><span>Residences envisioned</span></div>
+    <div class="fig"><b class="serif">2</b><span>Buildings, one central plaza</span></div>
+    <div class="fig"><b class="serif">1</b><span>New HBLR station, developer funded</span></div>
+    <div class="fig"><b class="serif">4</b><span>Storey retail &amp; amenity podium</span></div>
+  </div>
+</section>
 
-  <section class="section dark" id="serhant">
-    <div class="heading reveal">
-      <h2>Close with belief. Close with SERHANT.</h2>
-      <p>The final chapter should leave no doubt that the project can launch with a sharper identity, a bigger sense of excitement, and a complete marketing engine behind it.</p>
-    </div>
-    <div class="promise">
-      <div class="box reveal">
-        <h3>What Lincoln should feel</h3>
-        <p>That Holland Park can be introduced with more impact, more beauty, and more market excitement. That the project can feel fully imagined. And that the right partner can make the visual story work much harder from day one.</p>
-      </div>
-      <div class="box-dark reveal d1">
-        <h3>What SERHANT. brings</h3>
-        <p>SERHANT. New Development brings brand, media, design, launch strategy, and digital execution together. That means a more cohesive story, a more distinctive identity, and a market debut that feels premium from the first impression to the final close.</p>
-        <div class="engine">
-          <div class="e"><small>01</small><h4>Brand identity</h4><p>A sharper point of view for the project.</p></div>
-          <div class="e"><small>02</small><h4>Visual production</h4><p>Content that actually feels elevated.</p></div>
-          <div class="e"><small>03</small><h4>Digital experience</h4><p>A site that sells aspiration before details.</p></div>
-          <div class="e"><small>04</small><h4>Launch engine</h4><p>Storytelling built to create excitement and momentum.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="sheet bone2 tight" data-ch="02" data-name="Lincoln’s Vision">
+  <div class="exhibits">
+    <figure class="rv">
+      <div class="frame mat"><img src="assets/renderings/hp-6.jpg" alt="Annotated aerial site plan showing Holland Park, the new light rail station and the proposed Erie Street connection" loading="lazy"></div>
+      <figcaption><span>Site plan · Connections</span><span>Drawing 01</span></figcaption>
+    </figure>
+    <figure class="rv d1">
+      <div class="frame mat"><img src="assets/renderings/hp-5.jpg" alt="Massing study showing building heights across the Holland Park site" loading="lazy"></div>
+      <figcaption><span>Massing study</span><span>Drawing 02</span></figcaption>
+    </figure>
+    <figure class="rv d2">
+      <div class="frame mat"><img src="assets/renderings/hp-4.jpg" alt="Section drawing through the podium, residential tower and new Holland Park light rail station" loading="lazy"></div>
+      <figcaption><span>Section · Podium to platform</span><span>Drawing 03</span></figcaption>
+    </figure>
+    <figure class="rv d3">
+      <div class="frame mat"><img src="assets/renderings/hp-7.jpg" alt="Elevation drawing of the proposed Holland Park light rail platform and canopies" loading="lazy"></div>
+      <figcaption><span>Platform elevation</span><span>Drawing 04</span></figcaption>
+    </figure>
+  </div>
+  <div class="col-note rv d2" style="margin-top:clamp(40px,6vh,86px)">
+    <h4 class="serif">The plan already tells the story.</h4>
+    <p>A pedestrian and bike crossing to the north. An Erie Street connection to the south. A station in the middle. Lincoln’s drawings describe movement first and units second, and that is the strongest possible foundation for the way this project should be brought to market.</p>
+  </div>
+</section>
 
-  <section class="cta reveal">
-    <h2>Holland Park already has the visual ingredients. This experience should make the opportunity feel undeniable.</h2>
-    <p>The next step is simple: keep the visuals leading, keep the language clean, and let the project feel more and more like a premium residential launch with every scroll.</p>
-    <a class="btn primary" href="#top">Back to top</a>
-  </section>
+<!-- ══════════ 03 · RESIDENT EXPERIENCE ══════════ -->
+<section class="plate" id="life" data-ch="03" data-name="Resident Experience">
+  <div class="plate-media" data-par="0.13" style="background-image:url('assets/renderings/hp-1.jpg');background-position:16% 60%"></div>
+  <div class="grain"></div>
+  <div class="plate-inner">
+    <div class="label rv">03 · Resident Experience</div>
+    <h3 class="serif rv d1">The commute begins downstairs.</h3>
+  </div>
+</section>
+
+<section class="sheet paper" data-ch="03" data-name="Resident Experience">
+  <div class="spread detail" style="align-items:start">
+    <figure class="frame rv">
+      <img src="assets/renderings/detail-steps.jpg" alt="Landscaped stepped seating and terraces in the Holland Park plaza" loading="lazy">
+      <figcaption><span>08:10 · The steps</span><span>Morning</span></figcaption>
+    </figure>
+    <figure class="frame rv d2" style="margin-top:clamp(40px,14vh,190px)">
+      <img src="assets/renderings/detail-cafe.jpg" alt="Cafe seating along the retail frontage at Holland Park" loading="lazy">
+      <figcaption><span>09:45 · The corner table</span><span>Mid-morning</span></figcaption>
+    </figure>
+  </div>
+  <div class="spread detail" style="margin-top:clamp(40px,9vh,140px);align-items:start">
+    <div class="col-note rv" style="margin-top:clamp(0px,8vh,120px)">
+      <h4 class="serif">A day that never needs a car.</h4>
+      <p>Step out, cross the plaza, board the light rail. One stop to 2nd Street, a short ride to Hoboken Terminal and Newport, and the PATH into Manhattan from there. Come home to shade, steps, and a street that is busy in the right way.</p>
+    </div>
+    <figure class="frame rv d2">
+      <img src="assets/renderings/detail-station.jpg" alt="Residents and cyclists at the new Holland Park light rail platform" loading="lazy">
+      <figcaption><span>18:30 · The platform</span><span>Evening</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="plate" data-ch="03" data-name="Resident Experience">
+  <div class="plate-media" data-par="0.11" style="background-image:url('assets/renderings/hp-3.jpg');background-position:center 60%"></div>
+  <div class="grain"></div>
+  <div class="plate-inner">
+    <div class="label rv">The feeling we are selling</div>
+    <h3 class="serif rv d1">You do not move into a building here. You move into the neighborhood it created.</h3>
+  </div>
+</section>
+
+<!-- ══════════ 04 · THE DISTRICT ══════════ -->
+<section class="sheet" id="district" data-ch="04" data-name="The District">
+  <div class="chapter-head rv"><div class="idx serif">04</div><h2 class="title">The District</h2></div>
+  <div class="statement wide rv d1"><h2>Five minutes of Jersey City. Five minutes of <em>Hoboken</em>.</h2></div>
+
+  <div class="map-sheet rv d2" style="margin-top:clamp(44px,7vh,100px)">
+    <div class="map-img frame">
+      <img src="assets/renderings/hp-9.jpg" alt="District map showing Holland Park with five and ten minute walk radii, the light rail line, Hoboken Terminal, 2nd Street and Newport" loading="lazy">
+    </div>
+    <div>
+      <div class="label">Within the walk radius</div>
+      <div class="walkline">
+        <div class="row"><div class="who">Hudson–Bergen Light Rail<small>New Holland Park station</small></div><div class="val serif">On site</div></div>
+        <div class="row"><div class="who">2nd Street Station<small>Hoboken · HBLR</small></div><div class="val serif">5 min</div></div>
+        <div class="row"><div class="who">Hoboken Terminal<small>PATH · NJ Transit · Ferry</small></div><div class="val serif">10 min</div></div>
+        <div class="row"><div class="who">Newport<small>PATH · Waterfront retail</small></div><div class="val serif">10 min</div></div>
+      </div>
+      <p class="say" style="margin-top:28px;font-size:15px">The map is the pitch. Holland Park is the one address that belongs to both sides of the line, and the only one that arrives with a station of its own.</p>
+    </div>
+  </div>
+</section>
+
+<section class="plate" data-ch="04" data-name="The District">
+  <div class="plate-media" data-par="0.14" style="background-image:url('assets/renderings/hp-10.jpg')"></div>
+  <div class="grain"></div>
+  <div class="corner">Aerial<br>Jersey City · Hoboken border</div>
+  <div class="plate-inner">
+    <div class="label rv">From above</div>
+    <h3 class="serif rv d1">The seam between two skylines.</h3>
+  </div>
+</section>
+
+<!-- ══════════ 05 · THE NEIGHBORHOOD ══════════ -->
+<section class="sheet dark on-dark" id="neighbors" data-ch="05" data-name="The Neighborhood">
+  <div class="chapter-head rv"><div class="idx serif">05</div><h2 class="title">The Neighborhood</h2></div>
+  <div class="statement wide rv d1"><h2>The best operators in Hudson County are already <em>here</em>.</h2></div>
+  <p class="say rv d2">RXR. Columbia Property Trust. Veris Residential. The Manhattan Building Company. Newport Associates. Greystar. Six buildings within a few blocks have spent a decade proving that this stretch of the waterfront supports genuine luxury rents. Holland Park arrives with that groundwork already done, and with the one thing none of them has: a station of its own.</p>
+
+  <div class="index rv d3" style="margin-top:clamp(44px,7vh,100px)">
+    <div class="row">
+      <div class="n">01</div>
+      <h4 class="serif">Radio Lofts at Hudson House<small>316 15th Street · 140 residences</small></h4>
+      <div class="who"><b>RXR · Columbia Property Trust</b>With Strategic Value Partners and One Investment Management, leased by Greystar. Lofts inside the former Emerson Radio and Continental Can building, with 11.5-foot ceilings.</div>
+      <div class="ask"><b class="serif">$3,365</b><span>Asking from</span></div>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <h4 class="serif">Hudson House East<small>315 15th Street</small></h4>
+      <div class="who"><b>RXR · Columbia Property Trust</b>Greystar managed. Studios through three-bedrooms, 676 to 2,341 square feet, at the top of the local asking range.</div>
+      <div class="ask"><b class="serif">$3,605</b><span>Asking from</span></div>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <h4 class="serif">Hudson House West<small>325 15th Street · 336 residences · 27 storeys</small></h4>
+      <div class="who"><b>RXR · Columbia Property Trust</b>Greystar managed. The tower of the 15th Street trio, and the newest large-format lease-up on this block.</div>
+      <div class="ask"><b class="serif">$2,695</b><span>Asking from</span></div>
+    </div>
+    <div class="row">
+      <div class="n">04</div>
+      <h4 class="serif">Soho Lofts<small>273 16th Street · 377 residences</small></h4>
+      <div class="who"><b>The Manhattan Building Company · Veris Residential</b>Some of the largest floor plans in Hudson County, plus a townhome collection running to five bedrooms.</div>
+      <div class="ask"><b class="serif">$3,330</b><span>Asking from</span></div>
+    </div>
+    <div class="row">
+      <div class="n">05</div>
+      <h4 class="serif">Cast Iron Lofts<small>837 Jersey Avenue &amp; 300 Coles Street</small></h4>
+      <div class="who"><b>The Manhattan Building Company</b>Two towers, 27 storeys, studios through three-bedrooms. The closest large neighbor to the Holland Park parcel.</div>
+      <div class="ask"><b class="serif">$3,158</b><span>Asking from</span></div>
+    </div>
+    <div class="row">
+      <div class="n">06</div>
+      <h4 class="serif">Embankment House<small>270 10th Street · 163 residences</small></h4>
+      <div class="who"><b>Newport Associates Development Company</b>Greystar managed. Built above the historic Erie Railroad embankment at Hamilton Park, 510 to 1,280 square feet.</div>
+      <div class="ask"><b class="serif">$2,820</b><span>Asking from</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 06 · THE RENT MARKET ══════════ -->
+<section class="sheet" id="market" data-ch="06" data-name="The Rent Market">
+  <div class="chapter-head rv"><div class="idx serif">06</div><h2 class="title">The Rent Market</h2></div>
+  <div class="statement wide rv d1"><h2>The rents are already <em>proven</em>. Holland Park sets the next line.</h2></div>
+
+  <div class="bars rv d2" id="bars">
+    <div class="b"><div class="nm">Hudson House West<small>325 15th Street</small></div><div class="track"><i data-w="67"></i></div><div class="amt serif">$2,695</div></div>
+    <div class="b"><div class="nm">Embankment House<small>270 10th Street</small></div><div class="track"><i data-w="70"></i></div><div class="amt serif">$2,820</div></div>
+    <div class="b"><div class="nm">Cast Iron Lofts<small>837 Jersey Avenue</small></div><div class="track"><i data-w="79"></i></div><div class="amt serif">$3,158</div></div>
+    <div class="b"><div class="nm">Soho Lofts<small>273 16th Street</small></div><div class="track"><i data-w="83"></i></div><div class="amt serif">$3,330</div></div>
+    <div class="b"><div class="nm">Radio Lofts<small>316 15th Street</small></div><div class="track"><i data-w="84"></i></div><div class="amt serif">$3,365</div></div>
+    <div class="b"><div class="nm">Hudson House East<small>315 15th Street</small></div><div class="track"><i data-w="90"></i></div><div class="amt serif">$3,605</div></div>
+  </div>
+
+  <div class="figures rv d3" style="margin-top:clamp(46px,7vh,96px)">
+    <div class="fig"><b class="serif">$8,350</b><span>Top of the current asking range, Radio Lofts</span></div>
+    <div class="fig"><b class="serif">$5,270</b><span>Three-bedroom asking, Soho Lofts</span></div>
+    <div class="fig"><b class="serif">$4,279</b><span>One-bedroom asking, Hudson House East</span></div>
+    <div class="fig"><b class="serif">1,600+</b><span>Luxury residences leasing within a few blocks</span></div>
+  </div>
+
+  <div class="spread" style="margin-top:clamp(46px,7vh,96px);align-items:start">
+    <div class="col-note rv">
+      <h4 class="serif">Every one of these rents was earned without a station at the door.</h4>
+      <p>Holland Park starts where they finish. A funded light rail stop, a real plaza, and a public realm that belongs to the whole district. That is the premium this market has not yet been asked to pay.</p>
+    </div>
+    <p class="source rv d2">Source · Publicly advertised asking rents and building listings, September 2026. Figures are the starting asking rent for each building and move with availability and concessions.</p>
+  </div>
+</section>
+
+<!-- ══════════ 07 · WHY SERHANT ══════════ -->
+<section class="sheet dark on-dark" id="serhant" data-ch="07" data-name="Why SERHANT.">
+  <div class="chapter-head rv"><div class="idx serif">07</div><h2 class="title">Why SERHANT.</h2></div>
+  <div class="statement wide rv d1"><h2>We build the audience <em>before</em> the building opens.</h2></div>
+  <p class="say rv d2">Holland Park deserves to be launched as a district, not listed as inventory. That is the exact shape of what SERHANT. was built to do: brand, content, technology and new development leasing inside one company, working together from day one.</p>
+
+  <div class="pillars rv d3">
+    <div class="p"><div class="n">01</div><h4>ID LAB</h4><p>The in-house branding studio. Name, identity, positioning and the district story, so Holland Park feels inevitable long before the first tour is booked.</p></div>
+    <div class="p"><div class="n">02</div><h4>SERHANT. STUDIOS</h4><p>A full production company inside the brokerage. Film, photography and social-native content made at broadcast quality and published to an audience that is already watching.</p></div>
+    <div class="p"><div class="n">03</div><h4>ADX</h4><p>Our advertising and distribution engine. Paid, organic and owned channels run as one system, read daily, with spend moved to whatever is filling the tour calendar.</p></div>
+    <div class="p"><div class="n">04</div><h4>NEW DEVELOPMENT</h4><p>The team that carries it from plan to lease-up. Pricing strategy, unit mix, amenity narrative, sales gallery, launch sequencing and the on-site team that closes it.</p></div>
+  </div>
+
+  <div class="reach rv d4">
+    <div>
+      <div class="big">16B+</div>
+      <div class="cap">Annual impressions across the SERHANT. network</div>
+    </div>
+    <div>
+      <div class="big">10M+</div>
+      <div class="cap">People in our owned audience, reachable on day one</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CLOSE ══════════ -->
+<section class="close" id="close" data-ch="08" data-name="Holland Park">
+  <div class="plate-media" data-par="0.1" style="background-image:url('assets/renderings/hp-2.jpg')"></div>
+  <div class="grain"></div>
+  <div class="close-inner">
+    <div class="label rv" style="color:rgba(255,255,255,.6);margin-bottom:24px">The close</div>
+    <h2 class="rv d1">Let’s introduce the neighborhood <em>before</em> we lease the first home.</h2>
+  </div>
+  <div class="sign">
+    <div class="mk">SERHANT.</div>
+    <div class="mt">Prepared for Lincoln Equities Group<br>Holland Park · Jersey City, New Jersey</div>
+  </div>
+</section>
+
 </main>
 
-<footer class="footer">
-  <strong>SERHANT.</strong>
-  Holland Park vision site concept prepared for Lincoln Equities Group. This version is intentionally visual first, hopeful in tone, and designed to emphasize what the project can become.
+<footer class="colophon">
+  Holland Park · Lincoln Equities Group · Presented by SERHANT. New Development<br>
+  Renderings, plans and site drawings courtesy of Lincoln Equities Group. Neighborhood rents reflect publicly advertised asking prices as of September 2026 and are subject to change.
 </footer>
 
 <script>
-const reveals=[...document.querySelectorAll('.reveal')];
-const io=new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('in');}
-  });
-},{threshold:.14});
-reveals.forEach(el=>io.observe(el));
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const nav=document.getElementById('nav');
-const progress=document.getElementById('progress');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('scrolled',window.scrollY>16);
-  const h=document.documentElement;
-  const sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight);
-  progress.style.width=(sc*100)+'%';
-  document.querySelectorAll('.parallax').forEach(el=>{
-    const speed=parseFloat(el.dataset.speed||'0.12');
-    el.style.transform=`translateY(${window.scrollY*speed}px)`;
+  /* cover intro */
+  requestAnimationFrame(function(){
+    document.getElementById('cover').classList.add('ready');
   });
-},{passive:true});
+
+  /* reveals */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv, .frame').forEach(function(el){ io.observe(el); });
+
+  /* rent bars */
+  var barsEl = document.getElementById('bars');
+  if(barsEl){
+    var bio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          barsEl.querySelectorAll('.track i').forEach(function(i){ i.style.width = i.getAttribute('data-w') + '%'; });
+          bio.disconnect();
+        }
+      });
+    }, {threshold:.3});
+    bio.observe(barsEl);
+  }
+
+  /* chapter readout — whichever chapter crosses the middle of the viewport wins */
+  var chNum = document.getElementById('chNum'), chName = document.getElementById('chName');
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var n = e.target.getAttribute('data-ch'), nm = e.target.getAttribute('data-name');
+      if(chNum.textContent === n && chName.textContent === nm) return;
+      chName.style.opacity = 0;
+      setTimeout(function(){ chNum.textContent = n; chName.textContent = nm; chName.style.opacity = 1; }, 170);
+    });
+  }, {rootMargin:'-48% 0px -48% 0px', threshold:0});
+  document.querySelectorAll('[data-ch]').forEach(function(el){ cio.observe(el); });
+
+  /* parallax + progress */
+  var pars = [].slice.call(document.querySelectorAll('[data-par]'));
+  var progress = document.getElementById('progress');
+  var ticking = false;
+  function frame(){
+    ticking = false;
+    var doc = document.documentElement;
+    var sc = doc.scrollTop / (doc.scrollHeight - doc.clientHeight || 1);
+    progress.style.width = (sc * 100) + '%';
+
+    var vh = window.innerHeight;
+    for(var i = 0; i < pars.length; i++){
+      var el = pars[i];
+      var host = el.parentElement;
+      var r = host.getBoundingClientRect();
+      if(r.bottom < -240 || r.top > vh + 240) continue;
+      var mid = r.top + r.height / 2 - vh / 2;
+      el.style.transform = 'translate3d(0,' + (-mid * parseFloat(el.getAttribute('data-par'))).toFixed(2) + 'px,0)';
+    }
+
+    theme();
+  }
+
+  /* is the masthead currently sitting on a dark plate? */
+  function theme(){
+    var probe = document.elementFromPoint(Math.round(window.innerWidth / 2), 34);
+    if(!probe || !probe.closest) return;
+    var dark = !!probe.closest('.plate, .cover, .close, .dark');
+    document.body.classList.toggle('over-dark', dark);
+    progress.classList.toggle('inv', dark);
+  }
+
+  function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(frame); } }
+
+  if(!reduce){
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+    frame();
+  } else {
+    window.addEventListener('scroll', function(){
+      var doc = document.documentElement;
+      progress.style.width = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight || 1) * 100) + '%';
+      theme();
+    }, {passive:true});
+    theme();
+  }
+})();
 </script>
 </body>
 </html>
