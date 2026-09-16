@@ -274,9 +274,47 @@ figure figcaption{
 .pillars .p .n{font-size:10px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.4)}
 .pillars .p h4{margin:0;font-size:clamp(20px,2.3vw,34px);font-weight:700;letter-spacing:-.035em;line-height:1}
 .pillars .p p{margin:0;max-width:min(100%,640px);font-size:15px;line-height:1.66;color:rgba(255,255,255,.74)}
-.reach{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,70px);margin-top:clamp(40px,7vh,90px);align-items:end}
-.reach .big{font-family:"Instrument Serif",serif;font-size:clamp(64px,11vw,190px);line-height:.82;letter-spacing:-.04em}
-.reach .cap{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:18px;line-height:2}
+.pillars .p .deliver{
+  margin:16px 0 0;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+  font-size:clamp(17px,1.7vw,26px);line-height:1.28;letter-spacing:-.015em;color:#d9bb88;max-width:min(100%,600px);
+}
+
+/* ───────── reach plate ───────── */
+.reach-plate{background:var(--ink);color:#fff;min-height:96svh;display:flex;align-items:center;padding:clamp(70px,11vh,150px) var(--gut);overflow:hidden}
+.reach-plate .inner{width:100%}
+.reach{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,90px);align-items:start;margin-top:clamp(30px,5vh,64px)}
+.reach .big{
+  font-family:"Instrument Serif",serif;font-size:clamp(76px,14.5vw,268px);
+  line-height:.8;letter-spacing:-.045em;font-variant-numeric:tabular-nums;
+}
+.reach .cap{
+  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.56);margin-top:22px;padding-top:20px;
+  border-top:1px solid var(--line-light);line-height:2;max-width:min(100%,330px);
+}
+.reach-punch{
+  margin:clamp(44px,8vh,104px) 0 0;max-width:min(100%,1180px);
+  font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(30px,4.6vw,86px);line-height:1.02;letter-spacing:-.022em;
+}
+.reach-punch em{font-style:italic;color:#d9bb88}
+
+/* ───────── launch sequence ───────── */
+.sequence{border-top:1px solid var(--line-light);margin-top:clamp(34px,6vh,74px)}
+.sequence .step{
+  display:grid;grid-template-columns:auto clamp(150px,15vw,250px) 1fr;gap:clamp(16px,3vw,56px);
+  align-items:baseline;padding:clamp(30px,4.4vh,56px) 0;border-bottom:1px solid var(--line-light);
+}
+.sequence .step .n{font-size:10px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.38);font-variant-numeric:tabular-nums}
+.sequence .step h4{
+  margin:0;font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(26px,3vw,46px);line-height:1;letter-spacing:-.02em;
+}
+.sequence .step h4 small{
+  display:block;margin-top:10px;font-family:Inter,sans-serif;font-size:9px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);
+}
+.sequence .step p{margin:0;max-width:min(100%,640px);font-size:16px;line-height:1.66;color:rgba(255,255,255,.76)}
 
 /* ───────── close ───────── */
 .close{position:relative;height:100svh;min-height:620px;overflow:hidden;background:#0b0b0c;color:#fff}
@@ -317,8 +355,10 @@ figure figcaption{
   .index .row .who{grid-column:2}
   .index .row .ask{grid-column:2;text-align:left}
   .index .row .ask b{font-size:32px}
-  .pillars .p{grid-template-columns:auto 1fr;row-gap:12px}
-  .pillars .p p{grid-column:2}
+  .pillars .p{grid-template-columns:1fr;row-gap:14px}
+  .pillars .p .n,.pillars .p h4,.pillars .p p,.pillars .p>div{grid-column:1}
+  .sequence .step{grid-template-columns:1fr;row-gap:14px}
+  .sequence .step .n,.sequence .step h4,.sequence .step p{grid-column:1}
   .reach{grid-template-columns:1fr;gap:38px}
   .cover-foot{grid-template-columns:1fr;gap:18px}
   .cover-foot .scroll-cue{display:none}
@@ -609,24 +649,103 @@ figure figcaption{
 <section class="sheet dark on-dark" id="serhant" data-ch="07" data-name="Why SERHANT.">
   <div class="chapter-head rv"><div class="idx serif">07</div><h2 class="title">Why SERHANT.</h2></div>
   <div class="statement wide rv d1"><h2>We build the audience <em>before</em> the building opens.</h2></div>
-  <p class="say rv d2">Holland Park deserves to be launched as a district, not listed as inventory. That is the exact shape of what SERHANT. was built to do: brand, content, technology and new development leasing inside one company, working together from day one.</p>
+  <p class="say rv d2">Holland Park deserves to be launched as a district, not listed as inventory. That is the exact shape of what SERHANT. was built to do: brand, content, technology and new development leasing inside one company, pointed at one project from day one.</p>
+</section>
 
-  <div class="pillars rv d3">
-    <div class="p"><div class="n">01</div><h4>ID LAB</h4><p>The in-house branding studio. Name, identity, positioning and the district story, so Holland Park feels inevitable long before the first tour is booked.</p></div>
-    <div class="p"><div class="n">02</div><h4>SERHANT. STUDIOS</h4><p>A full production company inside the brokerage. Film, photography and social-native content made at broadcast quality and published to an audience that is already watching.</p></div>
-    <div class="p"><div class="n">03</div><h4>ADX</h4><p>Our advertising and distribution engine. Paid, organic and owned channels run as one system, read daily, with spend moved to whatever is filling the tour calendar.</p></div>
-    <div class="p"><div class="n">04</div><h4>NEW DEVELOPMENT</h4><p>The team that carries it from plan to lease-up. Pricing strategy, unit mix, amenity narrative, sales gallery, launch sequencing and the on-site team that closes it.</p></div>
+<!-- reach -->
+<section class="reach-plate" data-ch="07" data-name="Why SERHANT.">
+  <div class="grain"></div>
+  <div class="inner">
+    <div class="label rv">What day one looks like</div>
+    <div class="reach">
+      <div class="rv d1">
+        <div class="big" data-count="16" data-suffix="B+">16B+</div>
+        <div class="cap">Impressions a year across the SERHANT. network</div>
+      </div>
+      <div class="rv d2">
+        <div class="big" data-count="10" data-suffix="M+">10M+</div>
+        <div class="cap">People already following, reachable the morning we launch</div>
+      </div>
+    </div>
+    <p class="reach-punch rv d3">Holland Park will never have to buy its first audience. It <em>already has one.</em></p>
   </div>
+</section>
 
-  <div class="reach rv d4">
-    <div>
-      <div class="big">16B+</div>
-      <div class="cap">Annual impressions across the SERHANT. network</div>
+<!-- the four divisions -->
+<section class="sheet dark on-dark" data-ch="07" data-name="Why SERHANT.">
+  <div class="statement wide rv"><h2>Four teams. <em>One</em> building.</h2></div>
+  <p class="say rv d1">Every one of these sits inside SERHANT., on the same floor, on the same calendar. Nothing gets handed to an outside agency and nothing gets lost between them.</p>
+
+  <div class="pillars rv d2">
+    <div class="p">
+      <div class="n">01</div>
+      <h4>ID LAB</h4>
+      <div>
+        <p>The in-house branding studio. Name, mark, voice and the district story, built before anything is sold. Everything downstream inherits it.</p>
+        <p class="deliver">For Holland Park: a brand that says district, not development.</p>
+      </div>
     </div>
-    <div>
-      <div class="big">10M+</div>
-      <div class="cap">People in our owned audience, reachable on day one</div>
+    <div class="p">
+      <div class="n">02</div>
+      <h4>SERHANT. STUDIOS</h4>
+      <div>
+        <p>A full production company inside the brokerage. Film, photography and social-native content made at broadcast quality, at the pace social actually moves.</p>
+        <p class="deliver">For Holland Park: a launch film that puts people in the plaza years before it opens.</p>
+      </div>
     </div>
+    <div class="p">
+      <div class="n">03</div>
+      <h4>ADX</h4>
+      <div>
+        <p>Our advertising and distribution engine. Paid, organic and owned channels run as one system, read every day, with spend moved to whatever is filling the calendar.</p>
+        <p class="deliver">For Holland Park: every dollar traced to a tour, and redirected the moment something works better.</p>
+      </div>
+    </div>
+    <div class="p">
+      <div class="n">04</div>
+      <h4>NEW DEVELOPMENT</h4>
+      <div>
+        <p>The team that carries it from plan to lease-up. Pricing strategy, unit mix, amenity narrative, sales gallery, launch sequencing and the on-site team that closes it.</p>
+        <p class="deliver">For Holland Park: a gallery, a price and a team on site the day leasing opens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- how the launch runs -->
+<section class="sheet dark on-dark" data-ch="07" data-name="The Launch">
+  <div class="statement wide rv"><h2>And they run in <em>this</em> order.</h2></div>
+  <p class="say rv d1">One sequence, one team, no gaps between the story and the lease. This is what we would start on the day Lincoln says go.</p>
+
+  <div class="sequence rv d2">
+    <div class="step">
+      <div class="n">01</div>
+      <h4>Position<small>ID Lab</small></h4>
+      <p>The name, the mark, the district story. We decide what Holland Park means before anyone decides what it costs.</p>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <h4>Produce<small>Studios</small></h4>
+      <p>The film, the stills, the social cuts, the site. Made once, made properly, made at the level these renderings already deserve.</p>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <h4>Publish<small>ADX</small></h4>
+      <p>Straight into ten million people, then into paid, then into whatever the numbers say is working that week.</p>
+    </div>
+    <div class="step">
+      <div class="n">04</div>
+      <h4>Open<small>New Development</small></h4>
+      <p>Gallery, pricing, team, tours. The doors open to an audience that has been watching this district get built for months.</p>
+    </div>
+  </div>
+</section>
+
+<section class="interlude dark" data-ch="07" data-name="Why SERHANT.">
+  <div class="interlude-inner">
+    <div class="label rv">The offer</div>
+    <h3 class="serif rv d1">One company, one story, from the first frame to the last lease.</h3>
+    <div class="rule rv d2" style="margin-top:clamp(32px,6vh,64px)"></div>
   </div>
 </section>
 
@@ -667,6 +786,31 @@ figure figcaption{
     });
   }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv, .frame').forEach(function(el){ io.observe(el); });
+
+  /* reach numerals count up */
+  var counters = [].slice.call(document.querySelectorAll('[data-count]'));
+  counters.forEach(function(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if(reduce) return;
+    el.textContent = '0' + suffix;
+    var nio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        nio.disconnect();
+        var t0 = null, dur = 1500;
+        function tick(t){
+          if(t0 === null) t0 = t;
+          var k = Math.min((t - t0) / dur, 1);
+          var eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if(k < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, {threshold:.5});
+    nio.observe(el);
+  });
 
   /* rent bars */
   var barsEl = document.getElementById('bars');
