@@ -17,6 +17,25 @@ Live: https://hxdoali.github.io/holland-park-serhant/
 8. Why SERHANT. — ID Lab, Studios, ADX, New Development
 9. The close
 
+## Palette
+
+Taken from the SERHANT. design tokens published at `styles.luxurypresence.com/serhant`.
+
+| Token | Value | SERHANT. name |
+|---|---|---|
+| `--ink` | `#000000` | primary-5 |
+| `--dark` | `#131826` | primary-4 |
+| `--navy` | `#001a72` | primary-accent |
+| `--blue` | `#002fcf` | primary-accent-hover |
+| `--paper` | `#ffffff` | primary-1 |
+| `--paper-2` | `#f7f7f7` | grey 1 |
+| `--paper-3` | `#eaeaea` | primary-3 |
+| `--muted` | `#585858` | grey 11 |
+
+`--sky` (`#8fa8ff`) is the one value not in the token set. The brand accent
+only reaches 1.95:1 against `--dark`, so dark surfaces use a lighter step of
+the same hue at 7.8:1.
+
 ## Build
 
 Static. `index.html` plus `assets/`. No build step, no runtime dependencies.

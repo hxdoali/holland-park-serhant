@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Holland Park — SERHANT.</title>
 <meta name="description" content="Holland Park. A new connected district between Jersey City and Hoboken. Prepared by SERHANT. for Lincoln Equities Group.">
-<meta name="theme-color" content="#0b0b0c">
+<meta name="theme-color" content="#131826">
 <meta property="og:title" content="Holland Park — A new district between Jersey City and Hoboken">
 <meta property="og:description" content="Prepared by SERHANT. for Lincoln Equities Group.">
 <meta property="og:image" content="assets/renderings/hp-2.jpg">
@@ -19,29 +19,34 @@
 @font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/instrument-serif-italic.woff2') format('woff2')}
 
 :root{
-  --ink:#0b0b0c;
-  --bone:#efebe4;
-  --bone-2:#e6e1d8;
-  --paper:#f7f5f1;
-  --line:rgba(11,11,12,.16);
+  /* SERHANT. brand palette, taken from the serhant.com design tokens */
+  --ink:#000000;              /* primary-5 */
+  --dark:#131826;             /* primary-4, dark surfaces */
+  --navy:#001a72;             /* primary accent */
+  --blue:#002fcf;             /* accent hover, live elements */
+  --sky:#8fa8ff;              /* light step of the accent hue, legible on dark */
+  --paper:#ffffff;            /* primary-1 */
+  --paper-2:#f7f7f7;          /* grey 1 */
+  --paper-3:#eaeaea;          /* primary-3 */
+  --line:rgba(0,0,0,.14);
   --line-light:rgba(255,255,255,.18);
-  --muted:rgba(11,11,12,.56);
+  --muted:#585858;            /* grey 11 */
   --muted-light:rgba(255,255,255,.62);
-  --accent:#9c7a45;
+  --accent:#001a72;
   --gut:clamp(20px,5.2vw,96px);
   --ease:cubic-bezier(.16,.84,.24,1);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  margin:0;background:var(--bone);color:var(--ink);
+  margin:0;background:var(--paper);color:var(--ink);
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   font-weight:400;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-::selection{background:var(--ink);color:var(--bone)}
+::selection{background:var(--navy);color:#fff}
 
 /* ───────── type primitives ───────── */
 .serif{font-family:"Instrument Serif",Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.015em}
@@ -54,7 +59,7 @@ a{color:inherit;text-decoration:none}
 .dark .rule,.plate .rule{background:var(--line-light)}
 
 /* ───────── chrome ───────── */
-.progress{position:fixed;left:0;top:0;height:2px;width:0;background:var(--ink);z-index:200;transition:background .4s ease}
+.progress{position:fixed;left:0;top:0;height:2px;width:0;background:var(--blue);z-index:200;transition:background .4s ease}
 .progress.inv{background:#fff}
 .masthead{
   position:fixed;top:0;left:0;right:0;z-index:150;
@@ -65,7 +70,7 @@ a{color:inherit;text-decoration:none}
 body.over-dark .masthead{color:#fff}
 .masthead:before{
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.24) 45%,rgba(11,11,12,0) 100%);height:130px;bottom:auto;
+  background:linear-gradient(180deg,rgba(19,24,38,.55) 0%,rgba(19,24,38,.24) 45%,rgba(19,24,38,0) 100%);height:130px;bottom:auto;
   opacity:0;transition:opacity .45s ease;
 }
 body.over-dark .masthead:before{opacity:1}
@@ -81,11 +86,11 @@ body.over-dark .masthead:before{opacity:1}
 .skip:focus{left:16px;top:16px;z-index:300;background:#fff;color:#000;padding:12px 16px;border-radius:2px}
 
 /* ───────── cover ───────── */
-.cover{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#0b0b0c;color:#fff}
+.cover{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#131826;color:#fff}
 .cover-media{position:absolute;inset:-6%;background-size:cover;background-position:center 42%;will-change:transform}
 .cover:after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(11,11,12,.62) 0%,rgba(11,11,12,.18) 30%,rgba(11,11,12,.42) 62%,rgba(11,11,12,.92) 100%);
+  background:linear-gradient(180deg,rgba(19,24,38,.62) 0%,rgba(19,24,38,.18) 30%,rgba(19,24,38,.42) 62%,rgba(19,24,38,.92) 100%);
 }
 .grain{
   position:absolute;inset:0;opacity:.055;pointer-events:none;z-index:3;
@@ -127,9 +132,9 @@ body.over-dark .masthead:before{opacity:1}
 section{position:relative}
 .sheet{padding:clamp(88px,15vh,190px) var(--gut)}
 .sheet.tight{padding-top:clamp(56px,8vh,110px)}
-.dark{background:var(--ink);color:#fff}
-.paper{background:var(--paper)}
-.bone2{background:var(--bone-2)}
+.dark{background:var(--dark);color:#fff}
+.paper{background:var(--paper-2)}
+.tint{background:var(--paper-3)}
 
 .chapter-head{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,5vw,80px);align-items:start;margin-bottom:clamp(40px,7vh,96px)}
 .chapter-head .idx{font-family:"Instrument Serif",serif;font-size:clamp(34px,4.4vw,72px);line-height:.8;opacity:.28}
@@ -142,7 +147,7 @@ section{position:relative}
   font-size:clamp(40px,6.4vw,118px);line-height:.96;letter-spacing:-.022em;
 }
 .statement h2 em{font-style:italic;color:var(--accent)}
-.dark .statement h2 em{color:#d9bb88}
+.dark .statement h2 em{color:var(--sky)}
 .statement.wide{max-width:min(100%,1340px)}
 .say{
   margin:clamp(28px,5vh,56px) 0 0;max-width:min(100%,660px);
@@ -160,10 +165,10 @@ section{position:relative}
 }
 
 /* ───────── full-bleed plates ───────── */
-.plate{position:relative;height:100svh;min-height:560px;overflow:hidden;background:#0b0b0c;color:#fff}
+.plate{position:relative;height:100svh;min-height:560px;overflow:hidden;background:#131826;color:#fff}
 .plate.tall{height:118svh}
 .plate-media{position:absolute;inset:-8%;background-size:cover;background-position:center;will-change:transform}
-.plate:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.44) 0%,rgba(11,11,12,.08) 26%,rgba(11,11,12,.30) 52%,rgba(11,11,12,.72) 78%,rgba(11,11,12,.95) 100%)}
+.plate:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,24,38,.44) 0%,rgba(19,24,38,.08) 26%,rgba(19,24,38,.30) 52%,rgba(19,24,38,.72) 78%,rgba(19,24,38,.95) 100%)}
 .plate-inner{
   position:relative;z-index:4;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
   padding:0 var(--gut) clamp(34px,6vh,74px);
@@ -172,7 +177,7 @@ section{position:relative}
 .plate h3{
   margin:0;max-width:17ch;font-family:"Instrument Serif",serif;font-weight:400;
   font-size:clamp(34px,5.2vw,96px);line-height:1;letter-spacing:-.02em;
-  text-shadow:0 2px 40px rgba(11,11,12,.35);
+  text-shadow:0 2px 40px rgba(19,24,38,.35);
 }
 .plate p{margin:18px 0 0;max-width:40ch;font-size:clamp(14px,1.25vw,18px);line-height:1.56;color:rgba(255,255,255,.8)}
 .plate .corner{
@@ -255,8 +260,8 @@ figure figcaption{
 .bars .b{display:grid;grid-template-columns:clamp(130px,17vw,230px) 1fr auto;gap:clamp(14px,2.4vw,40px);align-items:center;padding:clamp(14px,2.1vh,24px) 0;border-bottom:1px solid var(--line)}
 .bars .b .nm{font-size:12px;font-weight:500;letter-spacing:-.005em;line-height:1.35}
 .bars .b .nm small{display:block;margin-top:4px;font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.bars .b .track{height:2px;background:rgba(11,11,12,.12);position:relative}
-.bars .b .track i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:0;transition:width 1.5s var(--ease)}
+.bars .b .track{height:2px;background:rgba(0,0,0,.12);position:relative}
+.bars .b .track i{position:absolute;left:0;top:0;bottom:0;background:var(--navy);width:0;transition:width 1.5s var(--ease)}
 .bars .b:nth-child(2) .track i{transition-delay:.06s}
 .bars .b:nth-child(3) .track i{transition-delay:.12s}
 .bars .b:nth-child(4) .track i{transition-delay:.18s}
@@ -276,11 +281,11 @@ figure figcaption{
 .pillars .p p{margin:0;max-width:min(100%,640px);font-size:15px;line-height:1.66;color:rgba(255,255,255,.74)}
 .pillars .p .deliver{
   margin:16px 0 0;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
-  font-size:clamp(17px,1.7vw,26px);line-height:1.28;letter-spacing:-.015em;color:#d9bb88;max-width:min(100%,600px);
+  font-size:clamp(17px,1.7vw,26px);line-height:1.28;letter-spacing:-.015em;color:var(--sky);max-width:min(100%,600px);
 }
 
 /* ───────── reach plate ───────── */
-.reach-plate{background:var(--ink);color:#fff;min-height:96svh;display:flex;align-items:center;padding:clamp(70px,11vh,150px) var(--gut);overflow:hidden}
+.reach-plate{background:var(--dark);color:#fff;min-height:96svh;display:flex;align-items:center;padding:clamp(70px,11vh,150px) var(--gut);overflow:hidden}
 .reach-plate .inner{width:100%}
 .reach{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,90px);align-items:start;margin-top:clamp(30px,5vh,64px)}
 .reach .big{
@@ -297,7 +302,7 @@ figure figcaption{
   font-family:"Instrument Serif",serif;font-weight:400;
   font-size:clamp(30px,4.6vw,86px);line-height:1.02;letter-spacing:-.022em;
 }
-.reach-punch em{font-style:italic;color:#d9bb88}
+.reach-punch em{font-style:italic;color:var(--sky)}
 
 /* ───────── launch sequence ───────── */
 .sequence{border-top:1px solid var(--line-light);margin-top:clamp(34px,6vh,74px)}
@@ -317,15 +322,15 @@ figure figcaption{
 .sequence .step p{margin:0;max-width:min(100%,640px);font-size:16px;line-height:1.66;color:rgba(255,255,255,.76)}
 
 /* ───────── close ───────── */
-.close{position:relative;height:100svh;min-height:620px;overflow:hidden;background:#0b0b0c;color:#fff}
+.close{position:relative;height:100svh;min-height:620px;overflow:hidden;background:#131826;color:#fff}
 .close .plate-media{position:absolute;inset:-6%;background-size:cover;background-position:center 40%}
-.close:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.72),rgba(11,11,12,.44) 42%,rgba(11,11,12,.94))}
+.close:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,24,38,.72),rgba(19,24,38,.44) 42%,rgba(19,24,38,.94))}
 .close-inner{position:relative;z-index:4;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut)}
 .close h2{
   margin:0;max-width:15ch;font-family:"Instrument Serif",serif;font-weight:400;
   font-size:clamp(40px,7.4vw,140px);line-height:.96;letter-spacing:-.022em;
 }
-.close h2 em{font-style:italic;color:#d9bb88}
+.close h2 em{font-style:italic;color:var(--sky)}
 .sign{
   position:absolute;left:var(--gut);right:var(--gut);bottom:clamp(28px,5vh,56px);z-index:5;
   display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
@@ -333,7 +338,7 @@ figure figcaption{
 }
 .sign .mk{font-size:clamp(22px,3vw,44px);font-weight:800;letter-spacing:-.05em;line-height:1}
 .sign .mt{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:2;text-align:right}
-.colophon{background:var(--ink);color:rgba(255,255,255,.44);padding:26px var(--gut) 34px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;line-height:2.2;border-top:1px solid rgba(255,255,255,.1)}
+.colophon{background:var(--dark);color:rgba(255,255,255,.44);padding:26px var(--gut) 34px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;line-height:2.2;border-top:1px solid rgba(255,255,255,.1)}
 
 /* ───────── reveal ───────── */
 .rv{opacity:0;transform:translateY(26px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}
@@ -470,7 +475,7 @@ figure figcaption{
   </div>
 </section>
 
-<section class="sheet bone2 tight" data-ch="02" data-name="Lincoln’s Vision">
+<section class="sheet tint tight" data-ch="02" data-name="Lincoln’s Vision">
   <div class="exhibits">
     <figure class="rv">
       <div class="frame mat"><img src="assets/renderings/hp-6.jpg" alt="Annotated aerial site plan showing Holland Park, the new light rail station and the proposed Erie Street connection" loading="lazy"></div>
