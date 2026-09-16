@@ -679,8 +679,10 @@ figure figcaption{
 <!-- ══════════ 07 · WHY SERHANT ══════════ -->
 <section class="plate" id="film-vision" data-ch="07" data-name="Why SERHANT.">
   <video class="film-media" playsinline muted loop preload="none"
-         poster="assets/film/nd-vision.jpg" data-src="assets/film/nd-vision.mp4"
-         aria-label="SERHANT. New Development division film"></video>
+         poster="assets/film/nd-vision.jpg" aria-label="SERHANT. New Development division film">
+    <source data-src="assets/film/nd-vision.webm" type="video/webm">
+    <source data-src="assets/film/nd-vision.mp4" type="video/mp4">
+  </video>
   <div class="grain"></div>
   <div class="film-tag"><i></i>SERHANT. New Development &middot; Division film</div>
   <div class="plate-inner">
@@ -698,8 +700,10 @@ figure figcaption{
 
 <section class="plate" id="film-site" data-ch="07" data-name="The Work">
   <video class="film-media" playsinline muted loop preload="none"
-         poster="assets/film/nd-site.jpg" data-src="assets/film/nd-site.mp4"
-         aria-label="SERHANT. teams on site with developers"></video>
+         poster="assets/film/nd-site.jpg" aria-label="SERHANT. teams on site with developers">
+    <source data-src="assets/film/nd-site.webm" type="video/webm">
+    <source data-src="assets/film/nd-site.mp4" type="video/mp4">
+  </video>
   <div class="grain"></div>
   <div class="film-tag"><i></i>On site &middot; Ideation, construction, sales gallery</div>
   <div class="plate-inner">
@@ -789,10 +793,12 @@ figure figcaption{
 
 <section class="plate" id="film-crew" data-ch="07" data-name="SERHANT. Studios">
   <video class="film-media" playsinline muted loop preload="none"
-         poster="assets/film/st-crew.jpg" data-src="assets/film/st-crew.mp4"
-         aria-label="SERHANT. Studios production crew at work"></video>
+         poster="assets/film/nd-studio.jpg" aria-label="SERHANT. Studios filming a development">
+    <source data-src="assets/film/nd-studio.webm" type="video/webm">
+    <source data-src="assets/film/nd-studio.mp4" type="video/mp4">
+  </video>
   <div class="grain"></div>
-  <div class="film-tag"><i></i>SERHANT. Studios &middot; Production reel</div>
+  <div class="film-tag"><i></i>SERHANT. Studios &middot; On a development shoot</div>
   <div class="plate-inner">
     <div class="label rv">In-house production team</div>
     <h3 class="serif rv d1">The first media network of its kind.</h3>
@@ -873,8 +879,10 @@ figure figcaption{
 
 <section class="plate" id="film-proof" data-ch="07" data-name="Why SERHANT.">
   <video class="film-media" playsinline muted loop preload="none"
-         poster="assets/film/nd-brand.jpg" data-src="assets/film/nd-brand.mp4"
-         aria-label="SERHANT. New Development project branding and results"></video>
+         poster="assets/film/nd-brand.jpg" aria-label="SERHANT. New Development project branding and results">
+    <source data-src="assets/film/nd-brand.webm" type="video/webm">
+    <source data-src="assets/film/nd-brand.mp4" type="video/mp4">
+  </video>
   <div class="grain"></div>
   <div class="film-tag"><i></i>SERHANT. New Development &middot; Division film</div>
   <div class="plate-inner">
@@ -936,7 +944,14 @@ figure figcaption{
       entries.forEach(function(e){
         var v = e.target;
         if(e.isIntersecting){
-          if(!v.getAttribute('src')){ v.setAttribute('src', v.getAttribute('data-src')); }
+          if(!v.dataset.loaded){
+            var srcs = v.querySelectorAll('source[data-src]');
+            for(var j = 0; j < srcs.length; j++){
+              srcs[j].src = srcs[j].getAttribute('data-src');
+            }
+            v.dataset.loaded = '1';
+            v.load();
+          }
           if(!reduce){
             var pr = v.play();
             if(pr && pr.catch) pr.catch(function(){ /* autoplay blocked: poster stands in */ });

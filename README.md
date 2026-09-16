@@ -47,24 +47,27 @@ Deployed to GitHub Pages by `.github/workflows/pages.yml` on every push to `main
 ## Film
 
 `assets/film/` holds four silent background loops cut from SERHANT.'s own
-published films, plus a poster frame for each:
+published New Development division film, plus a poster frame for each:
 
-| Clip | Source | Shows |
-|---|---|---|
-| `nd-vision` | SERHANT. New Development division film | Ten years, $10B active inventory |
-| `nd-site` | same | Ideation workshop, hard hats on site, sales gallery |
-| `nd-brand` | same | Studios crew, branded hard hats, project identities |
-| `st-crew` | SERHANT. Studios reel | In-house production team at work |
+| Clip | Shows |
+|---|---|
+| `nd-vision` | The blue S, and the line "over $10 billion in active inventory" |
+| `nd-site` | Ideation workshop, hard hats on a live site, sales gallery, model residence |
+| `nd-studio` | SERHANT. Studios shooting a development from a rooftop |
+| `nd-brand` | Branded hard hats on site, then Brooklyn Point, Quay Tower, The Melrose, 868 Lorimer |
 
-Both source films are served from SERHANT.'s own Cloudinary delivery account
-(`res.cloudinary.com/luxuryp`), the same CDN that serves them on serhant.com.
-They are re-encoded here at 1280px, audio stripped, and self-hosted so the deck
-plays with no network.
+The source film is served from SERHANT.'s own Cloudinary delivery account
+(`res.cloudinary.com/luxuryp`), the same CDN that serves it on serhant.com.
 
-Each clip is `preload="none"` and only loads and plays once its section scrolls
-into view, so the page costs nothing extra until the viewer reaches chapter
-seven. Under `prefers-reduced-motion` the poster frame stands in and nothing
-autoplays.
+Each clip ships twice: VP9 WebM first, H.264 MP4 as the fallback. WebM is about
+30 per cent smaller at matching quality and covers Chrome, Edge and Firefox;
+MP4 covers Safari and iOS. A viewer downloads one of the two, never both.
+
+Every clip is `preload="none"` inside a `<video>` whose `<source>` elements
+carry `data-src`. Nothing is fetched until the section scrolls into view, at
+which point the loader fills in the sources, calls `load()` and plays; leaving
+the section pauses it. Under `prefers-reduced-motion` the poster frame stands
+in and nothing autoplays.
 
 Instagram was not used as a source: its CDN links are signed and expire within
 hours, so anything hotlinked from there would break before the meeting.
