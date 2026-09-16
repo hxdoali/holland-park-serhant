@@ -44,6 +44,31 @@ presents correctly with no network access.
 
 Deployed to GitHub Pages by `.github/workflows/pages.yml` on every push to `main`.
 
+## Film
+
+`assets/film/` holds four silent background loops cut from SERHANT.'s own
+published films, plus a poster frame for each:
+
+| Clip | Source | Shows |
+|---|---|---|
+| `nd-vision` | SERHANT. New Development division film | Ten years, $10B active inventory |
+| `nd-site` | same | Ideation workshop, hard hats on site, sales gallery |
+| `nd-brand` | same | Studios crew, branded hard hats, project identities |
+| `st-crew` | SERHANT. Studios reel | In-house production team at work |
+
+Both source films are served from SERHANT.'s own Cloudinary delivery account
+(`res.cloudinary.com/luxuryp`), the same CDN that serves them on serhant.com.
+They are re-encoded here at 1280px, audio stripped, and self-hosted so the deck
+plays with no network.
+
+Each clip is `preload="none"` and only loads and plays once its section scrolls
+into view, so the page costs nothing extra until the viewer reaches chapter
+seven. Under `prefers-reduced-motion` the poster frame stands in and nothing
+autoplays.
+
+Instagram was not used as a source: its CDN links are signed and expire within
+hours, so anything hotlinked from there would break before the meeting.
+
 ## Sources
 
 Renderings, site plans and drawings courtesy of Lincoln Equities Group.

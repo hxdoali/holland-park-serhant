@@ -284,6 +284,32 @@ figure figcaption{
   font-size:clamp(17px,1.7vw,26px);line-height:1.28;letter-spacing:-.015em;color:var(--sky);max-width:min(100%,600px);
 }
 
+/* ───────── film plates ───────── */
+.plate video.film-media{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  background:var(--dark);
+}
+.film-tag{
+  position:absolute;left:var(--gut);top:64px;z-index:5;display:flex;align-items:center;gap:9px;
+  font-size:9px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.62);
+}
+.film-tag i{
+  width:6px;height:6px;border-radius:50%;background:var(--sky);display:block;
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.watch{
+  display:inline-flex;align-items:center;gap:12px;margin-top:26px;padding-bottom:6px;
+  border-bottom:1px solid rgba(255,255,255,.35);
+  font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#fff;
+  transition:border-color .3s ease,color .3s ease;
+}
+.watch:hover{color:var(--sky);border-color:var(--sky)}
+
+/* work index tweaks */
+.index.work .ask b{font-size:clamp(18px,1.8vw,27px)}
+.index.work .row h4{font-size:clamp(24px,2.9vw,46px)}
+
 /* ───────── reach plate ───────── */
 .reach-plate{background:var(--dark);color:#fff;min-height:96svh;display:flex;align-items:center;padding:clamp(70px,11vh,150px) var(--gut);overflow:hidden}
 .reach-plate .inner{width:100%}
@@ -377,7 +403,7 @@ figure figcaption{
   .chapter-head .title{padding-top:0}
   .bars .b{grid-template-columns:1fr auto;row-gap:10px}
   .bars .b .track{grid-column:1/-1;order:3}
-  .plate .corner{display:none}
+  .plate .corner,.film-tag{display:none}
   .statement,.statement.wide{max-width:none}
   .chapter-readout .name{display:none}
   .index .row h4{font-size:30px}
@@ -651,10 +677,95 @@ figure figcaption{
 </section>
 
 <!-- ══════════ 07 · WHY SERHANT ══════════ -->
+<section class="plate" id="film-vision" data-ch="07" data-name="Why SERHANT.">
+  <video class="film-media" playsinline muted loop preload="none"
+         poster="assets/film/nd-vision.jpg" data-src="assets/film/nd-vision.mp4"
+         aria-label="SERHANT. New Development division film"></video>
+  <div class="grain"></div>
+  <div class="film-tag"><i></i>SERHANT. New Development &middot; Division film</div>
+  <div class="plate-inner">
+    <div class="label rv">07 &middot; Why SERHANT.</div>
+    <h3 class="serif rv d1">Ten years. More than $10 billion in active inventory.</h3>
+    <p class="rv d2">In SERHANT. New Development&rsquo;s own words: changing the way buildings are imagined, planned, marketed and sold.</p>
+  </div>
+</section>
+
 <section class="sheet dark on-dark" id="serhant" data-ch="07" data-name="Why SERHANT.">
   <div class="chapter-head rv"><div class="idx serif">07</div><h2 class="title">Why SERHANT.</h2></div>
   <div class="statement wide rv d1"><h2>We build the audience <em>before</em> the building opens.</h2></div>
   <p class="say rv d2">Holland Park deserves to be launched as a district, not listed as inventory. That is the exact shape of what SERHANT. was built to do: brand, content, technology and new development leasing inside one company, pointed at one project from day one.</p>
+</section>
+
+<section class="plate" id="film-site" data-ch="07" data-name="The Work">
+  <video class="film-media" playsinline muted loop preload="none"
+         poster="assets/film/nd-site.jpg" data-src="assets/film/nd-site.mp4"
+         aria-label="SERHANT. teams on site with developers"></video>
+  <div class="grain"></div>
+  <div class="film-tag"><i></i>On site &middot; Ideation, construction, sales gallery</div>
+  <div class="plate-inner">
+    <div class="label rv">What working together looks like</div>
+    <h3 class="serif rv d1">Hard hats before headlines.</h3>
+    <p class="rv d2">Strategy workshops, site walks, sales galleries and brand identities built for luxury projects from the ground up.</p>
+  </div>
+</section>
+
+<!-- selected work -->
+<section class="sheet dark on-dark" id="work" data-ch="07" data-name="The Work">
+  <div class="statement wide rv"><h2>A decade of buildings launched <em>this</em> way.</h2></div>
+  <p class="say rv d1">Ground-up development, with the developer in the room from the first strategy session. A selection of the projects SERHANT. New Development has carried to market.</p>
+
+  <div class="index work rv d2" style="margin-top:clamp(40px,6vh,90px)">
+    <div class="row">
+      <div class="n">01</div>
+      <h4 class="serif">One Williamsburg Wharf<small>East River waterfront</small></h4>
+      <div class="who"><b>Launch film made in-house</b>SERHANT. Studios put the developer, the architect, the interior designer and the landscape designer on camera, cut against render animations by Hayes Davidson.</div>
+      <div class="ask"><b class="serif">Brooklyn</b><span>Market</span></div>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <h4 class="serif">550 Vanderbilt<small>Pacific Park, Prospect Heights</small></h4>
+      <div class="who"><b>A masterplan district</b>The first residential building to open in Pacific Park, the twenty-two acre Frank Gehry designed masterplan. The closest thing in the portfolio to what Holland Park is setting out to do.</div>
+      <div class="ask"><b class="serif">Brooklyn</b><span>Market</span></div>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <h4 class="serif">Brooklyn Point<small>Downtown Brooklyn</small></h4>
+      <div class="who"><b>Extell</b>With Kohn Pedersen Fox and Katherine Newman Design. A monumental luxury tower in one of the fastest growing neighborhoods in the city.</div>
+      <div class="ask"><b class="serif">Brooklyn</b><span>Market</span></div>
+    </div>
+    <div class="row">
+      <div class="n">04</div>
+      <h4 class="serif">Quay Tower<small>Brooklyn Bridge Park</small></h4>
+      <div class="who"><b>ODA &middot; Marmol Radziner</b>Thirty storeys directly on the park, California modernist interiors wrapped in a metallic and glass fa&ccedil;ade.</div>
+      <div class="ask"><b class="serif">Brooklyn</b><span>Market</span></div>
+    </div>
+    <div class="row">
+      <div class="n">05</div>
+      <h4 class="serif">200 Amsterdam<small>Upper West Side</small></h4>
+      <div class="who"><b>Elkus Manfredi &middot; CetraRuddy</b>A neighborhood-defining tower at the nexus of Lincoln Center and Central Park.</div>
+      <div class="ask"><b class="serif">Manhattan</b><span>Market</span></div>
+    </div>
+    <div class="row">
+      <div class="n">06</div>
+      <h4 class="serif">Paragon<small>Long Island City waterfront</small></h4>
+      <div class="who"><b>Waterfront and transit-led</b>Skyline views across the East River, in a neighborhood that transit rebuilt. The same argument Holland Park will make.</div>
+      <div class="ask"><b class="serif">Queens</b><span>Market</span></div>
+    </div>
+    <div class="row">
+      <div class="n">07</div>
+      <h4 class="serif">VITA<small>Passive House</small></h4>
+      <div class="who"><b>New York&rsquo;s newest Passive House condominium</b>One hundred and twenty-one residences marketed on performance and wellbeing, not only on finishes.</div>
+      <div class="ask"><b class="serif">Manhattan</b><span>Market</span></div>
+    </div>
+    <div class="row">
+      <div class="n">08</div>
+      <h4 class="serif">Mercedes-Benz Places<small>Downtown Miami</small></h4>
+      <div class="who"><b>Branded residences</b>Proof the division travels, and that it can carry a global brand partnership through a full launch.</div>
+      <div class="ask"><b class="serif">Miami</b><span>Market</span></div>
+    </div>
+  </div>
+
+  <p class="say rv d3" style="margin-top:clamp(36px,6vh,72px)">And there is already a SERHANT. New Jersey team on this side of the river.</p>
 </section>
 
 <!-- reach -->
@@ -673,6 +784,20 @@ figure figcaption{
       </div>
     </div>
     <p class="reach-punch rv d3">Holland Park will never have to buy its first audience. It <em>already has one.</em></p>
+  </div>
+</section>
+
+<section class="plate" id="film-crew" data-ch="07" data-name="SERHANT. Studios">
+  <video class="film-media" playsinline muted loop preload="none"
+         poster="assets/film/st-crew.jpg" data-src="assets/film/st-crew.mp4"
+         aria-label="SERHANT. Studios production crew at work"></video>
+  <div class="grain"></div>
+  <div class="film-tag"><i></i>SERHANT. Studios &middot; Production reel</div>
+  <div class="plate-inner">
+    <div class="label rv">In-house production team</div>
+    <h3 class="serif rv d1">The first media network of its kind.</h3>
+    <p class="rv d2">Launch films, stills and social written, shot and cut by the same company that leases the building.</p>
+    <a class="watch rv d3" href="https://www.youtube.com/watch?v=at0s_VSGEF4" target="_blank" rel="noopener">Watch a launch film</a>
   </div>
 </section>
 
@@ -746,6 +871,18 @@ figure figcaption{
   </div>
 </section>
 
+<section class="plate" id="film-proof" data-ch="07" data-name="Why SERHANT.">
+  <video class="film-media" playsinline muted loop preload="none"
+         poster="assets/film/nd-brand.jpg" data-src="assets/film/nd-brand.mp4"
+         aria-label="SERHANT. New Development project branding and results"></video>
+  <div class="grain"></div>
+  <div class="film-tag"><i></i>SERHANT. New Development &middot; Division film</div>
+  <div class="plate-inner">
+    <div class="label rv">Proven results</div>
+    <h3 class="serif rv d1">New development expertise you can depend on.</h3>
+  </div>
+</section>
+
 <section class="interlude dark" data-ch="07" data-name="Why SERHANT.">
   <div class="interlude-inner">
     <div class="label rv">The offer</div>
@@ -791,6 +928,26 @@ figure figcaption{
     });
   }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv, .frame').forEach(function(el){ io.observe(el); });
+
+  /* film plates: load and play only while in view */
+  var films = [].slice.call(document.querySelectorAll('video.film-media'));
+  if(films.length){
+    var vio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if(e.isIntersecting){
+          if(!v.getAttribute('src')){ v.setAttribute('src', v.getAttribute('data-src')); }
+          if(!reduce){
+            var pr = v.play();
+            if(pr && pr.catch) pr.catch(function(){ /* autoplay blocked: poster stands in */ });
+          }
+        } else if(!v.paused){
+          v.pause();
+        }
+      });
+    }, {threshold:.2});
+    films.forEach(function(v){ vio.observe(v); });
+  }
 
   /* reach numerals count up */
   var counters = [].slice.call(document.querySelectorAll('[data-count]'));
