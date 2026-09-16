@@ -5,6 +5,17 @@ development on 18th Street at the Jersey City–Hoboken line, prepared by SERHAN
 
 Live: https://hxdoali.github.io/holland-park-serhant/
 
+## How it works
+
+A 21-slide click-through deck, not a scrolling page. Each slide is one point and
+fills the viewport.
+
+- Advance with arrow keys, space, page keys, a click anywhere, the on-screen
+  arrows, or the tick rail on the right
+- `Esc` or the menu button opens a contents grid to jump straight to a slide
+- CSS scroll snapping with `scroll-snap-stop: always`, so one gesture moves
+  exactly one slide on trackpad and touch alike
+
 ## Story flow
 
 1. Cover — Holland Park as a new connected district
@@ -16,6 +27,18 @@ Live: https://hxdoali.github.io/holland-park-serhant/
 7. The Rent Market
 8. Why SERHANT. — ID Lab, Studios, ADX, New Development
 9. The close
+
+## Image quality
+
+The Holland Park renderings only exist at about 1200-1400px wide; Squarespace,
+the YIMBY thread and the press coverage all serve the same originals. Rather
+than blow them up, the deck keeps every image inside the slide and caps it at
+its own resolution, and `assets/renderings/2x/` holds a Lanczos-resampled,
+lightly sharpened WebP of each one.
+
+The result is that every image is *downscaled* even on a 2x display: measured
+factors run 0.27 to 0.87 across laptop, desktop and tablet widths. Nothing is
+upscaled, so nothing looks pixelated. All twelve 2x files together are 2.5 MB.
 
 ## Palette
 
