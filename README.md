@@ -104,6 +104,125 @@ hours, so anything hotlinked from there would break before the meeting.
 
 ## Fact check
 
+Every claim was verified against a primary source in September 2026.
+
+### Holland Park
+
+Checked against the Jersey Avenue Light Rail Redevelopment Plan amendments
+(Jersey City Open Data, dated 6 April 2021, 47pp). The plan never uses the name
+"Holland Park" or "Lincoln Equities" — the site is **Block 6002, Lot 7**, and the
+mechanism is the **Light Rail Station Overlay Bonus**.
+
+Verified verbatim from the ordinance:
+
+- Maximum permitted height **18 storeys and 230 feet**
+- A **centralized public plaza of at least 18,000 square feet**, with landscaping,
+  trees, furniture, a water feature and storefronts opening onto it
+- **At least 10% onsite affordable housing**, which may not be built off-site or
+  bought out
+- The redeveloper undertakes **in-kind construction of the light rail station or a
+  contribution of funds for its full buildout, as approved by NJ Transit**
+- The station must be built **in the first phase** and be **operable, confirmed by
+  NJ Transit, before any certificate of occupancy**
+- NJ Transit must confirm in writing that it supports the station before the site
+  plan application is complete
+- Public walkways and ramps from Jersey Avenue and Grove Street, **no less than 12
+  feet wide** and ADA accessible
+- The plaza extends north-south to **18th Street, midblock between Jersey Avenue
+  and Grove Street**
+
+Removed: **800 units**. The figure appears in 2021 press coverage of Lincoln's
+proposal, not in the plan. The ordinance explicitly states density "is not
+regulated by units per acre or floor area ratios" and is set by the building
+envelope, so no unit cap exists to cite.
+
+Note: the section drawing marks a 450-foot tower, which exceeds the 230-foot cap
+the plan adopted. The drawings are therefore labelled as Lincoln's concept
+drawings rather than as entitlements.
+
+### The neighbouring buildings
+
+Ownership was out of date in three of four cases:
+
+| Building | Was | Verified |
+|---|---|---|
+| Hudson House (East, West, Radio Lofts) | "RXR · Columbia Property Trust" | Built by The Manhattan Building Company; 829 units acquired 14 May 2025 by Strategic Value Partners, One Investment Management, RXR and Columbia Property Trust; leased by Greystar |
+| Embankment House | "Newport Associates" | Built by LeFrak; sold September 2023 to Rockpoint Group; managed by Greystar |
+| Soho Lofts | "Manhattan Building Co · Veris" | Built by The Manhattan Building Company; sold April 2019 to Roseland Residential Trust, now Veris Residential |
+| Cast Iron Lofts | The Manhattan Building Company | Unchanged; still developer-owned |
+
+### The rents
+
+The six per-building asking rents were removed. Cast Iron Lofts was checked
+against the building's own floorplan listings and came back at **$3,444** for a
+studio against the **$3,158** on the deck, so the figures were stale. The other
+five could not be verified to the same standard: Greystar and Veris render
+pricing in JavaScript behind a certificate the sandbox cannot validate, and the
+aggregator summaries the original numbers came from mix gross rent, net-effective
+rent and concessions.
+
+What remains is what can be cited: unit counts, ownership, and Cast Iron Lofts
+pricing taken directly from the landlord's listings on 17 September 2026. The
+argument now rests on 1,756 units of institutionally-owned product leasing in the
+submarket, which is stronger than six volatile numbers.
+
+## Palette
+
+Taken from the SERHANT. design tokens published at `styles.luxurypresence.com/serhant`.
+
+| Token | Value | SERHANT. name |
+|---|---|---|
+| `--ink` | `#000000` | primary-5 |
+| `--dark` | `#131826` | primary-4 |
+| `--navy` | `#001a72` | primary-accent |
+| `--blue` | `#002fcf` | primary-accent-hover |
+| `--paper` | `#ffffff` | primary-1 |
+| `--paper-2` | `#f7f7f7` | grey 1 |
+| `--paper-3` | `#eaeaea` | primary-3 |
+| `--muted` | `#585858` | grey 11 |
+
+`--sky` (`#8fa8ff`) is the one value not in the token set. The brand accent
+only reaches 1.95:1 against `--dark`, so dark surfaces use a lighter step of
+the same hue at 7.8:1.
+
+## Build
+
+Static. `index.html` plus `assets/`. No build step, no runtime dependencies.
+Fonts (Inter, Instrument Serif) and all renderings are self-hosted so the deck
+presents correctly with no network access.
+
+Deployed to GitHub Pages by `.github/workflows/pages.yml` on every push to `main`.
+
+## Film
+
+`assets/film/` holds four silent background loops cut from SERHANT.'s own
+published New Development division film, plus a poster frame for each:
+
+| Clip | Shows |
+|---|---|
+| `nd-vision` | The blue S, and the line "over $10 billion in active inventory" |
+| `nd-site` | Ideation workshop, hard hats on a live site, sales gallery, model residence |
+| `nd-studio` | SERHANT. Studios shooting a development from a rooftop |
+| `nd-brand` | Branded hard hats on site, then Brooklyn Point, Quay Tower, The Melrose, 868 Lorimer |
+
+The source film is served from SERHANT.'s own Cloudinary delivery account
+(`res.cloudinary.com/luxuryp`), the same CDN that serves it on serhant.com.
+
+Each clip ships twice: VP9 WebM first, H.264 MP4 as the fallback. WebM is about
+30 per cent smaller at matching quality and covers Chrome, Edge and Firefox;
+MP4 covers Safari and iOS. A viewer downloads one of the two, never both.
+
+Every clip is `preload="none"` inside a `<video>` whose `<source>` elements
+carry `data-src`. Nothing is fetched until the section scrolls into view, at
+which point the loader fills in the sources, calls `load()` and plays; leaving
+the section pauses it. Under `prefers-reduced-motion` the poster frame stands
+in and nothing autoplays.
+
+Instagram was not used as a source: its CDN links are signed and expire within
+hours, so anything hotlinked from there would break before the meeting.
+
+## Fact check
+
 Every claim on the deck was verified in September 2026. Corrections made:
 
 | Claim | Finding | Now reads |

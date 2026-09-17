@@ -240,7 +240,7 @@ h2 em{font-style:italic;color:var(--navy)}
 .dark .row h3 small{color:rgba(255,255,255,.45)}
 .row .who{font-size:var(--t-body);line-height:1.4;color:var(--muted)}
 .dark .row .who{color:rgba(255,255,255,.72)}
-.row .who b{font-weight:600;color:var(--ink)}
+.row .who b{display:block;font-weight:600;color:var(--ink);margin-bottom:4px}
 .dark .row .who b{color:#fff}
 .row .val{text-align:right;white-space:nowrap;font-family:"Instrument Serif",serif;font-size:clamp(17px,min(2.2vw,3vh),32px);line-height:1}
 .row .val span{display:block;margin-top:6px;font-family:Inter,sans-serif;font-size:var(--t-micro);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
@@ -488,12 +488,12 @@ body.on-dark .nav-btn{color:#fff}
   <div class="media-in">
     <div class="eyebrow rv">01 &middot; The vision</div>
     <h2 class="rv d1">A neighborhood arrives <em>between</em> two cities.</h2>
-    <p class="say rv d2">Lincoln Equities is building the connection, not just the address: two buildings either side of a public plaza, with a light rail station funded by the developer landing straight into it.</p>
+    <p class="say rv d2">Lincoln Equities is building the connection, not just the address. The city&rsquo;s Light Rail Station Overlay Bonus lets it rise to 18 storeys &mdash; in exchange for building the station itself.</p>
     <div class="figs four rv d3">
-      <div><b class="serif">800</b><span>Residences proposed</span></div>
-      <div><b class="serif">2</b><span>Buildings, one plaza</span></div>
-      <div><b class="serif">1</b><span>New station, developer funded</span></div>
-      <div><b class="serif">4</b><span>Storey retail podium</span></div>
+      <div><b class="serif">18</b><span>Storeys and 230ft permitted</span></div>
+      <div><b class="serif">18,000</b><span>Sq ft minimum public plaza</span></div>
+      <div><b class="serif">10%</b><span>Minimum onsite affordable</span></div>
+      <div><b class="serif">1</b><span>Light rail station, built in phase one</span></div>
     </div>
   </div>
 </section>
@@ -515,7 +515,7 @@ body.on-dark .nav-btn{color:#fff}
 
 <!-- 04 ───────── the drawings ───────── -->
 <section class="slide tint3" data-t="The Plan">
-  <div class="eyebrow rv">03 &middot; The plan &mdash; as filed with the city</div>
+  <div class="eyebrow rv">03 &middot; The plan &mdash; Lincoln Equities concept drawings</div>
   <div class="exhibits rv d1">
     <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-6.webp" type="image/webp"><img src="assets/renderings/hp-6.jpg" alt="Site plan showing the proposed light rail station and Erie Street connection" loading="lazy"></picture></div><b>Site plan &middot; Connections</b></div>
     <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-5.webp" type="image/webp"><img src="assets/renderings/hp-5.jpg" alt="Massing study of the Holland Park site" loading="lazy"></picture></div><b>Massing study</b></div>
@@ -563,19 +563,37 @@ body.on-dark .nav-btn{color:#fff}
   </div>
 </section>
 
-<!-- 07 ───────── the neighbourhood + rents, merged ───────── -->
+<!-- 07 ───────── the market: who owns it, what it trades for ───────── -->
 <section class="slide dark" data-t="The Market">
-  <div class="eyebrow rv">06 &middot; The neighborhood, and what it already earns</div>
-  <h2 class="lead wide rv d1" style="font-size:var(--t-mid)">The best operators in Hudson County are already <em>here</em>, and the rents are already proven.</h2>
+  <div class="eyebrow rv">06 &middot; Who already owns this submarket</div>
+  <h2 class="lead wide rv d1" style="font-size:var(--t-mid)">One local developer built it. <em>Institutional capital</em> has been buying it ever since.</h2>
   <div class="rows r4 mkt rv d2">
-    <div class="row"><div class="n">01</div><h3 class="serif">Hudson House East<small>315 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$3,605<span>Asking from</span></div></div>
-    <div class="row"><div class="n">02</div><h3 class="serif">Radio Lofts<small>316 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$3,365<span>Asking from</span></div></div>
-    <div class="row"><div class="n">03</div><h3 class="serif">Soho Lofts<small>273 16th Street</small></h3><div class="who"><b>Manhattan Building Co · Veris</b></div><div class="val serif">$3,330<span>Asking from</span></div></div>
-    <div class="row"><div class="n">04</div><h3 class="serif">Cast Iron Lofts<small>837 Jersey Avenue</small></h3><div class="who"><b>The Manhattan Building Company</b></div><div class="val serif">$3,158<span>Asking from</span></div></div>
-    <div class="row"><div class="n">05</div><h3 class="serif">Embankment House<small>270 10th Street</small></h3><div class="who"><b>Newport Associates</b></div><div class="val serif">$2,820<span>Asking from</span></div></div>
-    <div class="row"><div class="n">06</div><h3 class="serif">Hudson House West<small>325 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$2,695<span>Asking from</span></div></div>
+    <div class="row">
+      <div class="n">01</div>
+      <h3 class="serif">Hudson House<small>East, West &amp; Radio Lofts &middot; 15th Street</small></h3>
+      <div class="who"><b>Built by The Manhattan Building Company</b>Acquired May 2025 by Strategic Value Partners, One Investment Management, RXR and Columbia Property Trust. Leased by Greystar.</div>
+      <div class="val serif">829<span>Units</span></div>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <h3 class="serif">Cast Iron Lofts I &amp; II<small>837 Jersey Avenue &amp; 300 Coles Street</small></h3>
+      <div class="who"><b>The Manhattan Building Company</b>Still owned by the developer. Studios currently from $3,444 and one-bedrooms from $3,613.</div>
+      <div class="val serif">387<span>Units</span></div>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <h3 class="serif">Soho Lofts<small>273 16th Street</small></h3>
+      <div class="who"><b>Built by The Manhattan Building Company</b>Sold in April 2019 to Roseland Residential Trust, now Veris Residential, which owns and operates it today.</div>
+      <div class="val serif">377<span>Units</span></div>
+    </div>
+    <div class="row">
+      <div class="n">04</div>
+      <h3 class="serif">Embankment House<small>270 10th Street &middot; Hamilton Park</small></h3>
+      <div class="who"><b>Built by LeFrak</b>Sold September 2023 to Rockpoint Group. Managed by Greystar. Built above the historic Erie Railroad embankment.</div>
+      <div class="val serif">163<span>Units</span></div>
+    </div>
   </div>
-  <p class="src rv d3">Every one of these was earned without a station at the door &nbsp;·&nbsp; Publicly advertised asking rents, September 2026</p>
+  <p class="src rv d3">1,756 luxury rentals within a few blocks, and every one of them leased without a station at the door &nbsp;·&nbsp; Cast Iron Lofts pricing from the building&rsquo;s own floorplan listings, 17 September 2026</p>
 </section>
 
 <!-- 08 ───────── film: hard hats + the division in numbers ───────── -->
