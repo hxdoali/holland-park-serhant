@@ -179,6 +179,46 @@ h2 em{font-style:italic;color:var(--navy)}
 .dark .closer em{color:var(--sky)}
 .figs.two{grid-template-columns:repeat(2,minmax(0,auto));gap:clamp(20px,5vw,80px);justify-content:start}
 
+/* figures sitting on a photo slide */
+.media-in .figs{margin-top:clamp(14px,2.6vh,32px);border-top:1px solid rgba(255,255,255,.22);padding-top:clamp(12px,2vh,22px)}
+.media-in .figs div b{color:#fff;text-shadow:0 2px 24px rgba(19,24,38,.6)}
+.media-in .figs div span{color:rgba(255,255,255,.66)}
+.figs.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+/* district: aerial behind, map card and transit list on top */
+.district{
+  position:relative;z-index:4;height:100%;display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(18px,3.4vw,58px);align-items:center;
+  padding:calc(var(--pad-y) * .92) var(--gut) clamp(30px,5vh,58px);
+}
+.mapcard{background:#fff;padding:clamp(8px,1.1vw,18px);position:relative;
+  width:100%;aspect-ratio:3600/1977;max-height:100%;align-self:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.mapcard picture{position:absolute;inset:clamp(8px,1.1vw,18px);display:flex;align-items:center;justify-content:center}
+.mapcard img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.district-copy{
+  min-width:0;position:relative;padding:clamp(16px,2.6vh,30px) clamp(16px,2vw,32px);
+  background:linear-gradient(180deg,rgba(19,24,38,.62),rgba(19,24,38,.82));
+  backdrop-filter:blur(3px);border:1px solid rgba(255,255,255,.14);
+}
+.district-copy h2{font-size:var(--t-mid);max-width:18ch;text-shadow:0 2px 30px rgba(19,24,38,.7)}
+.district-copy .rows{margin-top:clamp(12px,2.2vh,26px)}
+.district-copy .row{border-color:rgba(255,255,255,.22)}
+.district-copy .row h3{color:#fff}
+.district-copy .row h3 small{color:rgba(255,255,255,.55)}
+.district-copy .row .val{color:#fff;font-size:clamp(15px,min(1.9vw,2.6vh),26px)}
+.district-copy .src{color:rgba(255,255,255,.55)}
+
+/* engine: division + step + deliverable in one row */
+.rows.engine .row{grid-template-columns:auto minmax(0,.9fr) minmax(0,1.5fr);row-gap:6px}
+.rows.engine .unit{font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.035em;
+  font-size:clamp(14px,min(1.7vw,2.3vh),24px);line-height:1.1}
+.rows.engine .unit small{display:block;margin-top:6px;font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:clamp(15px,min(1.9vw,2.6vh),27px);letter-spacing:-.02em;text-transform:none;color:var(--sky)}
+.rows.engine .deliver{grid-column:3;margin:2px 0 0;font-size:clamp(13px,min(1.5vw,2vh),20px)}
+.rows.mkt .row{grid-template-columns:auto minmax(0,1.3fr) minmax(0,1fr) auto}
+
 /* ═════════ figure rows ═════════ */
 .figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,40px);margin-top:clamp(20px,4vh,56px)}
 .figs div b{display:block;font-family:"Instrument Serif",serif;font-size:clamp(30px,min(4.4vw,6vh),68px);line-height:.92;letter-spacing:-.03em}
@@ -337,7 +377,14 @@ body.on-dark .nav-btn{color:#fff}
 
 /* ═════════ responsive ═════════ */
 @media (max-width:1080px){
-  .figs{grid-template-columns:1fr 1fr;gap:clamp(12px,2.4vh,26px) 20px}
+  .figs,.figs.four{grid-template-columns:1fr 1fr;gap:clamp(10px,2vh,22px) 20px}
+  .district{grid-template-columns:1fr;gap:clamp(12px,2.4vh,26px);align-content:center}
+  .mapcard{width:auto;height:min(40vh,46vw);max-width:100%;margin:0 auto}
+  .rows.engine .row{grid-template-columns:auto minmax(0,1fr)}
+  .rows.engine .who{display:none}
+  .rows.engine .deliver{grid-column:2}
+  .rows.mkt .row{grid-template-columns:auto minmax(0,1fr) auto}
+  .rows.mkt .who{display:none}
   .mapwrap{grid-template-columns:1fr;gap:14px}
   .reach{grid-template-columns:1fr;gap:clamp(14px,3vh,30px)}
   .rows.r4 .row{grid-template-columns:auto minmax(0,1fr) auto}
@@ -366,6 +413,21 @@ body.on-dark .nav-btn{color:#fff}
   .index-grid{grid-template-columns:1fr}
 }
 /* short viewports: phones in landscape, small laptops */
+/* the district slide has the most on it: compress before it can clip */
+@media (max-height:760px){
+  .district{padding:calc(var(--pad-y) * .8) var(--gut) clamp(18px,3vh,40px);gap:clamp(14px,2.6vw,36px)}
+  .district-copy{padding:clamp(11px,1.8vh,20px) clamp(12px,1.6vw,22px)}
+  .district-copy h2{font-size:clamp(17px,min(2.5vw,3.4vh),30px);max-width:22ch}
+  .district-copy .rows{margin-top:clamp(8px,1.5vh,16px)}
+  .district-copy .row{padding:clamp(4px,.9vh,10px) 0}
+  .district-copy .row h3{font-size:clamp(14px,min(1.8vw,2.5vh),22px)}
+  .district-copy .row h3 small{display:none}
+  .district-copy .src{display:none}
+}
+@media (max-height:560px){
+  .district{grid-template-columns:1fr}
+  .mapcard{display:none}
+}
 @media (max-height:540px){
   :root{--pad-y:clamp(40px,10vh,56px)}
   .reach{grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,34px)}
@@ -377,6 +439,8 @@ body.on-dark .nav-btn{color:#fff}
   .rows,.bars{margin-top:clamp(8px,1.6vh,16px)}
   .figs{margin-top:clamp(10px,2vh,20px)}
   .shot{margin:clamp(6px,1.4vh,14px) 0}
+  .media-in .figs{margin-top:8px;padding-top:8px}
+  .district{padding-top:calc(var(--pad-y) * .95)}
   /* keep the rent bars on one line when the viewport is short */
   .bar{grid-template-columns:minmax(88px,24%) 1fr auto;gap:0 14px}
   .bar .track{grid-column:auto;order:0}
@@ -413,23 +477,29 @@ body.on-dark .nav-btn{color:#fff}
   </div>
 </section>
 
-<!-- 02 ───────── the vision ───────── -->
+<!-- 02 ───────── the vision + the plan in numbers ───────── -->
 <section class="slide media" data-t="The Vision">
   <picture>
     <source srcset="assets/renderings/ai/hp-1.webp" type="image/webp">
-    <img class="media-bg" src="assets/renderings/hp-1.jpg" alt="Public plaza and new light rail station at Holland Park" loading="lazy" decoding="async">
+    <img class="media-bg" src="assets/renderings/hp-1.jpg" alt="Public plaza and proposed light rail station at Holland Park" loading="lazy" decoding="async">
   </picture>
   <div class="grain"></div>
   <div class="film-tag"><i></i>Holland Park &middot; Plaza &amp; light rail</div>
   <div class="media-in">
     <div class="eyebrow rv">01 &middot; The vision</div>
     <h2 class="rv d1">A neighborhood arrives <em>between</em> two cities.</h2>
-    <p class="say rv d2">The last great connective parcel on the Jersey City–Hoboken line, with a developer-funded light rail station landing straight into public space.</p>
+    <p class="say rv d2">Lincoln Equities is building the connection, not just the address: two buildings either side of a public plaza, with a light rail station funded by the developer landing straight into it.</p>
+    <div class="figs four rv d3">
+      <div><b class="serif">800</b><span>Residences proposed</span></div>
+      <div><b class="serif">2</b><span>Buildings, one plaza</span></div>
+      <div><b class="serif">1</b><span>New station, developer funded</span></div>
+      <div><b class="serif">4</b><span>Storey retail podium</span></div>
+    </div>
   </div>
 </section>
 
-<!-- 04 -->
-<section class="slide media" data-t="Eye Level">
+<!-- 03 ───────── the public realm ───────── -->
+<section class="slide media" data-t="The Public Realm">
   <picture>
     <source srcset="assets/renderings/ai/hp-3.webp" type="image/webp">
     <img class="media-bg" src="assets/renderings/hp-3.jpg" alt="Street level retail and cafe seating at Holland Park" loading="lazy" decoding="async">
@@ -437,112 +507,79 @@ body.on-dark .nav-btn{color:#fff}
   <div class="grain"></div>
   <div class="film-tag"><i></i>Retail street &amp; terraces</div>
   <div class="media-in">
-    <div class="eyebrow rv">The public realm</div>
-    <h2 class="rv d1">Districts are made at <em>eye level</em>.</h2>
-    <p class="say rv d2">Cafés with tables outside. Shade, steps, planting, a reason to stop. Built to be used before it is admired.</p>
+    <div class="eyebrow rv">02 &middot; The public realm</div>
+    <h2 class="rv d1">You do not move into a building here. You move into the <em>neighborhood</em> it created.</h2>
+    <p class="say rv d2">Cafés with tables outside, shade, steps, planting, a reason to stop. Districts are made at eye level, and this one is drawn to be used before it is admired.</p>
   </div>
 </section>
 
-<!-- 05 ───────── lincoln's vision ───────── -->
-<section class="slide dark" data-t="Lincoln’s Vision">
-  <div class="eyebrow rv">02 &middot; Lincoln’s vision</div>
-  <h2 class="lead wide rv d1">Lincoln Equities is building the <em>connection</em>, not just the address.</h2>
-  <div class="figs rv d2">
-    <div><b class="serif">800</b><span>Residences envisioned</span></div>
-    <div><b class="serif">2</b><span>Buildings, one central plaza</span></div>
-    <div><b class="serif">1</b><span>New light rail station, developer funded</span></div>
-    <div><b class="serif">4</b><span>Storey retail &amp; amenity podium</span></div>
-  </div>
-</section>
-
-<!-- 06 ───────── the drawings ───────── -->
+<!-- 04 ───────── the drawings ───────── -->
 <section class="slide tint3" data-t="The Plan">
-  <div class="eyebrow rv">The plan already tells the story</div>
+  <div class="eyebrow rv">03 &middot; The plan &mdash; as filed with the city</div>
   <div class="exhibits rv d1">
-    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-6.webp" type="image/webp"><img src="assets/renderings/hp-6.jpg" alt="Site plan showing the new light rail station and Erie Street connection" loading="lazy"></picture></div><b>Site plan &middot; Connections</b></div>
+    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-6.webp" type="image/webp"><img src="assets/renderings/hp-6.jpg" alt="Site plan showing the proposed light rail station and Erie Street connection" loading="lazy"></picture></div><b>Site plan &middot; Connections</b></div>
     <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-5.webp" type="image/webp"><img src="assets/renderings/hp-5.jpg" alt="Massing study of the Holland Park site" loading="lazy"></picture></div><b>Massing study</b></div>
     <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-4.webp" type="image/webp"><img src="assets/renderings/hp-4.jpg" alt="Section through the podium and light rail platform" loading="lazy"></picture></div><b>Section &middot; Podium to platform</b></div>
     <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-7.webp" type="image/webp"><img src="assets/renderings/hp-7.jpg" alt="Elevation of the proposed light rail platform" loading="lazy"></picture></div><b>Platform elevation</b></div>
   </div>
+  <p class="closer rv d2">A pedestrian and bike crossing north, an Erie Street connection south, and a station in the middle. The drawings describe <em>movement</em> first and units second.</p>
 </section>
 
-<!-- 07 ───────── resident experience ───────── -->
+<!-- 05 ───────── a day here ───────── -->
 <section class="slide" data-t="A Day Here">
-  <div class="eyebrow rv">03 &middot; Resident experience</div>
-  <h2 class="lead wide rv d1">A day that never needs <em>a car</em>.</h2>
+  <div class="eyebrow rv">04 &middot; Resident experience</div>
+  <h2 class="lead wide rv d1" style="font-size:var(--t-mid)">A day that never needs <em>a car</em>.</h2>
   <div class="trio rv d2">
     <figure><div class="fr"><picture><source srcset="assets/renderings/ai/detail-steps.webp" type="image/webp"><img src="assets/renderings/detail-steps.jpg" alt="Stepped seating in the plaza" loading="lazy"></picture></div><figcaption>08:10 &middot; The steps</figcaption></figure>
     <figure><div class="fr"><picture><source srcset="assets/renderings/ai/detail-cafe.webp" type="image/webp"><img src="assets/renderings/detail-cafe.jpg" alt="Cafe seating on the retail frontage" loading="lazy"></picture></div><figcaption>09:45 &middot; The corner table</figcaption></figure>
     <figure><div class="fr"><picture><source srcset="assets/renderings/ai/detail-station.webp" type="image/webp"><img src="assets/renderings/detail-station.jpg" alt="Residents at the light rail platform" loading="lazy"></picture></div><figcaption>18:30 &middot; The platform</figcaption></figure>
   </div>
-  <p class="closer rv d3">You do not move into a building here. You move into the <em>neighborhood</em> it created.</p>
+  <p class="closer rv d3">Step out, cross the plaza, board the light rail. Come home to a street that is busy in <em>the right way</em>.</p>
 </section>
 
-<!-- 08 ───────── statement ───────── -->
-
-<!-- 09 ───────── district map ───────── -->
-<section class="slide" data-t="The District">
-  <div class="eyebrow rv">04 &middot; The district</div>
-  <h2 class="lead wide rv d1" style="font-size:var(--t-mid)">Five minutes of Jersey City. Five minutes of <em>Hoboken</em>.</h2>
-  <div class="mapwrap rv d2">
-    <div class="mapbox"><picture><source srcset="assets/renderings/ai/hp-9.webp" type="image/webp"><img src="assets/renderings/hp-9.jpg" alt="Map showing Holland Park with five and ten minute walk radii" loading="lazy"></picture></div>
-    <div class="rows walk r2" style="margin-top:0">
-      <div class="row"><h3 class="serif">Light rail<small>New Holland Park station</small></h3><div class="val serif">On site</div></div>
-      <div class="row"><h3 class="serif">2nd Street<small>Hoboken · HBLR</small></h3><div class="val serif">5 min</div></div>
-      <div class="row"><h3 class="serif">Hoboken Terminal<small>PATH · NJ Transit · Ferry</small></h3><div class="val serif">10 min</div></div>
-      <div class="row"><h3 class="serif">Newport<small>PATH · Waterfront retail</small></h3><div class="val serif">10 min</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 10 -->
-<section class="slide media" data-t="From Above">
+<!-- 06 ───────── the district: aerial + map + transit ───────── -->
+<section class="slide media" data-t="The District">
   <picture>
     <source srcset="assets/renderings/ai/hp-10.webp" type="image/webp">
     <img class="media-bg" src="assets/renderings/hp-10.jpg" alt="Aerial photograph of the Holland Park site" loading="lazy" decoding="async">
   </picture>
   <div class="grain"></div>
-  <div class="film-tag"><i></i>Aerial &middot; Jersey City · Hoboken</div>
-  <div class="media-in">
-    <div class="eyebrow rv">From above</div>
-    <h2 class="rv d1">The seam between <em>two skylines</em>.</h2>
-    <p class="say rv d2">The parcel sits where two street grids, two waterfronts and two transit networks already meet.</p>
+  <div class="film-tag"><i></i>Aerial &middot; Jersey City &middot; Hoboken border</div>
+  <div class="district">
+    <div class="mapcard rv">
+      <picture><source srcset="assets/renderings/ai/hp-9.webp" type="image/webp"><img src="assets/renderings/hp-9.jpg" alt="Map showing Holland Park with five and ten minute walk radii" loading="lazy"></picture>
+    </div>
+    <div class="district-copy">
+      <div class="eyebrow rv">05 &middot; The district</div>
+      <h2 class="rv d1">A station of <em>its own</em>, on the line between two cities.</h2>
+      <div class="rows walk r2 rv d2">
+        <div class="row"><h3 class="serif">Holland Park station<small>Proposed · on site</small></h3><div class="val serif">On site</div></div>
+        <div class="row"><h3 class="serif">2nd Street<small>Hoboken · light rail</small></h3><div class="val serif">10 min walk</div></div>
+        <div class="row"><h3 class="serif">Hoboken Terminal<small>PATH · NJ Transit · ferry</small></h3><div class="val serif">Up the line</div></div>
+        <div class="row"><h3 class="serif">Newport<small>PATH · waterfront retail</small></h3><div class="val serif">Down the line</div></div>
+      </div>
+      <p class="src rv d3">Walk radii as drawn on the project's own transit plan</p>
+    </div>
   </div>
 </section>
 
-<!-- 11 ───────── the neighbourhood ───────── -->
-<section class="slide dark" data-t="The Neighborhood">
-  <div class="eyebrow rv">05 &middot; The neighborhood</div>
-  <h2 class="lead wide rv d1" style="font-size:var(--t-mid)">The best operators in Hudson County are already <em>here</em>.</h2>
-  <div class="rows r4 rv d2">
-    <div class="row"><div class="n">01</div><h3 class="serif">Radio Lofts<small>316 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$3,365<span>Asking from</span></div></div>
-    <div class="row"><div class="n">02</div><h3 class="serif">Hudson House East<small>315 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$3,605<span>Asking from</span></div></div>
-    <div class="row"><div class="n">03</div><h3 class="serif">Hudson House West<small>325 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$2,695<span>Asking from</span></div></div>
-    <div class="row"><div class="n">04</div><h3 class="serif">Soho Lofts<small>273 16th Street</small></h3><div class="who"><b>Manhattan Building Co · Veris</b></div><div class="val serif">$3,330<span>Asking from</span></div></div>
-    <div class="row"><div class="n">05</div><h3 class="serif">Cast Iron Lofts<small>837 Jersey Avenue</small></h3><div class="who"><b>The Manhattan Building Company</b></div><div class="val serif">$3,158<span>Asking from</span></div></div>
-    <div class="row"><div class="n">06</div><h3 class="serif">Embankment House<small>270 10th Street</small></h3><div class="who"><b>Newport Associates</b></div><div class="val serif">$2,820<span>Asking from</span></div></div>
-  </div>
-</section>
-
-<!-- 12 ───────── rent market ───────── -->
-<section class="slide" data-t="The Rent Market">
-  <div class="eyebrow rv">06 &middot; The rent market</div>
-  <h2 class="lead wide rv d1" style="font-size:var(--t-mid)">The rents are already <em>proven</em>. Holland Park sets the next line.</h2>
-  <div class="bars rv d2" id="bars">
-    <div class="bar"><div class="nm">Hudson House West<small>325 15th</small></div><div class="track"><i data-w="67"></i></div><div class="amt serif">$2,695</div></div>
-    <div class="bar"><div class="nm">Embankment House<small>270 10th</small></div><div class="track"><i data-w="70"></i></div><div class="amt serif">$2,820</div></div>
-    <div class="bar"><div class="nm">Cast Iron Lofts<small>837 Jersey</small></div><div class="track"><i data-w="79"></i></div><div class="amt serif">$3,158</div></div>
-    <div class="bar"><div class="nm">Soho Lofts<small>273 16th</small></div><div class="track"><i data-w="83"></i></div><div class="amt serif">$3,330</div></div>
-    <div class="bar"><div class="nm">Radio Lofts<small>316 15th</small></div><div class="track"><i data-w="84"></i></div><div class="amt serif">$3,365</div></div>
-    <div class="bar"><div class="nm">Hudson House East<small>315 15th</small></div><div class="track"><i data-w="90"></i></div><div class="amt serif">$3,605</div></div>
+<!-- 07 ───────── the neighbourhood + rents, merged ───────── -->
+<section class="slide dark" data-t="The Market">
+  <div class="eyebrow rv">06 &middot; The neighborhood, and what it already earns</div>
+  <h2 class="lead wide rv d1" style="font-size:var(--t-mid)">The best operators in Hudson County are already <em>here</em>, and the rents are already proven.</h2>
+  <div class="rows r4 mkt rv d2">
+    <div class="row"><div class="n">01</div><h3 class="serif">Hudson House East<small>315 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$3,605<span>Asking from</span></div></div>
+    <div class="row"><div class="n">02</div><h3 class="serif">Radio Lofts<small>316 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$3,365<span>Asking from</span></div></div>
+    <div class="row"><div class="n">03</div><h3 class="serif">Soho Lofts<small>273 16th Street</small></h3><div class="who"><b>Manhattan Building Co · Veris</b></div><div class="val serif">$3,330<span>Asking from</span></div></div>
+    <div class="row"><div class="n">04</div><h3 class="serif">Cast Iron Lofts<small>837 Jersey Avenue</small></h3><div class="who"><b>The Manhattan Building Company</b></div><div class="val serif">$3,158<span>Asking from</span></div></div>
+    <div class="row"><div class="n">05</div><h3 class="serif">Embankment House<small>270 10th Street</small></h3><div class="who"><b>Newport Associates</b></div><div class="val serif">$2,820<span>Asking from</span></div></div>
+    <div class="row"><div class="n">06</div><h3 class="serif">Hudson House West<small>325 15th Street</small></h3><div class="who"><b>RXR · Columbia Property Trust</b></div><div class="val serif">$2,695<span>Asking from</span></div></div>
   </div>
   <p class="src rv d3">Every one of these was earned without a station at the door &nbsp;·&nbsp; Publicly advertised asking rents, September 2026</p>
 </section>
 
-<!-- 13 ───────── film: ten years ───────── -->
-
-<!-- 14 ───────── film: hard hats ───────── -->
-<section class="slide media" data-t="Hard Hats">
+<!-- 08 ───────── film: hard hats + the division in numbers ───────── -->
+<section class="slide media" data-t="Why SERHANT.">
   <video class="media-bg" playsinline muted loop preload="none" poster="assets/film/nd-site.jpg" aria-label="SERHANT. teams on site with developers">
     <source data-src="assets/film/nd-site.webm" type="video/webm">
     <source data-src="assets/film/nd-site.mp4" type="video/mp4">
@@ -550,66 +587,76 @@ body.on-dark .nav-btn{color:#fff}
   <div class="grain"></div>
   <div class="film-tag"><i></i>On site &middot; Ideation, construction, sales gallery</div>
   <div class="media-in">
-    <div class="eyebrow rv">What working together looks like</div>
+    <div class="eyebrow rv">07 &middot; Why SERHANT.</div>
     <h2 class="rv d1">Hard hats before headlines.</h2>
     <p class="say rv d2">Strategy workshops, site walks, sales galleries and brand identities, built for luxury projects from the ground up.</p>
+    <div class="figs four rv d3">
+      <div><b class="serif">6</b><span>Years, founded September 2020</span></div>
+      <div><b class="serif">$10B+</b><span>New development inventory</span></div>
+      <div><b class="serif">16B+</b><span>Impressions a year</span></div>
+      <div><b class="serif">10M+</b><span>Audience on day one</span></div>
+    </div>
   </div>
 </section>
 
-<!-- 15 ───────── selected work ───────── -->
+<!-- 09 ───────── selected work ───────── -->
 <section class="slide dark" data-t="Selected Work">
-  <div class="eyebrow rv">A decade of buildings launched this way</div>
-  <div class="figs two rv" style="margin:0 0 clamp(12px,2.4vh,26px)">
-    <div><b class="serif">10</b><span>Years of SERHANT. New Development</span></div>
-    <div><b class="serif">$10B+</b><span>Active inventory managed</span></div>
-  </div>
+  <div class="eyebrow rv">08 &middot; Buildings SERHANT. New Development is taking to market now</div>
   <div class="rows r4 rv d1">
-    <div class="row"><div class="n">01</div><h3 class="serif">One Williamsburg Wharf<small>East River waterfront</small></h3><div class="who"><b>Launch film made in-house</b></div><div class="val serif">Brooklyn</div></div>
-    <div class="row"><div class="n">02</div><h3 class="serif">550 Vanderbilt<small>Pacific Park</small></h3><div class="who"><b>First building of a 22-acre masterplan</b></div><div class="val serif">Brooklyn</div></div>
+    <div class="row"><div class="n">01</div><h3 class="serif">One Williamsburg Wharf<small>East River waterfront</small></h3><div class="who"><b>Naftali · Brandon Haw Architecture</b></div><div class="val serif">Brooklyn</div></div>
+    <div class="row"><div class="n">02</div><h3 class="serif">Mandarin Oriental, Fifth Avenue<small>Midtown</small></h3><div class="who"><b>Branded residences</b></div><div class="val serif">Manhattan</div></div>
     <div class="row"><div class="n">03</div><h3 class="serif">Brooklyn Point<small>Downtown Brooklyn</small></h3><div class="who"><b>Extell · Kohn Pedersen Fox</b></div><div class="val serif">Brooklyn</div></div>
     <div class="row"><div class="n">04</div><h3 class="serif">Quay Tower<small>Brooklyn Bridge Park</small></h3><div class="who"><b>ODA · Marmol Radziner</b></div><div class="val serif">Brooklyn</div></div>
     <div class="row"><div class="n">05</div><h3 class="serif">200 Amsterdam<small>Upper West Side</small></h3><div class="who"><b>Elkus Manfredi · CetraRuddy</b></div><div class="val serif">Manhattan</div></div>
-    <div class="row"><div class="n">06</div><h3 class="serif">Paragon<small>Long Island City</small></h3><div class="who"><b>Waterfront and transit-led</b></div><div class="val serif">Queens</div></div>
+    <div class="row"><div class="n">06</div><h3 class="serif">Paragon<small>Long Island City waterfront</small></h3><div class="who"><b>Waterfront and transit-led</b></div><div class="val serif">Queens</div></div>
     <div class="row"><div class="n">07</div><h3 class="serif">Mercedes-Benz Places<small>Downtown Miami</small></h3><div class="who"><b>Branded residences</b></div><div class="val serif">Miami</div></div>
   </div>
+  <p class="src rv d2">Licensed in New Jersey, with a SERHANT. team already on this side of the river</p>
 </section>
 
-<!-- 16 ───────── reach ───────── -->
+<!-- 10 ───────── the audience ───────── -->
 <section class="slide dark" data-t="The Audience">
-  <div class="eyebrow rv">What day one looks like</div>
+  <div class="eyebrow rv">09 &middot; What day one looks like</div>
   <div class="reach rv d1">
     <div><div class="big" data-count="16" data-suffix="B+">16B+</div><div class="cap2">Impressions a year across the SERHANT. network</div></div>
     <div><div class="big" data-count="10" data-suffix="M+">10M+</div><div class="cap2">People already following, reachable the morning we launch</div></div>
   </div>
-  <h2 class="rv d2" style="margin-top:clamp(18px,3.4vh,44px);font-size:var(--t-mid);max-width:26ch">Holland Park will never have to buy its first audience. It <em>already has one.</em></h2>
+  <h2 class="rv d2" style="margin-top:clamp(16px,3vh,40px);font-size:var(--t-mid);max-width:28ch">Holland Park will never have to buy its first audience. It <em>already has one.</em></h2>
 </section>
 
-<!-- 17 ───────── film: studios ───────── -->
-
-<!-- 18 ───────── four teams ───────── -->
-<section class="slide dark" data-t="Four Teams">
-  <div class="eyebrow rv">Four teams, one building</div>
-  <div class="rows r2 rv d1">
-    <div class="row"><div class="n">01</div><div><h3 style="font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.035em">ID LAB</h3><p class="deliver" style="margin:8px 0 0">A brand that says district, not development.</p></div></div>
-    <div class="row"><div class="n">02</div><div><h3 style="font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.035em">SERHANT. STUDIOS</h3><p class="deliver" style="margin:8px 0 0">A launch film that puts people in the plaza years before it opens.</p></div></div>
-    <div class="row"><div class="n">03</div><div><h3 style="font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.035em">ADX</h3><p class="deliver" style="margin:8px 0 0">Every dollar traced to a tour, and redirected the moment something works better.</p></div></div>
-    <div class="row"><div class="n">04</div><div><h3 style="font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.035em">NEW DEVELOPMENT</h3><p class="deliver" style="margin:8px 0 0">A gallery, a price and a team on site the day leasing opens.</p></div></div>
+<!-- 11 ───────── the engine: four teams x four steps ───────── -->
+<section class="slide dark" data-t="The Engine">
+  <div class="eyebrow rv">10 &middot; Four teams, one building, one order</div>
+  <div class="rows engine rv d1">
+    <div class="row">
+      <div class="n">01</div>
+      <h3 class="unit">ID LAB<small>Position</small></h3>
+      <div class="who">We decide what Holland Park means before anyone decides what it costs.</div>
+      <p class="deliver">A brand that says district, not development.</p>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <h3 class="unit">SERHANT. STUDIOS<small>Produce</small></h3>
+      <div class="who">The film, the stills, the social cuts, the site. Made once, made properly.</div>
+      <p class="deliver">People in the plaza years before it opens.</p>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <h3 class="unit">ADX<small>Publish</small></h3>
+      <div class="who">Straight into ten million people, then into paid, then into whatever is working.</div>
+      <p class="deliver">Every dollar traced to a tour.</p>
+    </div>
+    <div class="row">
+      <div class="n">04</div>
+      <h3 class="unit">NEW DEVELOPMENT<small>Open</small></h3>
+      <div class="who">Pricing, unit mix, amenity narrative, sales gallery, launch sequencing.</div>
+      <p class="deliver">A gallery, a price and a team on site the day leasing opens.</p>
+    </div>
   </div>
   <a class="watch rv d2" href="https://www.youtube.com/watch?v=at0s_VSGEF4" target="_blank" rel="noopener">Watch a SERHANT. launch film</a>
 </section>
 
-<!-- 19 ───────── the launch ───────── -->
-<section class="slide dark" data-t="The Launch">
-  <div class="eyebrow rv">And they run in this order</div>
-  <div class="rows r3 rv d1">
-    <div class="row"><div class="n">01</div><h3 class="serif">Position<small>ID Lab</small></h3><div class="val serif" style="font-size:var(--t-body);font-family:Inter,sans-serif;text-align:right;white-space:normal;max-width:34ch;color:rgba(255,255,255,.72)">We decide what Holland Park means before anyone decides what it costs.</div></div>
-    <div class="row"><div class="n">02</div><h3 class="serif">Produce<small>Studios</small></h3><div class="val serif" style="font-size:var(--t-body);font-family:Inter,sans-serif;text-align:right;white-space:normal;max-width:34ch;color:rgba(255,255,255,.72)">The film, the stills, the social cuts, the site. Made once, made properly.</div></div>
-    <div class="row"><div class="n">03</div><h3 class="serif">Publish<small>ADX</small></h3><div class="val serif" style="font-size:var(--t-body);font-family:Inter,sans-serif;text-align:right;white-space:normal;max-width:34ch;color:rgba(255,255,255,.72)">Straight into ten million people, then into paid, then into whatever is working.</div></div>
-    <div class="row"><div class="n">04</div><h3 class="serif">Open<small>New Development</small></h3><div class="val serif" style="font-size:var(--t-body);font-family:Inter,sans-serif;text-align:right;white-space:normal;max-width:34ch;color:rgba(255,255,255,.72)">Gallery, pricing, team, tours. To an audience that has watched it get built.</div></div>
-  </div>
-</section>
-
-<!-- 20 ───────── film: proven ───────── -->
+<!-- 12 ───────── film: proven results ───────── -->
 <section class="slide media" data-t="Proven Results">
   <video class="media-bg" playsinline muted loop preload="none" poster="assets/film/nd-brand.jpg" aria-label="SERHANT. New Development project identities">
     <source data-src="assets/film/nd-brand.webm" type="video/webm">
@@ -618,13 +665,13 @@ body.on-dark .nav-btn{color:#fff}
   <div class="grain"></div>
   <div class="film-tag"><i></i>Brooklyn Point &middot; Quay Tower &middot; The Melrose &middot; 868 Lorimer</div>
   <div class="media-in">
-    <div class="eyebrow rv">Proven results</div>
+    <div class="eyebrow rv">11 &middot; Proven results</div>
     <h2 class="rv d1">Buildings we branded, filmed and sold.</h2>
-    <p class="say rv d2">Ten years of SERHANT. New Development, and more than $10 billion in active inventory.</p>
+    <p class="say rv d2">Brand, content, technology and new development leasing inside one company, pointed at one project from day one.</p>
   </div>
 </section>
 
-<!-- 21 ───────── close ───────── -->
+<!-- 13 ───────── close ───────── -->
 <section class="slide cover" data-t="The Close" style="justify-content:center">
   <div class="cover-bg" style="background-image:url('assets/renderings/ai/hp-2.webp');background-position:center 40%"></div>
   <div class="grain"></div>

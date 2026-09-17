@@ -7,7 +7,7 @@ Live: https://hxdoali.github.io/holland-park-serhant/
 
 ## How it works
 
-A 17-slide click-through deck, not a scrolling page. Each slide is one point and
+A 13-slide click-through deck, not a scrolling page. Each slide is one point and
 fills the viewport.
 
 - Advance with arrow keys, space, page keys, a click anywhere, the on-screen
@@ -101,6 +101,33 @@ in and nothing autoplays.
 
 Instagram was not used as a source: its CDN links are signed and expire within
 hours, so anything hotlinked from there would break before the meeting.
+
+## Fact check
+
+Every claim on the deck was verified in September 2026. Corrections made:
+
+| Claim | Finding | Now reads |
+|---|---|---|
+| SERHANT. "a decade" / "10 years" | Founded 15 September 2020 | Six years |
+| "$10B+ over the past decade" | Division passed $10B in inventory by its second year | "$10B+ new development inventory", no decade |
+| 550 Vanderbilt as a SERHANT. project | Sold out before the firm existed; not on the active list | Removed |
+| "2nd Street — 5 min walk" | Outside the 5-minute ring on the project's own transit plan | "10 min walk" |
+| "Hoboken Terminal — 10 min walk" | Well outside the 10-minute ring; roughly 1.2 miles | "Up the line" |
+| "Newport — 10 min walk" | At the edge of the 10-minute ring | "Down the line" |
+| "Five minutes of Jersey City, five minutes of Hoboken" | Unsupported by the walk radii | Replaced |
+| 800 units, station, podium stated as fact | Sought via amendments to the Jersey Avenue Light Rail Redevelopment Plan, presented to the Planning Board 13 April 2021 | Labelled as proposed |
+
+Verified and unchanged: two buildings either side of a north-south pedestrian
+plaza; a new elevated Hudson-Bergen Light Rail station at the developer's
+expense with pedestrian connections to 18th Street and Grove Street; the
+four-storey retail, amenity and parking podium (from the project's own section
+drawing); and the six neighbourhood buildings with their owners and asking
+rents.
+
+Two figures come from the client and could not be confirmed on serhant.com:
+16B+ impressions a year and a 10M+ audience. One 2025 article cites "over 9.5
+million followers", so the audience figure should be confirmed internally
+before the deck is shown.
 
 ## Sources
 
