@@ -592,9 +592,9 @@ body.on-dark .nav-btn{color:#fff}
     <p class="say rv d2">Strategy workshops, site walks, sales galleries and brand identities, built for luxury projects from the ground up.</p>
     <div class="figs four rv d3">
       <div><b class="serif">6</b><span>Years, founded September 2020</span></div>
-      <div><b class="serif">$10B+</b><span>New development inventory</span></div>
-      <div><b class="serif">16B+</b><span>Impressions a year</span></div>
-      <div><b class="serif">10M+</b><span>Audience on day one</span></div>
+      <div><b class="serif">200%</b><span>New Development growth, year on year</span></div>
+      <div><b class="serif">$6.5B</b><span>Sales volume closed in 2025</span></div>
+      <div><b class="serif">9.3M</b><span>Followers across platforms</span></div>
     </div>
   </div>
 </section>
@@ -611,15 +611,15 @@ body.on-dark .nav-btn{color:#fff}
     <div class="row"><div class="n">06</div><h3 class="serif">Paragon<small>Long Island City waterfront</small></h3><div class="who"><b>Waterfront and transit-led</b></div><div class="val serif">Queens</div></div>
     <div class="row"><div class="n">07</div><h3 class="serif">Mercedes-Benz Places<small>Downtown Miami</small></h3><div class="who"><b>Branded residences</b></div><div class="val serif">Miami</div></div>
   </div>
-  <p class="src rv d2">Licensed in New Jersey, with a SERHANT. team already on this side of the river</p>
+  <p class="src rv d2">Licensed in New Jersey, with a SERHANT. team already on this side of the river &nbsp;·&nbsp; Firm figures from the SERHANT. 2025 annual letter</p>
 </section>
 
 <!-- 10 ───────── the audience ───────── -->
 <section class="slide dark" data-t="The Audience">
   <div class="eyebrow rv">09 &middot; What day one looks like</div>
   <div class="reach rv d1">
-    <div><div class="big" data-count="16" data-suffix="B+">16B+</div><div class="cap2">Impressions a year across the SERHANT. network</div></div>
-    <div><div class="big" data-count="10" data-suffix="M+">10M+</div><div class="cap2">People already following, reachable the morning we launch</div></div>
+    <div><div class="big" data-count="40" data-suffix="B+">40B+</div><div class="cap2">PR impressions from 1,400+ placements, 2025 year to date</div></div>
+    <div><div class="big" data-count="9.3" data-suffix="M">9.3M</div><div class="cap2">Followers across platforms &mdash; the most-followed brokerage on the planet</div></div>
   </div>
   <h2 class="rv d2" style="margin-top:clamp(16px,3vh,40px);font-size:var(--t-mid);max-width:28ch">Holland Park will never have to buy its first audience. It <em>already has one.</em></h2>
 </section>
@@ -643,7 +643,7 @@ body.on-dark .nav-btn{color:#fff}
     <div class="row">
       <div class="n">03</div>
       <h3 class="unit">ADX<small>Publish</small></h3>
-      <div class="who">Straight into ten million people, then into paid, then into whatever is working.</div>
+      <div class="who">Straight into 9.3 million followers, then into paid, then into whatever is working.</div>
       <p class="deliver">Every dollar traced to a tour.</p>
     </div>
     <div class="row">
@@ -799,14 +799,15 @@ body.on-dark .nav-btn{color:#fff}
     [].forEach.call(slide.querySelectorAll('[data-count]'), function(el){
       if(el.dataset.ran) return; el.dataset.ran = '1';
       if(reduce) return;
-      var target = parseInt(el.getAttribute('data-count'), 10), sfx = el.getAttribute('data-suffix') || '', t0 = null;
+      var target = parseFloat(el.getAttribute('data-count')), sfx = el.getAttribute('data-suffix') || '', t0 = null;
+      var dp = (target % 1 === 0) ? 0 : 1;
       function tick(t){
         if(t0 === null) t0 = t;
         var k = Math.min((t - t0) / 1400, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3))) + sfx;
+        el.textContent = (target * (1 - Math.pow(1 - k, 3))).toFixed(dp) + sfx;
         if(k < 1) requestAnimationFrame(tick);
       }
-      el.textContent = '0' + sfx;
+      el.textContent = (0).toFixed(dp) + sfx;
       requestAnimationFrame(tick);
     });
   }

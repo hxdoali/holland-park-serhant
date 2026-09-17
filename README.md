@@ -124,10 +124,14 @@ four-storey retail, amenity and parking podium (from the project's own section
 drawing); and the six neighbourhood buildings with their owners and asking
 rents.
 
-Two figures come from the client and could not be confirmed on serhant.com:
-16B+ impressions a year and a 10M+ audience. One 2025 article cites "over 9.5
-million followers", so the audience figure should be confirmed internally
-before the deck is shown.
+The reach figures were tracked down to SERHANT.'s own 2025 annual letter
+(serhantannualletter2025.com), which states verbatim: "the most-followed real
+estate brokerage on the planet, with 9.3 million followers across platforms and
+over 40 billion PR impressions from more than 1,400 placements YTD." Both
+numbers originally on the deck were wrong. 16B+ was the 2022 figure from the
+earlier annual letter and badly understated current reach; 10M+ overstated the
+audience. The same letter supplies the 200% year-on-year New Development growth
+and the $6.5 billion closed in 2025.
 
 ## Sources
 
