@@ -7,7 +7,7 @@ Live: https://hxdoali.github.io/holland-park-serhant/
 
 ## How it works
 
-A 21-slide click-through deck, not a scrolling page. Each slide is one point and
+A 17-slide click-through deck, not a scrolling page. Each slide is one point and
 fills the viewport.
 
 - Advance with arrow keys, space, page keys, a click anywhere, the on-screen
@@ -30,15 +30,22 @@ fills the viewport.
 
 ## Image quality
 
-The Holland Park renderings only exist at about 1200-1400px wide; Squarespace,
-the YIMBY thread and the press coverage all serve the same originals. Rather
-than blow them up, the deck keeps every image inside the slide and caps it at
-its own resolution, and `assets/renderings/2x/` holds a Lanczos-resampled,
-lightly sharpened WebP of each one.
+The Holland Park renderings only exist at roughly 1200-1400px wide. Squarespace
+serves the same file whatever size you request, and the YIMBY thread originals
+and the press coverage are identical, so there was no larger source to fetch.
 
-The result is that every image is *downscaled* even on a 2x display: measured
-factors run 0.27 to 0.87 across laptop, desktop and tablet widths. Nothing is
-upscaled, so nothing looks pixelated. All twelve 2x files together are 2.5 MB.
+`assets/renderings/ai/` holds a Real-ESRGAN x4 upscale of each one, run locally
+on CPU and downsampled to 3600px wide. Real-ESRGAN reconstructs edges rather
+than interpolating them: building fenestration, canopy trusses, railings and
+signage that were mush under Lanczos come back as clean geometry.
+
+At 3600px the hero images run full bleed and still downsample on a 2x display
+(measured 0.8x at 1440 and 0.94x at 1920), so they are large *and* sharp. All
+twelve files together are 6 MB.
+
+Regenerating them needs `torch` (CPU wheel) and the official
+`RealESRGAN_x4plus.pth` weights; the generator is reimplemented in plain torch
+in the scratch script, so `basicsr` is not required.
 
 ## Palette
 

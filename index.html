@@ -11,7 +11,7 @@
 <meta property="og:image" content="assets/renderings/hp-2.jpg">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-normal.woff2" crossorigin>
-<link rel="preload" as="image" href="assets/renderings/2x/hp-2.webp">
+<link rel="preload" as="image" href="assets/renderings/ai/hp-2.webp">
 <style>
 /* Self-hosted latin subsets. Inter and Instrument Serif, SIL Open Font License 1.1. */
 @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/inter-normal.woff2') format('woff2')}
@@ -118,11 +118,12 @@ h2 em{font-style:italic;color:var(--navy)}
 
 /* ═════════ media slides (image + video) ═════════ */
 .media-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.slide.media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,24,38,.46),rgba(19,24,38,.08) 30%,rgba(19,24,38,.42) 60%,rgba(19,24,38,.93))}
+.slide.media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,24,38,.52) 0%,rgba(19,24,38,.10) 26%,rgba(19,24,38,.36) 50%,rgba(19,24,38,.80) 76%,rgba(19,24,38,.97) 100%)}
 .media-in{position:relative;z-index:4;padding:0 var(--gut) clamp(34px,7vh,72px)}
-.media-in h2{max-width:min(100%,17ch);text-shadow:0 2px 40px rgba(19,24,38,.4)}
+.media-in .say{color:rgba(255,255,255,.82);text-shadow:0 1px 20px rgba(19,24,38,.7);max-width:min(100%,54ch)}
+.media-in h2{max-width:min(100%,17ch);text-shadow:0 2px 34px rgba(19,24,38,.75)}
 .film-tag{
-  position:absolute;left:var(--gut);top:calc(var(--pad-y) * .62);z-index:5;
+  position:absolute;left:var(--gut);top:clamp(58px,7.8vh,96px);z-index:5;
   display:flex;align-items:center;gap:9px;
   font-size:var(--t-micro);font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);
 }
@@ -165,6 +166,18 @@ h2 em{font-style:italic;color:var(--navy)}
 .trio .fr picture{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center}
 .trio img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .trio figcaption{margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:var(--t-micro);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* merged closing line on a content slide */
+.closer{
+  margin:clamp(12px,2.2vh,26px) 0 0;padding-top:clamp(10px,1.7vh,18px);
+  border-top:1px solid var(--line);
+  font-family:"Instrument Serif",serif;font-size:var(--t-mid);line-height:1.06;
+  max-width:min(100%,30ch);
+}
+.closer em{font-style:italic;color:var(--navy)}
+.dark .closer{border-color:var(--line-light)}
+.dark .closer em{color:var(--sky)}
+.figs.two{grid-template-columns:repeat(2,minmax(0,auto));gap:clamp(20px,5vw,80px);justify-content:start}
 
 /* ═════════ figure rows ═════════ */
 .figs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,40px);margin-top:clamp(20px,4vh,56px)}
@@ -219,6 +232,7 @@ h2 em{font-style:italic;color:var(--navy)}
 .mapbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .walk .row{grid-template-columns:1fr auto}
 
+.slide .watch{margin-top:clamp(14px,2.6vh,30px)}
 .watch{
   display:inline-flex;align-items:center;gap:10px;margin-top:clamp(14px,2.4vh,28px);padding-bottom:5px;
   border-bottom:1px solid rgba(255,255,255,.35);
@@ -387,7 +401,7 @@ body.on-dark .nav-btn{color:#fff}
 
 <!-- 01 ───────── cover ───────── -->
 <section class="slide cover" data-t="Holland Park">
-  <div class="cover-bg" style="background-image:url('assets/renderings/2x/hp-2.webp')"></div>
+  <div class="cover-bg" style="background-image:url('assets/renderings/ai/hp-2.webp')"></div>
   <div class="grain"></div>
   <div class="cover-in">
     <div class="eyebrow rv" style="color:rgba(255,255,255,.72)">Jersey City &middot; Hoboken line &middot; 18th Street &amp; Jersey Avenue</div>
@@ -400,39 +414,32 @@ body.on-dark .nav-btn{color:#fff}
 </section>
 
 <!-- 02 ───────── the vision ───────── -->
-<section class="slide" data-t="The Vision">
-  <div class="eyebrow rv">01 &middot; The vision</div>
-  <h2 class="lead rv d1">A neighborhood arrives <em>between</em> two cities.</h2>
-  <p class="say rv d2">The last great connective parcel on the Jersey City–Hoboken line. What rises here will not read as a building with an address. It will read as the place where the two cities finally meet.</p>
-</section>
-
-<!-- 03 -->
-<section class="slide tint" data-t="The Plaza">
-  <div class="eyebrow rv">Ground floor of a district</div>
-  <div class="shot rv d1">
-    <picture>
-      <source srcset="assets/renderings/2x/hp-1.webp" type="image/webp">
-      <img src="assets/renderings/hp-1.jpg" alt="Public plaza and new light rail station at Holland Park" loading="lazy">
-    </picture>
-  </div>
-  <div class="shot-cap rv d2">
-    <div><h2 class="serif">A plaza where a rail line becomes a front door.</h2><p class="say">An elevated Hudson–Bergen Light Rail station, funded by the developer, landing straight into public space.</p></div>
-    <div class="note">Holland Park<br>Plaza &amp; light rail</div>
+<section class="slide media" data-t="The Vision">
+  <picture>
+    <source srcset="assets/renderings/ai/hp-1.webp" type="image/webp">
+    <img class="media-bg" src="assets/renderings/hp-1.jpg" alt="Public plaza and new light rail station at Holland Park" loading="lazy" decoding="async">
+  </picture>
+  <div class="grain"></div>
+  <div class="film-tag"><i></i>Holland Park &middot; Plaza &amp; light rail</div>
+  <div class="media-in">
+    <div class="eyebrow rv">01 &middot; The vision</div>
+    <h2 class="rv d1">A neighborhood arrives <em>between</em> two cities.</h2>
+    <p class="say rv d2">The last great connective parcel on the Jersey City–Hoboken line, with a developer-funded light rail station landing straight into public space.</p>
   </div>
 </section>
 
 <!-- 04 -->
-<section class="slide" data-t="Eye Level">
-  <div class="eyebrow rv">The public realm</div>
-  <div class="shot rv d1">
-    <picture>
-      <source srcset="assets/renderings/2x/hp-3.webp" type="image/webp">
-      <img src="assets/renderings/hp-3.jpg" alt="Street level retail and cafe seating at Holland Park" loading="lazy">
-    </picture>
-  </div>
-  <div class="shot-cap rv d2">
-    <div><h2 class="serif">Districts are made at eye level.</h2><p class="say">Cafés with tables outside. Shade, steps, planting, a reason to stop. Built to be used before it is admired.</p></div>
-    <div class="note">Retail street<br>&amp; terraces</div>
+<section class="slide media" data-t="Eye Level">
+  <picture>
+    <source srcset="assets/renderings/ai/hp-3.webp" type="image/webp">
+    <img class="media-bg" src="assets/renderings/hp-3.jpg" alt="Street level retail and cafe seating at Holland Park" loading="lazy" decoding="async">
+  </picture>
+  <div class="grain"></div>
+  <div class="film-tag"><i></i>Retail street &amp; terraces</div>
+  <div class="media-in">
+    <div class="eyebrow rv">The public realm</div>
+    <h2 class="rv d1">Districts are made at <em>eye level</em>.</h2>
+    <p class="say rv d2">Cafés with tables outside. Shade, steps, planting, a reason to stop. Built to be used before it is admired.</p>
   </div>
 </section>
 
@@ -452,10 +459,10 @@ body.on-dark .nav-btn{color:#fff}
 <section class="slide tint3" data-t="The Plan">
   <div class="eyebrow rv">The plan already tells the story</div>
   <div class="exhibits rv d1">
-    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/2x/hp-6.webp" type="image/webp"><img src="assets/renderings/hp-6.jpg" alt="Site plan showing the new light rail station and Erie Street connection" loading="lazy"></picture></div><b>Site plan &middot; Connections</b></div>
-    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/2x/hp-5.webp" type="image/webp"><img src="assets/renderings/hp-5.jpg" alt="Massing study of the Holland Park site" loading="lazy"></picture></div><b>Massing study</b></div>
-    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/2x/hp-4.webp" type="image/webp"><img src="assets/renderings/hp-4.jpg" alt="Section through the podium and light rail platform" loading="lazy"></picture></div><b>Section &middot; Podium to platform</b></div>
-    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/2x/hp-7.webp" type="image/webp"><img src="assets/renderings/hp-7.jpg" alt="Elevation of the proposed light rail platform" loading="lazy"></picture></div><b>Platform elevation</b></div>
+    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-6.webp" type="image/webp"><img src="assets/renderings/hp-6.jpg" alt="Site plan showing the new light rail station and Erie Street connection" loading="lazy"></picture></div><b>Site plan &middot; Connections</b></div>
+    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-5.webp" type="image/webp"><img src="assets/renderings/hp-5.jpg" alt="Massing study of the Holland Park site" loading="lazy"></picture></div><b>Massing study</b></div>
+    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-4.webp" type="image/webp"><img src="assets/renderings/hp-4.jpg" alt="Section through the podium and light rail platform" loading="lazy"></picture></div><b>Section &middot; Podium to platform</b></div>
+    <div class="exhibit"><div class="fr"><picture><source srcset="assets/renderings/ai/hp-7.webp" type="image/webp"><img src="assets/renderings/hp-7.jpg" alt="Elevation of the proposed light rail platform" loading="lazy"></picture></div><b>Platform elevation</b></div>
   </div>
 </section>
 
@@ -464,24 +471,21 @@ body.on-dark .nav-btn{color:#fff}
   <div class="eyebrow rv">03 &middot; Resident experience</div>
   <h2 class="lead wide rv d1">A day that never needs <em>a car</em>.</h2>
   <div class="trio rv d2">
-    <figure><div class="fr"><picture><source srcset="assets/renderings/2x/detail-steps.webp" type="image/webp"><img src="assets/renderings/detail-steps.jpg" alt="Stepped seating in the plaza" loading="lazy"></picture></div><figcaption>08:10 &middot; The steps</figcaption></figure>
-    <figure><div class="fr"><picture><source srcset="assets/renderings/2x/detail-cafe.webp" type="image/webp"><img src="assets/renderings/detail-cafe.jpg" alt="Cafe seating on the retail frontage" loading="lazy"></picture></div><figcaption>09:45 &middot; The corner table</figcaption></figure>
-    <figure><div class="fr"><picture><source srcset="assets/renderings/2x/detail-station.webp" type="image/webp"><img src="assets/renderings/detail-station.jpg" alt="Residents at the light rail platform" loading="lazy"></picture></div><figcaption>18:30 &middot; The platform</figcaption></figure>
+    <figure><div class="fr"><picture><source srcset="assets/renderings/ai/detail-steps.webp" type="image/webp"><img src="assets/renderings/detail-steps.jpg" alt="Stepped seating in the plaza" loading="lazy"></picture></div><figcaption>08:10 &middot; The steps</figcaption></figure>
+    <figure><div class="fr"><picture><source srcset="assets/renderings/ai/detail-cafe.webp" type="image/webp"><img src="assets/renderings/detail-cafe.jpg" alt="Cafe seating on the retail frontage" loading="lazy"></picture></div><figcaption>09:45 &middot; The corner table</figcaption></figure>
+    <figure><div class="fr"><picture><source srcset="assets/renderings/ai/detail-station.webp" type="image/webp"><img src="assets/renderings/detail-station.jpg" alt="Residents at the light rail platform" loading="lazy"></picture></div><figcaption>18:30 &middot; The platform</figcaption></figure>
   </div>
+  <p class="closer rv d3">You do not move into a building here. You move into the <em>neighborhood</em> it created.</p>
 </section>
 
 <!-- 08 ───────── statement ───────── -->
-<section class="slide dark" data-t="Not A Building">
-  <div class="eyebrow rv">The feeling we are selling</div>
-  <h2 class="lead wide rv d1">You do not move into a building here. You move into the <em>neighborhood</em> it created.</h2>
-</section>
 
 <!-- 09 ───────── district map ───────── -->
 <section class="slide" data-t="The District">
   <div class="eyebrow rv">04 &middot; The district</div>
   <h2 class="lead wide rv d1" style="font-size:var(--t-mid)">Five minutes of Jersey City. Five minutes of <em>Hoboken</em>.</h2>
   <div class="mapwrap rv d2">
-    <div class="mapbox"><picture><source srcset="assets/renderings/2x/hp-9.webp" type="image/webp"><img src="assets/renderings/hp-9.jpg" alt="Map showing Holland Park with five and ten minute walk radii" loading="lazy"></picture></div>
+    <div class="mapbox"><picture><source srcset="assets/renderings/ai/hp-9.webp" type="image/webp"><img src="assets/renderings/hp-9.jpg" alt="Map showing Holland Park with five and ten minute walk radii" loading="lazy"></picture></div>
     <div class="rows walk r2" style="margin-top:0">
       <div class="row"><h3 class="serif">Light rail<small>New Holland Park station</small></h3><div class="val serif">On site</div></div>
       <div class="row"><h3 class="serif">2nd Street<small>Hoboken · HBLR</small></h3><div class="val serif">5 min</div></div>
@@ -492,17 +496,17 @@ body.on-dark .nav-btn{color:#fff}
 </section>
 
 <!-- 10 -->
-<section class="slide dark" data-t="From Above">
-  <div class="eyebrow rv">From above</div>
-  <div class="shot rv d1">
-    <picture>
-      <source srcset="assets/renderings/2x/hp-10.webp" type="image/webp">
-      <img src="assets/renderings/hp-10.jpg" alt="Aerial photograph of the Holland Park site" loading="lazy">
-    </picture>
-  </div>
-  <div class="shot-cap rv d2">
-    <div><h2 class="serif">The seam between two skylines.</h2><p class="say">The parcel sits where two street grids, two waterfronts and two transit networks already meet.</p></div>
-    <div class="note">Aerial<br>Jersey City · Hoboken</div>
+<section class="slide media" data-t="From Above">
+  <picture>
+    <source srcset="assets/renderings/ai/hp-10.webp" type="image/webp">
+    <img class="media-bg" src="assets/renderings/hp-10.jpg" alt="Aerial photograph of the Holland Park site" loading="lazy" decoding="async">
+  </picture>
+  <div class="grain"></div>
+  <div class="film-tag"><i></i>Aerial &middot; Jersey City · Hoboken</div>
+  <div class="media-in">
+    <div class="eyebrow rv">From above</div>
+    <h2 class="rv d1">The seam between <em>two skylines</em>.</h2>
+    <p class="say rv d2">The parcel sits where two street grids, two waterfronts and two transit networks already meet.</p>
   </div>
 </section>
 
@@ -536,18 +540,6 @@ body.on-dark .nav-btn{color:#fff}
 </section>
 
 <!-- 13 ───────── film: ten years ───────── -->
-<section class="slide media" data-t="Ten Years">
-  <video class="media-bg" playsinline muted loop preload="none" poster="assets/film/nd-vision.jpg" aria-label="SERHANT. New Development division film">
-    <source data-src="assets/film/nd-vision.webm" type="video/webm">
-    <source data-src="assets/film/nd-vision.mp4" type="video/mp4">
-  </video>
-  <div class="grain"></div>
-  <div class="film-tag"><i></i>SERHANT. New Development &middot; Division film</div>
-  <div class="media-in">
-    <div class="eyebrow rv">07 &middot; Why SERHANT.</div>
-    <h2 class="rv d1">We have done this at scale.</h2>
-  </div>
-</section>
 
 <!-- 14 ───────── film: hard hats ───────── -->
 <section class="slide media" data-t="Hard Hats">
@@ -560,12 +552,17 @@ body.on-dark .nav-btn{color:#fff}
   <div class="media-in">
     <div class="eyebrow rv">What working together looks like</div>
     <h2 class="rv d1">Hard hats before headlines.</h2>
+    <p class="say rv d2">Strategy workshops, site walks, sales galleries and brand identities, built for luxury projects from the ground up.</p>
   </div>
 </section>
 
 <!-- 15 ───────── selected work ───────── -->
 <section class="slide dark" data-t="Selected Work">
   <div class="eyebrow rv">A decade of buildings launched this way</div>
+  <div class="figs two rv" style="margin:0 0 clamp(12px,2.4vh,26px)">
+    <div><b class="serif">10</b><span>Years of SERHANT. New Development</span></div>
+    <div><b class="serif">$10B+</b><span>Active inventory managed</span></div>
+  </div>
   <div class="rows r4 rv d1">
     <div class="row"><div class="n">01</div><h3 class="serif">One Williamsburg Wharf<small>East River waterfront</small></h3><div class="who"><b>Launch film made in-house</b></div><div class="val serif">Brooklyn</div></div>
     <div class="row"><div class="n">02</div><h3 class="serif">550 Vanderbilt<small>Pacific Park</small></h3><div class="who"><b>First building of a 22-acre masterplan</b></div><div class="val serif">Brooklyn</div></div>
@@ -588,19 +585,6 @@ body.on-dark .nav-btn{color:#fff}
 </section>
 
 <!-- 17 ───────── film: studios ───────── -->
-<section class="slide media" data-t="Studios">
-  <video class="media-bg" playsinline muted loop preload="none" poster="assets/film/nd-studio.jpg" aria-label="SERHANT. Studios filming a development">
-    <source data-src="assets/film/nd-studio.webm" type="video/webm">
-    <source data-src="assets/film/nd-studio.mp4" type="video/mp4">
-  </video>
-  <div class="grain"></div>
-  <div class="film-tag"><i></i>SERHANT. Studios &middot; On a development shoot</div>
-  <div class="media-in">
-    <div class="eyebrow rv">In-house production team</div>
-    <h2 class="rv d1">We shoot it ourselves.</h2>
-    <a class="watch rv d2" href="https://www.youtube.com/watch?v=at0s_VSGEF4" target="_blank" rel="noopener">Watch a launch film</a>
-  </div>
-</section>
 
 <!-- 18 ───────── four teams ───────── -->
 <section class="slide dark" data-t="Four Teams">
@@ -611,6 +595,7 @@ body.on-dark .nav-btn{color:#fff}
     <div class="row"><div class="n">03</div><div><h3 style="font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.035em">ADX</h3><p class="deliver" style="margin:8px 0 0">Every dollar traced to a tour, and redirected the moment something works better.</p></div></div>
     <div class="row"><div class="n">04</div><div><h3 style="font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.035em">NEW DEVELOPMENT</h3><p class="deliver" style="margin:8px 0 0">A gallery, a price and a team on site the day leasing opens.</p></div></div>
   </div>
+  <a class="watch rv d2" href="https://www.youtube.com/watch?v=at0s_VSGEF4" target="_blank" rel="noopener">Watch a SERHANT. launch film</a>
 </section>
 
 <!-- 19 ───────── the launch ───────── -->
@@ -635,12 +620,13 @@ body.on-dark .nav-btn{color:#fff}
   <div class="media-in">
     <div class="eyebrow rv">Proven results</div>
     <h2 class="rv d1">Buildings we branded, filmed and sold.</h2>
+    <p class="say rv d2">Ten years of SERHANT. New Development, and more than $10 billion in active inventory.</p>
   </div>
 </section>
 
 <!-- 21 ───────── close ───────── -->
 <section class="slide cover" data-t="The Close" style="justify-content:center">
-  <div class="cover-bg" style="background-image:url('assets/renderings/2x/hp-2.webp');background-position:center 40%"></div>
+  <div class="cover-bg" style="background-image:url('assets/renderings/ai/hp-2.webp');background-position:center 40%"></div>
   <div class="grain"></div>
   <div class="cover-in">
     <div class="eyebrow rv" style="color:rgba(255,255,255,.62)">The close</div>
