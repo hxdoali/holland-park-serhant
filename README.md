@@ -1,28 +1,43 @@
 # Holland Park × SERHANT.
 
-A cinematic, 12-slide first conversation for Lincoln Equities Group.
+A cinematic, 17-slide first conversation for Lincoln Equities Group.
 
 Live: https://hxdoali.github.io/holland-park-serhant/
 
 ## Purpose and story
 
-The first meeting demonstrates marketing experience and creative capability.
-Its next step is a second conversation about Lincoln’s vision and an initial
-creative direction. Financial metrics, rental research and detailed project
-programs do not lead the presentation.
+The presentation translates the supplied New Development Marketing Services
+proposal into a visual story: SERHANT.’s scale, work for other projects, branding,
+production, distribution and development process. Large, dated company and
+project figures provide evidence alongside the imagery. The next step is a
+second conversation about Lincoln’s vision and an initial creative direction.
+Detailed neighborhood rents remain in an optional appendix.
 
-1. Make Holland Park unforgettable
-2. Brooklyn Point — a lifestyle brought to life
-3. Quay Tower — cinematic waterfront and interior footage
-4. ID Lab — six development identities and two published campaign boards
-5. New Jersey — Charlie, One Jones Park and Columbus House
-6. The creative platform — ID Lab, Studios, ADX and New Development
-7. One story across brand, film, outdoor and in-person experiences
-8. Lincoln’s vision, with our full attention
-9. Imagining Holland Park
-10. Resident-story concepts
-11. Lincoln’s vision, with optional neighborhood research
-12. A second meeting: the vision and our first creative direction
+1. SERHANT. New Development — the experience, creative and reach
+2. The Scale Behind the Brand — $6.5B closed sales and 10M+ followers
+3. The Reach Behind the Work — 40B+ PR impressions and 1,400+ placements
+4. The Brands We’ve Built — six in-house development identities
+5. Brooklyn Point — a dedicated ID Lab campaign board
+6. Brooklyn Point: Brand to Film — live cinematography and historical sales proof
+7. Quay Tower: Film, Digital, Sales — live cinematography and project scale
+8. The One Above All Else — the Central Park Tower penthouse campaign board
+9. 200 Amsterdam: Sales & Marketing — documented role and project scale
+10. New Jersey: Experience Close to Home — Charlie, One Jones Park and Columbus House
+11. One Team Across the Launch — ID Lab, Studios, ADX and New Development
+12. Campaigns Across Channels — digital, film, outdoor and events
+13. How the Work Comes Together — Plan, Brand, Introduce and Sell
+14. Built Around Lincoln — the proposed partnership
+15. Holland Park: The Resident Story — illustrative creative possibilities
+16. Holland Park: Your Vision — Lincoln’s concept and optional neighborhood research
+17. The Next Conversation — a creative direction built around Holland Park
+
+Company figures retain their reporting periods: $6.5B firmwide closed sales,
+40B+ PR impressions and 1,400+ media placements are 2025 year-to-date measures
+from the December 2025 company letter; 10M+ social followers were reported in
+June 2026. PR impressions are not unique people. The undefined 200% New
+Development growth measure is not a main-slide headline. Project counts describe
+the published programs; historical sales figures carry their original dates and
+do not promise a Holland Park result.
 
 The main slides use concise headlines and imagery. Sources sit in consistent
 bottom footers; a Sources button opens the complete scope and original links.
@@ -38,9 +53,11 @@ SERHANT. film: aerials, waterfront, residence and lounge. Desktop is 1080p;
 mobile is 960×540. Both exports are silent H.264 with faststart. The full
 original film remains available on request.
 
-Branding includes two original 3456-pixel ID Lab portfolio boards, displayed
-with an enlarged detail view, and six original logo extracts from page 3 of
-the supplied New Development Marketing Proposal. The original artwork remains
+Branding includes two original 3456-pixel ID Lab portfolio boards, each on a
+dedicated slide with an enlarged detail view, and a separate wall of six original
+logo extracts from page 3 of the supplied New Development Marketing Proposal.
+The four-phase process translates the proposal’s planning, positioning, presale
+and sellout framework into a short visual sequence. The original artwork remains
 unchanged; embedded historical campaign language is not a current factual claim.
 See [MEDIA.md](MEDIA.md) for asset provenance and [FACTS.md](FACTS.md) for scope.
 All campaign footage and artwork are real published or supplied materials.
@@ -59,9 +76,10 @@ All campaign footage and artwork are real published or supplied materials.
   snapshots from September 21, 2026, with fee bases, unit examples and source links.
   Its map uses Leaflet and OpenStreetMap; all property details remain available
   if the map cannot load. This appendix retains native scrolling.
-- Existing deep links for campaigns, work, local work, capabilities, launch,
-  Holland Park and the district remain useful. Earlier momentum/audience links
-  lead to branding; creative links lead to the creative platform.
+- `#momentum` and `#audience` again open their dedicated company-stat slides.
+  Existing campaign, work, local-work, capabilities, launch and district links
+  retain their sections. Legacy `#holland-park` redirects to `#district`,
+  `#creative` to `#capabilities`, and `#quay` to `#work`.
 
 ## Deployment
 
@@ -71,10 +89,13 @@ Full films stream from their original publishers and require a connection.
 
 ## Verification
 
-The September 22 revision is tested in isolated headless Chrome at desktop,
-tablet, small phone and landscape dimensions, including 320×568 and 844×390.
-Checks cover rendered text bounds, source-footer separation, each tab,
-forward/back navigation, source dialogs, branding enlargement, keyboard tabs,
-resize, actual Quay playback, mobile selection, pause/resume and reduced motion.
-Desktop and mobile screenshots are visually inspected. Physical Safari/iOS
-hardware has not been tested. Video exports also receive full decode checks.
+The automated regression suite covers 216 presentation states across eight
+desktop, tablet, phone and landscape sizes. It checks rendered text bounds,
+source-footer separation, tabs, forward/back navigation, source dialogs,
+branding enlargement, keyboard controls, resize, deep links, video selection,
+pause/resume and reduced motion. The September 22 revision passed all 216
+layout states with no browser errors or continuation pages; actual Quay playback,
+mobile source selection, artwork enlargement and appendix checks also passed.
+Desktop and mobile screenshots were visually inspected. Physical Safari/iOS
+hardware has not been tested. The existing video exports have separate
+full-decode checks recorded in the media audit.

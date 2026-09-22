@@ -7,11 +7,33 @@ exclusive, completed sellout or Holland Park outcome.
 
 ## September 22, 2026 presentation direction
 
-The main slide sequence now leads with branding, filmmaking, development
-marketing experience and the opportunity for a second meeting. Financial-statistic
-slides have been removed from that sequence. The earlier dated source checks
-below remain an audit record, not a new claim that every figure appears in the
-pitch or has been refreshed since its stated verification date.
+The 17-slide sequence translates the supplied New Development Marketing
+Services proposal into a visual story of SERHANT.'s experience, project branding,
+film production, distribution and four-phase development process. Dedicated
+Brooklyn Point and Central Park Tower penthouse boards, the six-identity wall,
+live Brooklyn Point and Quay Tower films, and New York/New Jersey case studies
+show work for other projects before the proposed Lincoln partnership.
+
+Company and project figures are restored as visual proof. The main slides show
+**$6.5B firmwide closed sales**, **40B+ PR impressions** and **1,400+ media
+placements**, all reported for 2025 year to date in the December 2025 company
+letter, plus **10M+ social followers** reported in June 2026. These are attributed
+company figures, not independently audited results; impressions do not mean
+unique people. The reported 200% New Development growth measure remains in the
+source record with its undefined basis and is not a main-slide headline.
+
+Project figures retain their scope: Brooklyn Point's 100-plus unit sales are
+historical December 2021 company reporting; Quay Tower's 126 residences and
+200 Amsterdam's 112 residences describe project size. Charlie's planned 386
+homes, One Jones Park's 75 homes and Columbus House's 60 homes accompany the
+documented assignments, rather than serving as completed sales or leasing totals.
+Sources and concise qualifications sit in bottom footers with detailed source
+dialogs. Neighborhood rents remain in the optional appendix. The close invites
+a second meeting on Lincoln's vision and an initial creative direction.
+
+The earlier dated source checks below remain an audit record, not a claim that
+every historical figure appears in the main pitch or has been refreshed since
+its stated verification date.
 
 The New Jersey positioning is affirmative: local project experience alongside
 SERHANT.'s New York launch work and in-house creative services. No claim is made
