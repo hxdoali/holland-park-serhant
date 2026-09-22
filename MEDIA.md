@@ -135,3 +135,24 @@ artwork rather than cropping it into building photography.
   with still posters; viewers can opt into playback.
 - Full films use the original online publishers and require network access.
 - A visual-focus control hides talking points while retaining credits and controls.
+
+## Visual branding and motion revision
+
+- The company-stat slides now use the published development and Studios reels.
+  Figures remain company-level reporting, not performance attributed to the
+  particular clips or projects shown.
+- The own-brand tabs combine the historical outdoor photograph and Studios
+  footage. Headings describe visible identity, content and presence.
+- Added `assets/branding/idlab-studio.jpg`, the unchanged 3446 × 1932 photograph
+  published on [SERHANT. ID Lab](https://serhant.com/id-lab).
+  [Original photograph](https://media-production.lp-cdn.com/media/idg64zehshth7umhf2zc).
+  It supplies the development-brand process and the branding-board backdrops.
+- The Define step reuses `assets/film/nd-brand.jpg`, the existing Jolie still
+  from the official New Development film. The complete campaign boards retain
+  their original artwork and their enlarge controls.
+- Lincoln and closing slides use the existing official concept renderings
+  `hp-2.jpg` and `hp-3.jpg`. Slow image movement is a presentation effect, not
+  newly generated development footage.
+- Transitions use two rendered slide layers, a short directional fade, and
+  staggered content reveals. The outgoing layer is inert and its videos pause.
+  Reduced-motion mode cancels slide and tab animations and image drift.

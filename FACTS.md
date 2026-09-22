@@ -7,12 +7,18 @@ exclusive, completed sellout or Holland Park outcome.
 
 ## September 22, 2026 presentation direction
 
-The 17-slide sequence translates the supplied New Development Marketing
+The 19-slide sequence translates the supplied New Development Marketing
 Services proposal into a visual story of SERHANT.'s experience, project branding,
 film production, distribution and four-phase development process. Dedicated
 Brooklyn Point and Central Park Tower penthouse boards, the six-identity wall,
 live Brooklyn Point and Quay Tower films, and New York/New Jersey case studies
 show work for other projects before the proposed Lincoln partnership.
+
+The new own-brand chapter distinguishes SERHANT.’s brokerage identity, original
+content and historical outdoor work from project branding. The development-brand
+chapter summarizes official ID Lab services with four explanatory steps; it does
+not claim these are the company’s named internal method. All original figures
+and property snapshots keep their established scopes and dates.
 
 Company and project figures are restored as visual proof. The main slides show
 **$6.5B firmwide closed sales**, **40B+ PR impressions** and **1,400+ media

@@ -682,25 +682,188 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
  .proof-metric>span,.proof-metric small{display:block}
 }
 
+/* Cinematic presentation layers, with native layouts beneath the motion. */
+@media screen {
+ .js .slide{position:absolute;inset:0}
+ .js .slide.here{z-index:2}
+ .js .slide.leaving{display:flex;z-index:1;pointer-events:none}
+ .js .deck{background:#080d1c;isolation:isolate}
+ .pitch .slide-viewport{position:relative;z-index:2}
+ .pitch.media:after{background:linear-gradient(90deg,#050b20c9,transparent 88%),linear-gradient(0deg,#050b20de,transparent 44%,#050b2040 85%)}
+ .pitch .hero-brand{font:750 clamp(70px,min(15.5vw,23dvh),245px)/.89 Inter,Arial,sans-serif;letter-spacing:-.08em;max-width:none}
+ .pitch .hero-brand span{display:block;font:400 clamp(35px,5.6vw,86px)/1.1 Instrument,Georgia,serif;letter-spacing:-.03em;margin:24px 0 0 4px;color:#c7d5ff}
+ .opening-story .pitch-copy{max-width:none}
+ .opening-story .pitch-line{font-size:clamp(17px,1.7vw,25px)}
+ .pitch .scene-control button,.pitch .pill,.deck-nav button{transition:background .25s,color .25s,border-color .25s,box-shadow .25s}
+ .pitch .pill.primary:hover{box-shadow:0 0 35px #a5baff5c}
+ .deck-nav button:hover:not(:disabled){background:#dce5ff;color:#081755;border-color:#dce5ff}
+ .pitch .tab-list button{transition:background .25s,color .25s,border-color .25s}
+ .motion-proof.media:after{background:linear-gradient(90deg,#030c2587,#030c2522),linear-gradient(0deg,#030c25ed 3%,#030c25a6 28%,#030c2533 82%,#030c2588)}
+ .motion-proof .pitch-head h2{font-size:clamp(40px,min(5.5vw,8dvh),84px);text-shadow:0 2px 30px #0005}
+ .motion-proof .proof-grid{gap:4vw;max-width:none}
+ .motion-proof .proof-metric{padding:24px 26px 26px;background:linear-gradient(120deg,#08122b7a,#08122b22);border:1px solid #eef3ff4a;border-radius:3px;backdrop-filter:blur(9px)}
+ .motion-proof .proof-metric strong{text-shadow:0 2px 24px #0208184d;font-size:clamp(70px,min(10.5vw,15dvh),166px)}
+ .motion-proof .proof-metric small{color:#d2ddf9}
+ .motion-proof .slide-body{gap:34px}
+ .brand-story-slide{background:radial-gradient(ellipse at 90% 0,#22367c 0,transparent 52%),#080e21}
+ .brand-story-slide .slide-body{display:grid;grid-template-columns:.7fr 1.3fr;gap:5vw;align-items:center}
+ .brand-story-slide .pitch-head h2{font-size:clamp(44px,min(5.8vw,8dvh),87px)}
+ .brand-story-tabs .tab-list{margin-bottom:18px}
+ .brand-story-art{margin:0;height:57dvh;position:relative;overflow:hidden;border:1px solid #bbcfff3d;box-shadow:0 35px 70px #0005;isolation:isolate}
+ .brand-story-art:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#040915f2,transparent 80%);z-index:-1}
+ .brand-story-art>img,.brand-story-art>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+ .brand-story-art .motion-toggle{position:absolute;top:16px;right:16px}
+ .brand-signature{position:absolute;top:26px;left:28px;font:800 clamp(45px,5.5vw,92px)/1 Inter,Arial,sans-serif;letter-spacing:-.075em;color:white;text-shadow:0 4px 35px #030b29aa}
+ .brand-story-art figcaption{position:absolute;left:28px;right:24px;bottom:28px}
+ .brand-story-art h3{font-size:clamp(29px,3vw,48px);line-height:1.04;max-width:20ch}
+ .brand-story-art p{font-size:13px;color:#d7e1f8;margin-top:15px;max-width:40ch;line-height:1.5}
+ .method-slide{background:radial-gradient(ellipse at 0% 0%,#dbe4fa 0,transparent 60%),#f6f5f2}
+ .method-tabs .tab-list{margin-bottom:20px}
+ .method-panel{display:grid;grid-template-columns:1.45fr 1fr;gap:5vw;align-items:center}
+ .method-art{margin:0;position:relative;height:40dvh;overflow:hidden;box-shadow:0 24px 50px #1722481f;background:#eeece5}
+ .method-art>img,.method-art>video{width:100%;height:100%;object-fit:cover}
+ .method-art.is-board img{object-fit:contain}
+ .method-art .motion-toggle{position:absolute;right:16px;top:16px}
+ .method-number{display:block;font:500 clamp(50px,7vw,105px)/1 Inter,Arial,sans-serif;letter-spacing:-.08em;color:#c1ccec;margin-bottom:18px}
+ .method-copy h3{font-size:clamp(33px,4vw,60px);line-height:1.02;max-width:16ch}
+ .method-copy p{font-size:14px;line-height:1.5;color:var(--muted);max-width:30ch;margin-top:20px}
+ .board-slide.media:after{background:linear-gradient(90deg,#060d24f5,#091b4ccc 48%,#0611278c)}
+ .board-slide .full-board{background:#eae8e1;box-shadow:0 30px 90px #0006;outline:1px solid #ffffff40}
+ .board-slide .board-copy .art-expand{color:#e0e8ff}
+ .board-slide .board-copy .pitch-line{color:#e0e8ff}
+ .board-slide .board-copy h2{max-width:16ch}
+ #identities{background:radial-gradient(ellipse at 85% 0%,#d8e0fb 0,transparent 57%),#f5f4f0}
+ .portfolio-wall{background:transparent;border:0;gap:16px}
+ .portfolio-wall figure{border:1px solid #d1d9e2;box-shadow:0 18px 34px #06142a0b;border-radius:3px}
+ .lincoln-visual .media-bg{object-position:67% center}
+ .lincoln-visual.media:after{background:linear-gradient(90deg,#06102ce8,#06102c88 58%,#06102c22),linear-gradient(0deg,#06102ccc,transparent 50%)}
+ .closing-visual .media-bg{object-position:center}
+ .closing-visual.media:after{background:linear-gradient(90deg,#041128eb,#04112875),linear-gradient(0deg,#041128de,transparent 70%)}
+ .closing-visual .pitch-wordmark{font-size:clamp(48px,10vw,155px);line-height:1.15;margin-top:32px}
+ .closing-visual .next-meeting{color:#d0dcff}
+ .here>.media-bg:is(img){animation:scene-drift 18s ease-in-out infinite alternate;transform-origin:60% 40%}
+ .motion-paused .media-bg,.motion-paused .portfolio-wall figure{animation-play-state:paused!important}
+ @keyframes scene-drift{from{transform:scale(1.015)}to{transform:scale(1.07)}}
+}
+@media screen and (max-width:1000px){
+ .brand-story-slide .slide-body{grid-template-columns:.75fr 1.25fr;gap:28px}
+ .brand-story-slide .pitch-head h2{font-size:46px}
+ .brand-story-art{height:52dvh}
+ .brand-signature{font-size:54px}
+ .brand-story-art figcaption{left:22px;right:20px;bottom:22px}
+ .brand-story-art h3{font-size:33px}
+ .method-panel{gap:28px}
+}
+@media screen and (max-width:650px){
+ .pitch .hero-brand{font-size:clamp(59px,16.8vw,109px)}
+ .pitch .hero-brand span{font-size:clamp(33px,9vw,54px);margin-top:19px}
+ .opening-story .pitch-line{font-size:16px}
+ .motion-proof .pitch-head h2{font-size:clamp(35px,10vw,49px)}
+ .motion-proof .slide-body{gap:24px}
+ .motion-proof .proof-grid{gap:12px}
+ .motion-proof .proof-metric{padding:18px 12px 20px;backdrop-filter:blur(6px)}
+ .motion-proof .proof-metric strong{font-size:clamp(35px,10.6vw,62px)}
+ .motion-proof .proof-metric>span{font-size:11px;margin-top:13px}
+ .motion-proof .proof-metric small{font-size:9px}
+ .brand-story-slide .slide-body{display:flex;gap:18px}
+ .brand-story-slide .pitch-head h2{font-size:clamp(34px,9.5vw,48px)}
+ .brand-story-slide .pitch-head h2 br{display:none}
+ .brand-story-tabs .tab-list{margin-bottom:12px}
+ .brand-story-art{height:35dvh;min-height:225px}
+ .brand-signature{font-size:51px;top:20px;left:20px}
+ .brand-story-art figcaption{left:20px;right:20px;bottom:20px}
+ .brand-story-art h3{font-size:29px;max-width:20ch}
+ .brand-story-art p{font-size:12px;margin-top:12px}
+ .method-tabs .tab-list{margin-bottom:12px}
+ .method-panel{display:block}
+ .method-art{height:23dvh;min-height:150px}
+ .method-copy{position:relative;padding-left:45px;margin-top:18px}
+ .method-number{position:absolute;left:0;top:2px;font-size:31px;margin:0}
+ .method-copy h3{font-size:29px;max-width:22ch}
+ .method-copy p{font-size:12px;max-width:35ch;margin-top:8px}
+ .board-slide .full-board{width:100%}
+ .portfolio-wall{gap:10px}
+ .closing-visual .pitch-wordmark{font-size:clamp(47px,14vw,80px);margin-top:26px}
+}
+@media screen and (max-width:650px) and (max-height:650px){
+ .motion-proof .pitch-head h2{font-size:32px}
+ .motion-proof .proof-metric{padding:14px 10px 16px}
+ .motion-proof .proof-metric strong{font-size:34px}
+ .motion-proof .proof-metric>span{font-size:10px}
+ .motion-proof .slide-body{gap:20px}
+ .brand-story-slide .pitch-head h2{font-size:31px}
+ .brand-story-slide .slide-body{gap:13px}
+ .brand-story-art{height:205px;min-height:0}
+ .brand-signature{font-size:45px;top:15px;left:17px}
+ .brand-story-art figcaption{left:17px;right:17px;bottom:17px}
+ .brand-story-art h3{font-size:25px}
+ .brand-story-art p{font-size:11px;margin-top:9px}
+ .method-art{height:118px;min-height:0}
+ .method-copy{margin-top:12px;padding-left:34px}
+ .method-number{font-size:25px}
+ .method-copy h3{font-size:24px}
+ .method-copy p{font-size:11px;margin-top:6px}
+ .method-tabs .tab-list button{font-size:9px;padding:8px 5px}
+ .portfolio-wall{gap:8px}
+ .portfolio-wall figure{min-height:68px}
+}
+@media screen and (max-height:500px) and (min-width:651px){
+ .pitch .hero-brand{font-size:80px}
+ .pitch .hero-brand span{font-size:37px;margin-top:12px}
+ .motion-proof .pitch-head h2{font-size:32px}
+ .motion-proof .slide-body{gap:18px}
+ .motion-proof .proof-metric{padding:10px 16px}
+ .motion-proof .proof-metric strong{font-size:60px}
+ .motion-proof .proof-metric>span{font-size:11px;margin-top:7px}
+ .motion-proof .proof-metric small{font-size:9px;margin-top:4px}
+ .brand-story-slide .pitch-head h2{font-size:34px}
+ .brand-story-tabs .tab-list{margin-bottom:10px}
+ .brand-story-art{height:190px}
+ .brand-signature{font-size:37px;top:12px;left:17px}
+ .brand-story-art figcaption{left:17px;right:17px;bottom:14px}
+ .brand-story-art h3{font-size:25px}
+ .brand-story-art p{font-size:11px;margin-top:8px}
+ .method-tabs .tab-list{margin-bottom:10px}
+ .method-art{height:155px}
+ .method-number{font-size:35px;margin-bottom:8px}
+ .method-copy h3{font-size:29px}
+ .method-copy p{font-size:11px;margin-top:10px}
+ .closing-visual .pitch-wordmark{font-size:53px;margin-top:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ .here>.media-bg:is(img){animation:none!important;transform:none!important}
+}
+@media print{
+ .brand-story-slide .slide-body,.method-panel{display:block}
+ .brand-story-art>img,.method-art>img{width:100%;max-height:280px;object-fit:contain}
+ .brand-story-art>video{display:none}
+ .brand-signature{font-size:70px}
+ .hero-brand span{display:block;font-size:45px}
+}
+
 </style></head><body>
 
 <a class="skip" href="#deck">Skip to presentation</a>
 <main class="deck" id="deck" tabindex="-1" aria-label="SERHANT. creative partnership pitch for Lincoln Equities Group">
-<section class="slide pitch media opening-story" id="serhant" data-t="SERHANT. New Development"><video class="media-bg" muted loop playsinline preload="none" poster="assets/campaigns/lifestyle.jpg" aria-label="Published SERHANT. development marketing reel"><source data-src="assets/campaigns/lifestyle.mp4" data-mobile="assets/campaigns/lifestyle-mobile.mp4" type="video/mp4"></video><div class="pitch-copy"><p class="eyebrow">Holland Park · A presentation for Lincoln Equities Group</p><h1>New development.<br><em>Distinctly SERHANT.</em></h1><p class="pitch-line">The experience. The creative. The reach.</p><div class="pitch-actions"><a class="pill primary" href="#momentum">Explore our work <span aria-hidden="true">→</span></a></div></div><div class="scene-control"><button class="focus-toggle" data-visual-focus aria-pressed="false">Show film only ↗</button><button class="motion-toggle" data-film>Pause motion</button></div><footer class="slide-note"><span>Published SERHANT. development marketing reel.</span><button class="source-button" data-source-note="platform">Sources</button></footer></section>
+<section class="slide pitch media opening-story" id="serhant" data-t="SERHANT. New Development"><video class="media-bg" muted loop playsinline preload="none" poster="assets/campaigns/lifestyle.jpg" aria-label="Published SERHANT. development marketing reel"><source data-src="assets/campaigns/lifestyle.mp4" data-mobile="assets/campaigns/lifestyle-mobile.mp4" type="video/mp4"></video><div class="pitch-copy"><p class="eyebrow">Holland Park · A presentation for Lincoln Equities Group</p><h1 class="hero-brand">SERHANT.<span>New development.</span></h1><p class="pitch-line">We build the brand.<br>Then bring it to the world.</p><div class="pitch-actions"><a class="pill primary" href="#momentum">Explore our work <span aria-hidden="true">→</span></a></div></div><div class="scene-control"><button class="focus-toggle" data-visual-focus aria-pressed="false">Show film only ↗</button><button class="motion-toggle" data-film>Pause motion</button></div><footer class="slide-note"><span>Published SERHANT. development marketing reel.</span><button class="source-button" data-source-note="platform">Sources</button></footer></section>
 
-<section class="slide pitch dark blue proof-slide" id="momentum" data-t="The Scale Behind the Brand"><div class="pitch-head"><div><p class="eyebrow">SERHANT. at scale</p><h2>Real estate expertise.<br><em>A powerful platform.</em></h2></div></div><div class="proof-grid"><div class="proof-metric"><strong>$6.5B</strong><span>Firmwide closed sales</span><small>2025 year to date</small></div><div class="proof-metric"><strong>10M+</strong><span>Followers across social channels</span><small>Reported June 2026</small></div></div><footer class="slide-note"><span>Company-reported · Sales: Dec. 2025 letter; followers: June 2026.</span><button class="source-button" data-source-note="company">Sources</button></footer></section>
+<section class="slide pitch media proof-slide motion-proof" id="momentum" data-t="The Scale Behind the Brand"><video class="media-bg" muted loop playsinline preload="none" poster="assets/campaigns/lifestyle.jpg" aria-label="SERHANT. development film behind the company figures"><source data-src="assets/campaigns/lifestyle.mp4" data-mobile="assets/campaigns/lifestyle-mobile.mp4" type="video/mp4"></video><div class="pitch-head"><div><p class="eyebrow">SERHANT. at scale</p><h2>The work.<br><em>The momentum.</em></h2></div></div><div class="proof-grid"><div class="proof-metric"><strong>$6.5B</strong><span>Firmwide closed sales</span><small>2025 year to date</small></div><div class="proof-metric"><strong>10M+</strong><span>Followers across social channels</span><small>Reported June 2026</small></div></div><div class="scene-control"><button class="motion-toggle" data-film>Pause motion</button></div><footer class="slide-note"><span>Company-reported · Sales: Dec. 2025; followers: June 2026. SERHANT. reel.</span><button class="source-button" data-source-note="company">Sources</button></footer></section>
 
-<section class="slide pitch media proof-slide reach-slide" id="audience" data-t="The Reach Behind the Work"><img class="media-bg" src="assets/campaigns/billboard.jpg" alt="SERHANT.’s actual historical New York outdoor brand campaign" loading="lazy"><div class="pitch-head"><div><p class="eyebrow">The brand behind the work</p><h2>Built to earn<br><em>attention.</em></h2></div></div><div class="proof-grid"><div class="proof-metric"><strong>40B+</strong><span>Reported PR impressions</span></div><div class="proof-metric"><strong>1,400+</strong><span>Media placements</span></div></div><footer class="slide-note"><span>2025 YTD · Company-reported; not unique people. Photo: 2021 brand campaign.</span><button class="source-button" data-source-note="reach">Sources</button></footer></section>
+<section class="slide pitch media proof-slide motion-proof" id="audience" data-t="The Reach Behind the Work"><video class="media-bg" muted loop playsinline preload="none" poster="assets/campaigns/production.jpg" aria-label="Published SERHANT. Studios reel behind company PR figures"><source data-src="assets/campaigns/production.mp4" data-mobile="assets/campaigns/production-mobile.mp4" type="video/mp4"></video><div class="pitch-head"><div><p class="eyebrow">The brand behind the work</p><h2>A story with<br><em>the reach to travel.</em></h2></div></div><div class="proof-grid"><div class="proof-metric"><strong>40B+</strong><span>Reported PR impressions</span></div><div class="proof-metric"><strong>1,400+</strong><span>Media placements</span></div></div><div class="scene-control"><button class="motion-toggle" data-film>Pause motion</button></div><footer class="slide-note"><span>2025 YTD · Company-reported; not unique people. Official Studios reel.</span><button class="source-button" data-source-note="reach">Sources</button></footer></section>
+
+<section class="slide pitch dark brand-story-slide" id="our-brand" data-t="How We Brand SERHANT."><div class="pitch-head"><div><p class="eyebrow">How we build the SERHANT. brand</p><h2>Built to be<br> <em>recognized.</em></h2></div></div><div class="tabs brand-story-tabs" data-tabs><div class="tab-list" role="tablist" aria-label="SERHANT. brand approach"><button id="own-tab-identity" role="tab" aria-controls="own-identity" aria-selected="true" tabindex="0">01 / Identity</button><button id="own-tab-content" role="tab" aria-controls="own-content" aria-selected="false" tabindex="-1">02 / Content</button><button id="own-tab-presence" role="tab" aria-controls="own-presence" aria-selected="false" tabindex="-1">03 / Presence</button></div><div class="brand-story-panel" id="own-identity" role="tabpanel" aria-labelledby="own-tab-identity" tabindex="0"><figure class="brand-story-art"><img src="assets/campaigns/billboard.jpg" alt="Published SERHANT. brokerage campaign" loading="lazy"><div class="brand-signature" aria-hidden="true">SERHANT.</div><figcaption><h3>An unmistakable identity.</h3><p>A bold wordmark. A confident voice.</p></figcaption></figure></div><div class="brand-story-panel" id="own-content" role="tabpanel" aria-labelledby="own-tab-content" tabindex="0" hidden><figure class="brand-story-art"><video class="" muted loop playsinline preload="none" poster="assets/campaigns/production.jpg" aria-label="SERHANT. Studios — original production"><source data-src="assets/campaigns/production.mp4" data-mobile="assets/campaigns/production-mobile.mp4" type="video/mp4"></video><button class="motion-toggle" data-film>Pause motion</button><figcaption><h3>A brand in constant motion.</h3><p>Original films. Real people. Stories worth watching.</p></figcaption></figure></div><div class="brand-story-panel" id="own-presence" role="tabpanel" aria-labelledby="own-tab-presence" tabindex="0" hidden><figure class="brand-story-art"><img src="assets/campaigns/billboard.jpg" alt="Published SERHANT. brokerage campaign" loading="lazy"><figcaption><h3>The same brand. Every touchpoint.</h3><p>From the screen to the street.</p></figcaption></figure></div></div><footer class="slide-note"><span>SERHANT. brand examples · Studios reel; historical 2021 outdoor campaign.</span><button class="source-button" data-source-note="ownbrand">Sources</button></footer></section>
+
+<section class="slide pitch tint method-slide" id="brand-method" data-t="How We Brand Developments"><div class="pitch-head"><div><p class="eyebrow">How we brand a development</p><h2>Find the story.<br><em>Build its world.</em></h2></div></div><div class="tabs method-tabs" data-tabs><div class="tab-list" role="tablist" aria-label="Development branding process"><button id="method-tab-discover" role="tab" aria-controls="method-discover" aria-selected="true" tabindex="0">01 / Discover</button><button id="method-tab-define" role="tab" aria-controls="method-define" aria-selected="false" tabindex="-1">02 / Define</button><button id="method-tab-design" role="tab" aria-controls="method-design" aria-selected="false" tabindex="-1">03 / Design</button><button id="method-tab-launch" role="tab" aria-controls="method-launch" aria-selected="false" tabindex="-1">04 / Launch</button></div><div class="method-panel" id="method-discover" role="tabpanel" aria-labelledby="method-tab-discover" tabindex="0"><figure class="method-art "><img src="assets/branding/idlab-studio.jpg" alt="Published SERHANT. creative illustrating discover" loading="lazy"></figure><div class="method-copy"><span class="method-number">01</span><h3>Start with the place.</h3><p>Architecture. Neighborhood. Future residents.</p></div></div><div class="method-panel" id="method-define" role="tabpanel" aria-labelledby="method-tab-define" tabindex="0" hidden><figure class="method-art "><img src="assets/film/nd-brand.jpg" alt="Published SERHANT. creative illustrating define" loading="lazy"></figure><div class="method-copy"><span class="method-number">02</span><h3>Give it a point of view.</h3><p>Positioning. Voice. A clear promise.</p></div></div><div class="method-panel" id="method-design" role="tabpanel" aria-labelledby="method-tab-design" tabindex="0" hidden><figure class="method-art is-board"><img src="assets/branding/brooklyn-brand.webp" alt="Published SERHANT. creative illustrating design" loading="lazy"></figure><div class="method-copy"><span class="method-number">03</span><h3>Make it unmistakable.</h3><p>Identity. Website. Every detail.</p></div></div><div class="method-panel" id="method-launch" role="tabpanel" aria-labelledby="method-tab-launch" tabindex="0" hidden><figure class="method-art "><video class="" muted loop playsinline preload="none" poster="assets/campaigns/lifestyle.jpg" aria-label="Published development marketing reel"><source data-src="assets/campaigns/lifestyle.mp4" data-mobile="assets/campaigns/lifestyle-mobile.mp4" type="video/mp4"></video><button class="motion-toggle" data-film>Pause motion</button></figure><div class="method-copy"><span class="method-number">04</span><h3>Bring the brand to life.</h3><p>Film. Content. A coordinated introduction.</p></div></div></div><footer class="slide-note"><span>Approach based on official ID Lab services · Published creative examples.</span><button class="source-button" data-source-note="brandmethod">Sources</button></footer></section>
 
 <section class="slide pitch tint" id="identities" data-t="The Brands We’ve Built"><div class="pitch-head"><div><p class="eyebrow">SERHANT. ID Lab · In-house identities</p><h2>Distinctive buildings.<br><em>Distinctive brands.</em></h2></div></div><div class="portfolio-wall"><figure><img src="assets/branding/library-logo.png" alt="The Library identity" loading="lazy"><figcaption>The Library</figcaption></figure><figure><img src="assets/branding/huxley-logo.png" alt="Huxley identity" loading="lazy"><figcaption>Huxley</figcaption></figure><figure><img src="assets/branding/westly-logo.png" alt="The Westly identity" loading="lazy"><figcaption>The Westly</figcaption></figure><figure><img src="assets/branding/huron-logo.png" alt="The Huron identity" loading="lazy"><figcaption>The Huron</figcaption></figure><figure><img src="assets/branding/iris-logo.png" alt="Iris identity" loading="lazy"><figcaption>Iris</figcaption></figure><figure><img src="assets/branding/vandam-logo.png" alt="100 Vandam identity" loading="lazy"><figcaption>100 Vandam</figcaption></figure></div><footer class="slide-note"><span>Selected in-house identities · Supplied New Development proposal.</span><button class="source-button" data-source-note="brand">Sources</button></footer></section>
 
-<section class="slide pitch tint board-slide" id="branding" data-t="Brooklyn Point."><div class="board-copy"><p class="eyebrow">SERHANT. ID Lab · Extell</p><h2>Brooklyn<br>Point.</h2><p class="pitch-line">A coordinated identity across the campaign.</p><div class="work-tokens"><span>Identity</span><span>Digital</span><span>Print</span></div><button class="art-expand" data-art="assets/branding/brooklyn-brand.webp" data-art-title="Brooklyn Point.">Explore the creative ↗</button></div><figure class="full-board"><img src="assets/branding/brooklyn-brand.webp" alt="Brooklyn Point. — published ID Lab campaign artwork" loading="lazy"></figure><footer class="slide-note"><span>Published ID Lab portfolio · Brooklyn Point development marketing.</span><button class="source-button" data-source-note="brand">Sources</button></footer></section>
+<section class="slide pitch media board-slide" id="branding" data-t="Brooklyn Point."><img class="media-bg" src="assets/branding/idlab-studio.jpg" alt="Inside SERHANT. ID Lab" loading="lazy"><div class="board-copy"><p class="eyebrow">SERHANT. ID Lab · Extell</p><h2>Brooklyn<br>Point.</h2><p class="pitch-line">A coordinated identity across the campaign.</p><div class="work-tokens"><span>Identity</span><span>Digital</span><span>Print</span></div><button class="art-expand" data-art="assets/branding/brooklyn-brand.webp" data-art-title="Brooklyn Point.">Explore the creative ↗</button></div><figure class="full-board"><img src="assets/branding/brooklyn-brand.webp" alt="Brooklyn Point. — published ID Lab campaign artwork" loading="lazy"></figure><footer class="slide-note"><span>Published ID Lab portfolio · Brooklyn Point development marketing.</span><button class="source-button" data-source-note="brand">Sources</button></footer></section>
 
 <section class="slide pitch media cinema-slide case-cinema" id="campaigns" data-t="Brooklyn Point — Brand to Film"><video class="media-bg" muted loop playsinline preload="none" poster="assets/campaigns/brooklyn.jpg" aria-label="Published Brooklyn Point commercial, cinematic lifestyle footage"><source data-src="assets/campaigns/brooklyn.mp4" data-mobile="assets/campaigns/brooklyn-mobile.mp4" type="video/mp4"></video><div class="pitch-copy"><p class="eyebrow">Brooklyn Point · Extell · New York</p><h2>From identity<br><em>to the screen.</em></h2><div class="work-tokens"><span>SERHANT. Studios</span><span>National TV commercial</span></div><div class="project-proof"><strong>100+</strong><span>Units sold · reported Dec. 2021</span></div><div class="pitch-actions"><button class="pill primary" data-film-key="brooklyn">Watch the full film ▶</button></div></div><div class="scene-control"><button class="focus-toggle" data-visual-focus aria-pressed="false">Show film only ↗</button><button class="motion-toggle" data-film>Pause motion</button></div><footer class="slide-note"><span>Historical SERHANT. reporting · Joint sales team with Extell Marketing Group.</span><button class="source-button" data-source-note="brooklyn">Sources</button></footer></section>
 
 <section class="slide pitch media cinema-slide case-cinema" id="work" data-t="Quay Tower — Film, Digital, Sales"><video class="media-bg" muted loop playsinline preload="none" poster="assets/campaigns/quay.jpg" aria-label="Cinematic waterfront and interior excerpts from the official SERHANT. Quay Tower film"><source data-src="assets/campaigns/quay.mp4" data-mobile="assets/campaigns/quay-mobile.mp4" type="video/mp4"></video><div class="pitch-copy"><p class="eyebrow">Brooklyn waterfront · RAL + Oliver’s Realty Group</p><h2>Quay<br><em>Tower.</em></h2><div class="work-tokens"><span>Project films</span><span>Website redesign</span><span>Sales marketing</span></div><div class="project-proof"><strong>126</strong><span>Condominium residences</span></div><div class="pitch-actions"><button class="pill primary" data-film-key="quay">Explore the full film ▶</button></div></div><div class="scene-control"><button class="focus-toggle" data-visual-focus aria-pressed="false">Show film only ↗</button><button class="motion-toggle" data-film>Pause motion</button></div><footer class="slide-note"><span>Official SERHANT. film · Services: 2021 letter; project size: RAL.</span><button class="source-button" data-source-note="quay">Sources</button></footer></section>
 
-<section class="slide pitch tint board-slide" id="penthouse" data-t="The One Above All Else."><div class="board-copy"><p class="eyebrow">Central Park Tower · Penthouse listing campaign</p><h2>The One<br>Above All Else.</h2><p class="pitch-line">A signature identity for a singular residence.</p><div class="work-tokens"><span>Identity</span><span>Digital</span><span>Print</span></div><button class="art-expand" data-art="assets/branding/central-park-brand.webp" data-art-title="The One Above All Else.">Explore the creative ↗</button></div><figure class="full-board"><img src="assets/branding/central-park-brand.webp" alt="The One Above All Else. — published ID Lab campaign artwork" loading="lazy"></figure><footer class="slide-note"><span>Published ID Lab portfolio · Penthouse listing scope.</span><button class="source-button" data-source-note="brand">Sources</button></footer></section>
+<section class="slide pitch media board-slide" id="penthouse" data-t="The One Above All Else."><img class="media-bg" src="assets/branding/idlab-studio.jpg" alt="Inside SERHANT. ID Lab" loading="lazy"><div class="board-copy"><p class="eyebrow">Central Park Tower · Penthouse listing campaign</p><h2>The One<br>Above All Else.</h2><p class="pitch-line">A signature identity for a singular residence.</p><div class="work-tokens"><span>Identity</span><span>Digital</span><span>Print</span></div><button class="art-expand" data-art="assets/branding/central-park-brand.webp" data-art-title="The One Above All Else.">Explore the creative ↗</button></div><figure class="full-board"><img src="assets/branding/central-park-brand.webp" alt="The One Above All Else. — published ID Lab campaign artwork" loading="lazy"></figure><footer class="slide-note"><span>Published ID Lab portfolio · Penthouse listing scope.</span><button class="source-button" data-source-note="brand">Sources</button></footer></section>
 
 <section class="slide pitch media cinema-slide case-cinema" id="new-york" data-t="200 Amsterdam — Sales & Marketing"><img class="media-bg" src="assets/projects/amsterdam.jpg" alt="200 Amsterdam — published project interior" loading="lazy"><div class="pitch-copy"><p class="eyebrow">Upper West Side · SJP Properties + Mitsui Fudosan America</p><h2>200<br><em>Amsterdam.</em></h2><p class="pitch-line">Exclusive sales &amp; marketing.</p><div class="project-proof"><strong>112</strong><span>Condominium residences</span></div></div><footer class="slide-note"><span>Project scale: SJP · Assignment: official project sales materials.</span><button class="source-button" data-source-note="amsterdam">Sources</button></footer></section>
 
@@ -712,16 +875,16 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
 
 <section class="slide pitch tint" id="process" data-t="How the Work Comes Together"><div class="pitch-head"><div><p class="eyebrow">Our development marketing approach</p><h2>From the first brief<br><em>to the final closing.</em></h2></div></div><div class="visual-process-grid"><figure><img src="assets/projects/charlie.jpg" alt="Plan — published SERHANT. work illustrating the process" loading="lazy"><figcaption><span>01</span><h3>Plan</h3><p>Market insight</p></figcaption></figure><figure><img src="assets/branding/brooklyn-brand.webp" alt="Brand — published SERHANT. work illustrating the process" loading="lazy"><figcaption><span>02</span><h3>Brand</h3><p>Identity + positioning</p></figcaption></figure><figure><img src="assets/campaigns/brooklyn.jpg" alt="Introduce — published SERHANT. work illustrating the process" loading="lazy"><figcaption><span>03</span><h3>Introduce</h3><p>Content + presale</p></figcaption></figure><figure><img src="assets/projects/jones.jpg" alt="Sell — published SERHANT. work illustrating the process" loading="lazy"><figcaption><span>04</span><h3>Sell</h3><p>On-site team + feedback</p></figcaption></figure></div><footer class="slide-note"><span>Four phases from the proposal · Published projects and creative illustrate the approach.</span><button class="source-button" data-source-note="workflow">Sources</button></footer></section>
 
-<section class="slide pitch dark blue" id="lincoln" data-t="Built Around Lincoln"><div class="pitch-copy"><p class="eyebrow">Bringing that experience to Holland Park</p><h2>Lincoln’s vision.<br><em>Our full team.</em></h2><p class="pitch-line">A distinctive brand. A coordinated launch. A partnership built around you.</p><div class="vision-words"><span>Strategy</span><span>Creative</span><span>Sales + leasing</span></div></div><footer class="slide-note"><span>Proposed partnership · Scope shaped together with Lincoln.</span><button class="source-button" data-source-note="proposal">Sources</button></footer></section>
+<section class="slide pitch media lincoln-visual" id="lincoln" data-t="Built Around Lincoln"><img class="media-bg" src="assets/renderings/hp-2.jpg" alt="Lincoln Equities Group’s published Holland Park concept" loading="lazy"><div class="pitch-copy"><p class="eyebrow">Bringing that experience to Holland Park</p><h2>Lincoln’s vision.<br><em>Our full team.</em></h2><p class="pitch-line">A distinctive brand. A coordinated launch.<br>A partnership built around you.</p><div class="vision-words"><span>Strategy</span><span>Creative</span><span>Sales + leasing</span></div></div><footer class="slide-note"><span>Proposed partnership · Lincoln’s published Holland Park concept.</span><button class="source-button" data-source-note="proposal">Sources</button></footer></section>
 
 <section class="slide pitch tint" id="experience" data-t="Holland Park — The Resident Story"><div class="pitch-head"><div><p class="eyebrow">Holland Park · Early creative possibilities</p><h2>A place.<br><em>A story of its own.</em></h2></div></div><div class="tabs resident-pitch" data-tabs><div class="tab-list" role="tablist" aria-label="Resident story concepts"><button id="resident-tab-morning" role="tab" aria-controls="resident-morning" aria-selected="true" tabindex="0">Morning</button><button id="resident-tab-day" role="tab" aria-controls="resident-day" aria-selected="false" tabindex="-1">Everyday</button><button id="resident-tab-home" role="tab" aria-controls="resident-home" aria-selected="false" tabindex="-1">Homecoming</button></div><div class="resident-panel" id="resident-morning" role="tabpanel" aria-labelledby="resident-tab-morning" tabindex="0"><img src="assets/renderings/detail-cafe.jpg" alt="Morning — detail from Lincoln’s published Holland Park concept" loading="lazy"><div><h3>A favorite corner.<br>A familiar coffee.</h3><p>Neighborhood rituals.</p></div></div><div class="resident-panel" id="resident-day" role="tabpanel" aria-labelledby="resident-tab-day" tabindex="0" hidden><img src="assets/renderings/detail-steps.jpg" alt="Everyday — detail from Lincoln’s published Holland Park concept" loading="lazy"><div><h3>Room to step out.<br>Reasons to stay.</h3><p>The public-space story.</p></div></div><div class="resident-panel" id="resident-home" role="tabpanel" aria-labelledby="resident-tab-home" tabindex="0" hidden><img src="assets/renderings/detail-station.jpg" alt="Homecoming — detail from Lincoln’s published Holland Park concept" loading="lazy"><div><h3>A connected day.<br>A welcome return.</h3><p>The arrival experience.</p></div></div></div><footer class="slide-note"><span>Illustrative story directions · Lincoln’s published concepts.</span><button class="source-button" data-source-note="holland">Sources</button></footer></section>
 
 <section class="slide pitch media" id="district" data-t="Holland Park — Your Vision"><img class="media-bg" src="assets/renderings/hp-10.jpg" alt="Published Holland Park site concept from Lincoln Equities Group" loading="lazy"><div class="pitch-copy"><p class="eyebrow">We’ve started with your published vision</p><h2>Now, tell us<br><em>what comes next.</em></h2><p class="pitch-line">The ambition. The resident. The launch.</p><div class="pitch-actions"><button class="pill" id="openNeighborhood">Explore our neighborhood research ↗</button></div></div><footer class="slide-note"><span>Holland Park · Published Lincoln concept; official-property research in appendix.</span><button class="source-button" data-source-note="holland">Sources</button></footer></section>
 
-<section class="slide pitch dark blue closing-pitch" id="conversation" data-t="The Next Conversation"><div class="pitch-copy"><p class="next-meeting">Holland Park × SERHANT.</p><h2>Your vision.<br><em>Our next conversation.</em></h2><p class="pitch-line">Let’s come back with a creative direction built around Holland Park.</p><div class="vision-words"><span>The positioning.</span><span>The brand.</span><span>The launch.</span></div><div class="pitch-wordmark">SERHANT.</div></div><footer class="slide-note"><span>An invitation to a second meeting with Lincoln.</span><button class="source-button" data-source-note="proposal">Sources</button></footer></section>
+<section class="slide pitch media closing-pitch closing-visual" id="conversation" data-t="The Next Conversation"><img class="media-bg" src="assets/renderings/hp-3.jpg" alt="Lincoln’s published Holland Park development concept" loading="lazy"><div class="pitch-copy"><p class="next-meeting">Holland Park × SERHANT.</p><h2>Let’s build<br><em>what comes next.</em></h2><p class="pitch-line">Next meeting: your vision.<br>Our first creative direction.</p><div class="pitch-wordmark">SERHANT.</div></div><footer class="slide-note"><span>An invitation to a second meeting · Lincoln’s published concept.</span><button class="source-button" data-source-note="proposal">Sources</button></footer></section>
 </main>
 
-<header class="hud"><a class="wordmark" href="#serhant" aria-label="SERHANT. — return to opening">SERHANT.</a><div class="hud-right"><span class="chapter" id="chapter">Why SERHANT.</span><span class="count" id="count">01 / 17</span><button class="menu-btn" id="menuBtn" aria-label="Open presentation contents" aria-haspopup="dialog"><span></span><span></span><span></span></button></div></header>
+<header class="hud"><a class="wordmark" href="#serhant" aria-label="SERHANT. — return to opening">SERHANT.</a><div class="hud-right"><span class="chapter" id="chapter">Why SERHANT.</span><span class="count" id="count">01 / 19</span><button class="menu-btn" id="menuBtn" aria-label="Open presentation contents" aria-haspopup="dialog"><span></span><span></span><span></span></button></div></header>
 <nav class="rail" id="rail" aria-label="Presentation sections"></nav><p class="page-position" id="pagePosition" aria-live="polite" aria-atomic="true"></p><nav class="deck-nav" aria-label="Slide navigation"><button id="prev" aria-label="Previous slide">←</button><button id="next" aria-label="Next slide">→</button></nav><div class="progress" aria-hidden="true"><i id="progress"></i></div>
 <dialog id="contents" aria-labelledby="contents-title"><div class="dialog-head"><h2 id="contents-title">The conversation</h2><button class="close-dialog" data-close aria-label="Close contents">×</button></div><div class="index-grid" id="indexGrid"></div></dialog>
 <dialog id="neighborhood" aria-labelledby="neighborhood-title">
@@ -749,15 +912,17 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
 <template id="note-charlie"><h3>Charlie at Hoboken Connect</h3><p>LCOR development. SERHANT. announced an exclusive leasing and marketing appointment in 2026. Image: LCOR’s published concept rendering. An appointment is not a claim of completed delivery or leasing results.</p><p><a href="https://www.linkedin.com/posts/serhant_big-news-for-serhant-new-development-activity-7457844683336122368-IsAm" target="_blank" rel="noopener">SERHANT. appointment ↗</a> · <a href="https://www.lcor.com/development" target="_blank" rel="noopener">LCOR project ↗</a></p><p>386 planned residences is LCOR’s published program. Project size is not an attributed sales or leasing result.</p></template>
 <template id="note-jones"><h3>One Jones Park — Jersey City</h3><p>EPIRE development. Sales launch with Patrick Southern of SERHANT. The published listing identifies him as the exclusive sales agent. The imagery is official residence photography; it is not being labeled an ID Lab branding assignment.</p><p><a href="https://serhant.com/properties/387-8th-st-unit-2d-jc-downtown-nj-us-07302-260018795" target="_blank" rel="noopener">Official SERHANT. listing ↗</a> · <a href="https://epire.nyc/it/epire-project/one-jones-park-2/" target="_blank" rel="noopener">Developer project ↗</a></p><p>75 residences is the published condominium program. Project size is not an attributed sales or leasing result.</p></template>
 <template id="note-columbus"><h3>Columbus House — Jersey City</h3><p>Norkez development at 139 Christopher Columbus Drive. Marketed by Patrick Southern of SERHANT. Imagery: official residence photography. No claim of a whole-building exclusive assignment, creative authorship, event attendance, or sellout result is made here.</p><p><a href="https://serhant.com/properties/139-christopher-columbus-dr-unit-605-jc-downtown-nj-07302-260001444" target="_blank" rel="noopener">Official SERHANT. listing ↗</a></p><p>60 homes is the published total: 50 apartments and 10 townhomes. Project size is not an attributed sales or leasing result.</p></template>
-<template id="note-platform"><h3>Built for New Development</h3><p>SERHANT.’s official New Development page describes development sales, marketing, design consulting, research, ID Lab branding, Studios production, and ADX technology services. The displayed film is the published Studios reel, illustrating broader production capability.</p><p>These services inform the proposed approach. A Holland Park engagement, team, scope, timing and budget would be agreed with Lincoln.</p><p><a href="https://serhant.com/new-development" target="_blank" rel="noopener">New Development ↗</a> · <a href="https://serhant.com/studios" target="_blank" rel="noopener">Studios ↗</a> · <a href="https://serhant.com/id-lab" target="_blank" rel="noopener">ID Lab ↗</a> · <a href="https://serhant.com/adx" target="_blank" rel="noopener">ADX ↗</a></p></template>
+<template id="note-platform"><h3>Built for New Development</h3><p>SERHANT.’s official New Development page describes development sales, marketing, design consulting, research, ID Lab branding, Studios production, and ADX technology services. The presentation uses published Studios and Development Marketing reels, illustrating broader creative capability.</p><p>These services inform the proposed approach. A Holland Park engagement, team, scope, timing and budget would be agreed with Lincoln.</p><p><a href="https://serhant.com/new-development" target="_blank" rel="noopener">New Development ↗</a> · <a href="https://serhant.com/studios" target="_blank" rel="noopener">Studios ↗</a> · <a href="https://serhant.com/id-lab" target="_blank" rel="noopener">ID Lab ↗</a> · <a href="https://serhant.com/adx" target="_blank" rel="noopener">ADX ↗</a></p><p><a href="https://serhant.com/developers" target="_blank" rel="noopener">Development Marketing reel ↗</a></p></template>
 <template id="note-outdoor"><h3>Outdoor creative — published campaign</h3><p>Actual OUTFRONT photograph of SERHANT.’s historical 2021 New York welcome campaign. This is a brokerage brand campaign, not a development-specific ad or a currently running placement. No attributed sales or reach figures are claimed.</p><p><a href="https://www.outfront.com/resources/ooh-case-studies/serhant-real-estate" target="_blank" rel="noopener">Original campaign case study ↗</a></p></template>
 <template id="note-launch"><h3>One story. Every touchpoint.</h3><p>The presentation pairs actual ID Lab portfolio artwork, the published development marketing reel, a historical outdoor campaign, and published New Development event footage. These demonstrate different channels and capabilities; they are not represented as one project’s integrated campaign.</p><p>A coordinated Holland Park launch is a proposed approach for discussion with Lincoln.</p><p><a href="https://serhant.com/developers" target="_blank" rel="noopener">Development marketing ↗</a> · <a href="https://serhant.com/new-development" target="_blank" rel="noopener">New Development film ↗</a> · <a href="https://serhant.com/id-lab" target="_blank" rel="noopener">ID Lab portfolio ↗</a></p></template>
 <template id="note-holland"><h3>Holland Park — starting with Lincoln’s vision</h3><p>Imagery comes from Lincoln Equities Group’s published Holland Park concept. The resident stories are early creative interpretations, not approved plans or confirmed retail, amenity, transit or delivery promises. We want to hear Lincoln’s current vision directly in the meeting.</p><p>The separate neighborhood appendix retains the September 21, 2026 official-property asking-rent snapshots and labeled developer/owner context. It is reference material for a later discussion.</p><p><a href="https://www.lincolnequities.com/holland-park" target="_blank" rel="noopener">Lincoln’s official project page ↗</a></p></template>
 <template id="note-proposal"><h3>A proposal for Lincoln</h3><p>This is an invitation to explore a partnership. The second meeting would develop a shared brief and initial creative direction with Lincoln. No appointment, approved campaign, project budget, or future result is implied.</p><p><a href="https://serhant.com/new-development" target="_blank" rel="noopener">SERHANT. New Development ↗</a> · <a href="https://www.lincolnequities.com/holland-park" target="_blank" rel="noopener">Lincoln’s Holland Park ↗</a></p></template>
-<template id="note-company"><h3>SERHANT. — scale and audience</h3><p>$6.5 billion is firmwide closed sales volume reported year to date in the December 2025 annual letter. It is not New Development-only volume, inventory, revenue, or a Holland Park projection.</p><p>10 million-plus followers across social channels was reported in the June 23, 2026 company announcement. It is not a count of unique individuals or a promised audience for one project.</p><p><a href="https://www.serhantannualletter2025.com/" target="_blank" rel="noopener">December 2025 annual letter ↗</a> · <a href="https://serhant.com/new/blog/serhant-expands-into-houston-dallas-austin-and-san-antonio-as-top-agents-and-independent-brokerages-bring-dollar15-billion-in-combined-sales-volume-at-launch" target="_blank" rel="noopener">June 23, 2026 announcement ↗</a></p></template>
-<template id="note-reach"><h3>SERHANT. — published media figures</h3><p>SERHANT.’s December 2025 annual letter reports more than 40 billion PR impressions across more than 1,400 placements, year to date. These company-level reported impressions include repeat exposure; they are not unique people, guaranteed project reach, or sales attributed to a campaign.</p><p>The background shows the separate, historical 2021 SERHANT. brokerage campaign photographed by OUTFRONT. The PR figures are not attributed to that outdoor campaign.</p><p><a href="https://www.serhantannualletter2025.com/" target="_blank" rel="noopener">2025 annual letter ↗</a> · <a href="https://www.outfront.com/resources/ooh-case-studies/serhant-real-estate" target="_blank" rel="noopener">OUTFRONT campaign photograph ↗</a></p></template>
+<template id="note-company"><h3>SERHANT. — scale and audience</h3><p>$6.5 billion is firmwide closed sales volume reported year to date in the December 2025 annual letter. It is not New Development-only volume, inventory, revenue, or a Holland Park projection.</p><p>10 million-plus followers across social channels was reported in the June 23, 2026 company announcement. It is not a count of unique individuals or a promised audience for one project.</p><p><a href="https://www.serhantannualletter2025.com/" target="_blank" rel="noopener">December 2025 annual letter ↗</a> · <a href="https://serhant.com/new/blog/serhant-expands-into-houston-dallas-austin-and-san-antonio-as-top-agents-and-independent-brokerages-bring-dollar15-billion-in-combined-sales-volume-at-launch" target="_blank" rel="noopener">June 23, 2026 announcement ↗</a></p><p>Background: the published SERHANT. development marketing reel. The firmwide numbers are not attributed to the projects appearing in the film. <a href="https://serhant.com/developers" target="_blank" rel="noopener">Reel source ↗</a></p></template>
+<template id="note-reach"><h3>SERHANT. — published media figures</h3><p>SERHANT.’s December 2025 annual letter reports more than 40 billion PR impressions across more than 1,400 placements, year to date. These company-level reported impressions include repeat exposure; they are not unique people, guaranteed project reach, or sales attributed to a campaign.</p><p>The moving backdrop is SERHANT.’s official Studios reel. Its production imagery illustrates the platform; the company-wide PR figures are not attributed to that reel.</p><p><a href="https://www.serhantannualletter2025.com/" target="_blank" rel="noopener">2025 annual letter ↗</a> · <a href="https://serhant.com/studios" target="_blank" rel="noopener">Studios reel ↗</a></p></template>
 <template id="note-amsterdam"><h3>200 Amsterdam — project and assignment</h3><p>SJP Properties confirms 112 residences and a joint venture with Mitsui Fudosan America. The project’s published floor plan credits SERHANT. New Development with exclusive sales and marketing. This is the project’s scale, not a count of homes sold by SERHANT.</p><p><a href="https://sjpproperties.com/portfolio/200-amsterdam/" target="_blank" rel="noopener">SJP project page ↗</a> · <a href="https://200amsterdam.com/uploads/availability/FL46%2C48.pdf" target="_blank" rel="noopener">Official project sales credit ↗</a></p></template>
 <template id="note-workflow"><h3>From the brief to the final closing</h3><p>The four phases follow the supplied New Development Marketing Services proposal: analysis and planning; branding and positioning; presale; marketing and sellout. Shown here as a proposed coordinated approach, with authentic examples from different projects and published SERHANT. footage.</p><p>Deliverables, personnel, timing, budget and any sales or leasing scope would be agreed with Lincoln. The imagery does not depict an approved Holland Park campaign.</p><p><a href="https://serhant.com/new-development" target="_blank" rel="noopener">Official New Development services ↗</a> · <a href="https://serhant.com/id-lab" target="_blank" rel="noopener">ID Lab ↗</a> · <a href="https://serhant.com/studios" target="_blank" rel="noopener">Studios ↗</a> · <a href="https://serhant.com/adx" target="_blank" rel="noopener">ADX ↗</a></p></template>
+<template id="note-ownbrand"><h3>The SERHANT. brand — identity, content and presence</h3><p>This sequence illustrates SERHANT.’s own brand through its published identity, Studios production and historical outdoor advertising. The short headings summarize the visible creative approach; they are not performance guarantees.</p><p>The outdoor image is the 2021 brokerage campaign documented by OUTFRONT. The production film is the official Studios reel. These are different examples of the brand, not a single attributed campaign.</p><p><a href="https://serhant.com/studios" target="_blank" rel="noopener">SERHANT. Studios ↗</a> · <a href="https://serhant.com/id-lab" target="_blank" rel="noopener">Official ID Lab services ↗</a> · <a href="https://www.outfront.com/resources/ooh-case-studies/serhant-real-estate" target="_blank" rel="noopener">Published outdoor campaign ↗</a></p></template>
+<template id="note-brandmethod"><h3>How we build a development brand</h3><p>This presentation summarizes ID Lab’s published services: identity development and brand guides, printed and digital collateral, and marketing across channels. The four steps are an explanatory framework for this pitch, not a claim that the company names its internal process this way.</p><p>Behind-the-scenes image: the official ID Lab page. Artwork: the published Brooklyn Point portfolio. Film: the official development marketing reel. These examples illustrate the work; they are not approved Holland Park creative.</p><p><a href="https://serhant.com/id-lab" target="_blank" rel="noopener">Official ID Lab services and portfolio ↗</a> · <a href="https://serhant.com/studios" target="_blank" rel="noopener">Studios ↗</a> · <a href="https://serhant.com/developers" target="_blank" rel="noopener">Development marketing ↗</a></p><p>The Define step uses a still of Jolie from the published New Development film. <a href="https://serhant.com/new-development" target="_blank" rel="noopener">Official New Development source ↗</a></p></template>
 <noscript><style>.tab-list,[data-film],[data-visual-focus],[data-film-key],#openMarketingFilm,.deck-nav,.rail,#menuBtn,#openNeighborhood{display:none}[role=tabpanel][hidden]{display:block!important}</style></noscript>
 
 <script>
@@ -874,8 +1039,40 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
     const tick=document.createElement('button');tick.type='button';tick.setAttribute('aria-label',`${i+1}. ${s.dataset.t}`);tick.onclick=()=>go(i);rail.append(tick);
     const item=document.createElement('button');item.type='button';const number=document.createElement('span');number.textContent=String(i+1).padStart(2,'0');item.append(number,document.createTextNode(s.dataset.t));item.onclick=()=>{contents.close();go(i,true)};indexGrid.append(item);
   });
+  // Two real slide layers cross-fade. The outgoing layer is inert and its video
+// is paused; navigation remains immediate, including rapid direction changes.
+let transitionRuns=[],transitionTimer=0,transitionGeneration=0;
+const panelRuns=new Map();
+function stopTransition(){
+  transitionGeneration++;clearTimeout(transitionTimer);
+  transitionRuns.forEach(a=>a.cancel());transitionRuns=[];
+  panelRuns.forEach(a=>a.cancel());panelRuns.clear();
+  slides.forEach(s=>s.classList.remove('leaving'));
+}
+function playTransition(from,to){
+  if(reduce.matches)return;
+  const old=slides[from],incoming=slides[to],direction=to>from?1:-1;
+  const generation=transitionGeneration;
+  old.classList.add('leaving');
+  const timing={duration:680,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'};
+  transitionRuns.push(old.animate([{opacity:1,transform:'translate3d(0,0,0)'},{opacity:0,transform:`translate3d(${-direction*34}px,0,0)`}],timing));
+  transitionRuns.push(incoming.animate([{opacity:0,transform:`translate3d(${direction*42}px,0,0)`},{opacity:1,transform:'translate3d(0,0,0)'}],timing));
+  const pieces=incoming.querySelectorAll('.pitch-copy>*,.pitch-head,.proof-metric,.board-copy>*,.full-board,.portfolio-wall,.tabs,.visual-process-grid');
+  [...pieces].filter(n=>!n.closest('[hidden]')).slice(0,8).forEach((n,k)=>{
+    transitionRuns.push(n.animate([{opacity:0,translate:'0 15px'},{opacity:1,translate:'0 0'}],{duration:660,delay:80+Math.min(k,4)*55,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
+  });
+  transitionTimer=setTimeout(()=>{if(generation===transitionGeneration)stopTransition()},1080);
+}
+function revealPanel(panel){
+  panelRuns.get(panel)?.cancel();
+  if(reduce.matches)return;
+  const run=panel.animate([{opacity:.3,translate:'0 9px'},{opacity:1,translate:'0 0'}],{duration:480,easing:'cubic-bezier(.22,1,.36,1)'});
+  panelRuns.set(panel,run);
+  run.finished.then(()=>{if(panelRuns.get(panel)===run)panelRuns.delete(panel)}).catch(()=>{});
+}
+
   function go(i,focus=false){
-    i=Math.max(0,Math.min(slides.length-1,i));setCurrent(i);fitSlide(true);
+    i=Math.max(0,Math.min(slides.length-1,i));const outgoing=current;stopTransition();setCurrent(i);fitSlide(true);if(outgoing!==i)playTransition(outgoing,i);
     if(focus){slides[i].tabIndex=-1;slides[i].focus({preventScroll:true})}
   }
   function updateFilms(){
@@ -885,12 +1082,12 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
       const play=visible&&!filmPaused&&!modalOpen()&&!document.hidden;
       if(play){if(!v.dataset.loaded){v.querySelectorAll('source[data-src]').forEach(s=>s.src=innerWidth<=760&&s.dataset.mobile?s.dataset.mobile:s.dataset.src);v.dataset.loaded='1';v.load()}const attempt=v.play();if(attempt?.catch)attempt.catch(()=>{});}else v.pause();
     });
-    document.body.classList.toggle('motion-paused',filmPaused);
+    document.body.classList.toggle('motion-paused',filmPaused||document.hidden||modalOpen());
     document.querySelectorAll('[data-film]').forEach(b=>{b.textContent=filmPaused?'Play motion':'Pause motion';b.setAttribute('aria-pressed',String(!filmPaused))});
   }
   function animateNumbers(slide){slide.querySelectorAll('[data-number]').forEach(n=>{if(n.dataset.animated||reduce.matches)return;n.dataset.animated='true';const target=Number(n.dataset.number),decimals=Number.isInteger(target)?0:1,prefix=n.dataset.prefix||'',suffix=n.dataset.suffix||'';let start;function tick(t){if(start===undefined)start=t;const k=Math.min((t-start)/850,1);n.textContent=prefix+(target*(1-Math.pow(1-k,3))).toFixed(decimals)+suffix;if(k<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)})}
   function setCurrent(i){current=i;animateNumbers(slides[i]);slides.forEach((s,k)=>{s.classList.toggle('here',k===i);s.inert=k!==i;s.setAttribute('aria-hidden',String(k!==i))});[...rail.children].forEach((b,k)=>b.setAttribute('aria-current',String(k===i)));document.getElementById('chapter').textContent=slides[i].dataset.t;document.getElementById('count').textContent=`${String(i+1).padStart(2,'0')} / ${slides.length}`;document.getElementById('progress').style.width=`${(i+1)/slides.length*100}%`;document.body.classList.toggle('on-dark',slides[i].classList.contains('dark')||slides[i].classList.contains('media'));prev.disabled=i===0;next.disabled=i===slides.length-1;updateFilms()}
-  addEventListener('resize',()=>{scheduleFit();if(map)map.invalidateSize()});
+  addEventListener('resize',()=>{stopTransition();scheduleFit();if(map)map.invalidateSize()});
   prev.onclick=()=>advance(-1);next.onclick=()=>advance(1);
   document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const target=document.getElementById(a.hash.slice(1));if(!target)return;if(target===deck){e.preventDefault();deck.focus();return}const i=slides.indexOf(target);if(i<0)return;e.preventDefault();history.pushState(null,'',a.hash);go(i,true)}));
   function followHash(){const aliases={'#holland-park':'#district','#creative':'#capabilities','#quay':'#work'},hash=aliases[location.hash]||location.hash;const i=slides.findIndex(s=>'#'+s.id===hash);if(i>=0)go(i)}
@@ -930,7 +1127,7 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
   document.querySelectorAll('[data-visual-focus]').forEach(b=>b.onclick=()=>{const slide=b.closest('.slide'),on=slide.classList.toggle('visual-focus');slide.querySelectorAll('[data-visual-focus]').forEach(t=>{t.setAttribute('aria-pressed',String(on));t.textContent=on?'Show talking points ↙':'Show film only ↗'});scheduleFit()});
   dialogs.forEach(d=>{d.querySelector('[data-close]').onclick=()=>d.close();d.addEventListener('close',updateFilms);d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}})});
   document.querySelectorAll('[data-film]').forEach(b=>b.onclick=()=>{filmPaused=!filmPaused;updateFilms()});
-  reduce.addEventListener('change',()=>{filmPaused=reduce.matches;updateFilms()});document.addEventListener('visibilitychange',updateFilms);
+  reduce.addEventListener('change',()=>{stopTransition();filmPaused=reduce.matches;updateFilms()});document.addEventListener('visibilitychange',updateFilms);
   addEventListener('keydown',e=>{
     if(e.metaKey||e.ctrlKey||e.altKey||modalOpen()||e.target.closest(interactive))return;
     const k=e.key;
@@ -944,7 +1141,7 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
     const tabs=[...group.querySelectorAll('[role=tab]')];
     const activate=(tab,focus)=>{tabs.forEach(t=>{const active=t===tab;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!active});const panel=document.getElementById(tab.getAttribute('aria-controls'));
       if(panel.dataset.note){const foot=group.closest('.slide').querySelector('.slide-note');foot.querySelector('[data-source-note]').dataset.sourceNote=panel.dataset.note;foot.querySelector('span').textContent=panel.dataset.credit}
-      if(focus)tab.focus();fitSlide(true);updateFilms()};
+      if(focus)tab.focus();fitSlide(true);updateFilms();revealPanel(panel)};
     tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activate(tab,false));tab.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();e.stopPropagation();activate(tabs[n],true)})});
   });
   // Research is an optional appendix so the main presentation leads with the partnership.
