@@ -185,3 +185,21 @@ Updated September 22, 2026:
   versions, frame-derived posters, and faststart metadata. Their attribution is
   the [official New Development page](https://serhant.com/new-development).
   [Original film](https://res.cloudinary.com/luxuryp/videos/f_mp4,vc_h264,w_1920,c_limit/xjwd9qi9xhw39dev6mjt/newdevfilmfinal.mp4).
+
+
+## Delivery journey, distinct from brand creation
+
+Updated September 22, 2026:
+
+- The later process chapter is now **From Strategy to Sales**: Plan, Align,
+  Launch and Sell. Its labels summarize the proposed coordination of services,
+  rather than repeating the earlier ID Lab identity-creation steps.
+- Plan uses the existing official New Development site-visit still,
+  `assets/film/nd-site.jpg` (1280 × 720).
+- Align uses `assets/campaigns/development-production.jpg`, a new unretouched
+  1920 × 1080 frame at 00:48.4 from the original official
+  [New Development film](https://serhant.com/new-development).
+  It shows a camera operator in the film’s production sequence. The image
+  illustrates production capability; it does not identify a named assignment.
+- The repeated ID Lab studio photograph and Brooklyn Point brand board have
+  been removed from this chapter. Source notes remain at the bottom.
