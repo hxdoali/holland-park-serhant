@@ -1,6 +1,7 @@
 # Holland Park × SERHANT.
 
-A cinematic, 19-slide first conversation for Lincoln Equities Group.
+A cinematic first conversation for Lincoln Equities Group: 19 chapters, with
+34 presenter-controlled talking points.
 
 Live: https://hxdoali.github.io/holland-park-serhant/
 
@@ -59,8 +60,8 @@ Branding includes two original 3456-pixel ID Lab portfolio boards, each on a
 dedicated slide with an enlarged detail view, and a separate wall of six original
 logo extracts from page 3 of the supplied New Development Marketing Proposal.
 The four-phase process translates the proposal’s planning, positioning, presale
-and sellout framework into a short visual sequence. The original artwork remains
-unchanged; embedded historical campaign language is not a current factual claim.
+and sellout framework into a sequence that builds one stage per press.
+The original artwork remains unchanged; embedded historical campaign language is not a current factual claim.
 See [MEDIA.md](MEDIA.md) for asset provenance and [FACTS.md](FACTS.md) for scope.
 All campaign footage and artwork are real published or supplied materials.
 
@@ -70,8 +71,16 @@ All campaign footage and artwork are real published or supplied materials.
   tab changes. Rapid navigation cancels earlier transitions. Reduced motion
   switches instantly and disables background drift. Hidden slide layers remain
   inert and their footage pauses.
-- Screen-sized slides, with previous/next buttons, arrow keys, space and
-  horizontal swipes. Each concise chapter is designed for one screen.
+- Next/previous, arrow keys, space, Page Down/Page Up and horizontal swipes
+  follow all 34 talking points, including branding tabs, New Jersey assignments,
+  campaign channels, the four process stages and resident stories. Reverse
+  navigation returns to the preceding example. Nothing advances on a timer.
+- A desktop “Up next” cue names the upcoming point. The counter and progress
+  bar follow the complete sequence. The chapter menu returns to the first
+  point of the selected section; direct tab selection updates the sequence.
+- Full-screen property and concept backgrounds follow the selected example.
+  Branding artwork stays intact, and the identity wall sits in the ID Lab studio.
+  Each talking point is designed to fit one screen without scrolling.
 - Tabs support arrow keys, Home and End, with one selected tab stop.
 - Sources and artwork enlargement open native dialogs; Escape closes them.
 - Visual-focus buttons hide the talking points while film and controls remain.
@@ -95,10 +104,14 @@ Full films stream from their original publishers and require a connection.
 
 ## Verification
 
-The September 22 visual revision passed 288 slide and tab states across eight
-desktop, tablet, phone and landscape sizes, including 320×568 and 844×390.
+The September 22 presenter-flow revision passed 320 slide and tab states
+across eight desktop, tablet, phone and landscape sizes, including 320×568
+and 844×390.
 No rendered-text overflow, continuation pages or browser errors were found.
-The checks cover source-footer separation, tab changes, sources and navigation.
+The checks cover source-footer separation, tab changes, sources and every
+forward/backward step at each size. Dedicated flow checks cover clicker keys
+after button/dialog interaction, chapter jumps, touch input, matching source
+credits, active-scene playback and reduced motion.
 
 Actual motion tests passed at 1440×900, 390×844 and 320×568: layered transitions,
 rapid direction changes, one accessible active slide, video pause/resume,
