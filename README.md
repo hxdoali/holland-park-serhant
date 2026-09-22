@@ -33,6 +33,12 @@ off as current. See [FACTS.md](FACTS.md) and the presentation's source links.
 ## Controls and accessibility
 
 - Scroll through the presentation; taller sections expand to fit their content.
+- Phones, tablets and touch screens use normal scrolling without forced slide snapping.
+- Safe-area padding and 44-pixel navigation controls accommodate phone screens.
+- The neighborhood dialog starts with six clearly labeled rent cards. Each opens
+  unit/plan details above the map on phones, with a return-to-overview button.
+- Rent cards distinguish monthly totals from advertised starting rent; the
+  three Hudson House listings link to property-supplied RentCafe snapshots.
 - Left/right arrows or Page Up/Page Down move between sections.
 - Up/down arrows and space retain native scrolling.
 - The contents button or M key opens the index. Escape closes native dialogs.
@@ -82,3 +88,8 @@ groups, keyboard navigation, dialogs, cinema cleanup and lazy loading, reduced m
 map error fallback, and seven markers using the actual Leaflet library under
 jsdom. The computer-use browser runtime failed to start, so these checks are not
 a substitute for visual browser/device inspection.
+
+The mobile/rent revision additionally checks all six numeric rent cards, source
+and fee labels, detail/overview focus, popup prices, and interaction under eight
+viewport configurations from 320 to 820 pixels. These are DOM checks with mocked
+geometry, not screenshots or rendered layout tests.

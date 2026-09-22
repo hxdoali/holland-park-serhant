@@ -77,7 +77,7 @@ exclusive, completed sellout or Holland Park outcome.
   parcel identifier and acreage. This is not independent title evidence.
 - [City plan resource](https://data.jerseycitynj.gov/explore/assets/jersey-avenue-light-rail-redevelopment-plan/): planning context. Current program, entitlements,
   public-space and station arrangements remain topics for Lincoln.
-- [Hudson House acquisition release](https://www.prnewswire.com/news-releases/strategic-value-partners-oneim-rxr-and-columbia-property-trust-acquire-and-recapitalize-hudson-house-an-829-unit-multifamily-portfolio-in-jersey-city-nj-302455079.html): historical acquisition/recapitalization context for Radio Lofts, Hudson House East and West. Numeric rents could not be refreshed from the [official availability page](https://www.hudsonhouselofts.com/floor-plans/) and have been removed.
+- [Hudson House acquisition release](https://www.prnewswire.com/news-releases/strategic-value-partners-oneim-rxr-and-columbia-property-trust-acquire-and-recapitalize-hudson-house-an-829-unit-multifamily-portfolio-in-jersey-city-nj-302455079.html): historical acquisition/recapitalization context for Radio Lofts, Hudson House East and West. The [official availability page](https://www.hudsonhouselofts.com/floor-plans/) publishes leasing terms but its dynamic numeric feed could not be independently retrieved. The pitch uses the separate property-supplied RentCafe unit rows below, clearly labeled as published monthly totals, not verified base rents or concession-adjusted headline prices.
 - [Greystone developer announcement](https://www.greystone.com/news/greystone-arranges-30-million-construction-loan-for-the-manhattan-building-companys-80-unit-multifamily-development-in-jersey-city-nj/): original Manhattan Building Company role at Soho and Cast Iron Lofts.
 - [Soho official leasing page](https://verisresidential.com/jersey-city-nj-apartments/soho-lofts/): headline asking rents and amenities checked September 21. This does not establish legal ownership or an all-in monthly cost.
 - [Cast Iron CIL2_05L](https://castironlofts.com/floorplans/cil2_05l/): direct page's base and total monthly figures checked September 21. Cached search text showed older prices; the direct page supplied the snapshot.
@@ -93,3 +93,25 @@ averages or a proposed Holland Park rent schedule. Recheck before later meetings
 See [MEDIA.md](MEDIA.md) for the published ads, film sources, excerpt intervals
 and visual credits added to the pitch. Campaign examples distinguish project
 marketing, general production capability and the historical brokerage billboard.
+
+
+## Rent snapshot clarity — September 21, 2026
+
+All six overview cards show a published one-bedroom example with its fee basis.
+The three Hudson House sources below are property listings on RentCafe, which
+identifies Greystar as manager and describes the figures as property-supplied.
+These are listing snapshots checked on this date, not a live connection or an
+independent quote from the official Hudson House leasing feed. Search indexes
+and individual listing pages can differ; selected unit rows are used instead of
+conflicting headline minima. No concession calculation is made.
+
+- [Radio Lofts RentCafe listing](https://www.rentcafe.com/apartments/nj/jersey-city/radio-lofts-at-hudson-house/default.aspx): unit-row monthly totals: studio R519 $3,255–3,260; 1 bed R216 $4,220–4,225; 2 beds R317 $6,305–6,310; 3 beds R418 $9,510–9,515.
+- [Hudson House East RentCafe listing](https://www.rentcafe.com/apartments/nj/jersey-city/hudson-house-lofts/default.aspx): studio + flex 2215 $3,635–3,645; 1 bed 0912 $4,428–4,438; 2 beds + flex 1707 $5,578–5,588; 3 beds 0904 $7,905–7,915. All are unit-row monthly totals.
+- [Hudson House West RentCafe listing](https://www.rentcafe.com/apartments/nj/jersey-city/hudson-house-west/default.aspx): studio W0302 $3,865–3,870; 1 bed W0903 $4,700–4,705; 2 beds W1405 $6,510–6,515; 3 beds W1012 $7,865–7,870. The listing's headline figures differ from its unit totals; the presentation uses the explicitly labeled unit totals only.
+- Soho overview: 1 bed advertised from $3,305+, from the official Veris page. This is not an all-in monthly total. Detailed studio/1/2/3-bed headlines remain $3,175+ / $3,305+ / $4,380+ / $5,390+.
+- Cast Iron overview: CIL2_05L published monthly total $3,620.14–3,845.14; base $3,613–3,838. Re-fetched directly September 21; search-cache figures were older and higher.
+- Embankment overview: E-A1 monthly total $3,408; base $3,315; published 12-month term.
+
+Variable, optional and one-time costs can be additional. These selected units
+and plans are not building-wide minima or a market-average comparison. All
+developer/owner context remains separate from rental-source information.

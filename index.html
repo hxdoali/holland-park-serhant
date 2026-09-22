@@ -45,6 +45,124 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
 @media print{.campaign-tools,.production-controls,.case-watch,.cinema-choices{display:none}.campaign-panel[hidden]{display:block!important;margin-top:35px}.campaign-stage{height:auto;min-height:400px}.campaign-media{position:relative;height:280px;object-fit:contain}.campaign-shade{display:none}.campaign-kind,.campaign-copy,.campaign-credit{position:static;width:auto;max-width:none;padding:15px;color:white!important}.campaign-copy{opacity:1!important;visibility:visible!important}.campaign-showcase{background:#131826!important}.production-copy{opacity:1!important;visibility:visible!important}.process-film{display:none}.visual-process{display:block}.campaign-process .process-panel{margin-top:25px}}
 
 .campaign-kind{background:#091327c4;padding:8px 12px;border-radius:3px;max-width:60%}@media(max-width:760px){.campaign-kind{background:transparent;padding:22px 22px 0;max-width:none}}
+
+/* Rent snapshots and comfortable phone/tablet reading. */
+@media screen {
+ .slide,.hud{padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right))}
+ .hud{padding-top:calc(18px + env(safe-area-inset-top))}
+ .deck-nav{right:max(var(--gut),env(safe-area-inset-right));bottom:calc(14px + env(safe-area-inset-bottom))}
+ .deck-nav button{width:44px;height:44px}
+ .slide{padding-top:calc(100px + env(safe-area-inset-top));padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+ .film-control{top:calc(84px + env(safe-area-inset-top));min-height:44px}
+ .focus-toggle,.motion-toggle,.source-button,.text-link{min-height:44px}
+ .text-link{display:inline-flex;align-items:center}
+ dialog{overscroll-behavior:contain;max-height:calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom));overflow-x:hidden;scroll-padding-top:110px}
+ .dialog-head>*,.map-layout>*,.rent-overview,.rent-card-name{min-width:0}
+ .dialog-head h2{overflow-wrap:anywhere}
+ .rent-overview .eyebrow{margin-bottom:10px;color:var(--navy)}
+ .rent-overview h3{font-size:38px;line-height:1.1}
+ .rent-overview>p:last-child{font-size:13px;color:var(--muted);max-width:95ch;margin-top:14px;line-height:1.7}
+ .map-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0 32px}
+ .map-choices button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border-radius:8px;padding:20px;min-width:0;line-height:1.5;box-shadow:0 3px 14px #13182605}
+ .map-choices button:hover{border-color:var(--navy)}
+ .rent-card-name{font-size:14px;font-weight:650}
+ .rent-card-address{font-size:11px;margin-top:4px;opacity:.75}
+ .rent-card-scope{font-size:11px;margin-top:18px}
+ .rent-card-price{font-size:clamp(20px,2.1vw,27px);line-height:1.25;letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin:5px 0;overflow-wrap:anywhere}
+ .rent-card-basis{font-size:11px;opacity:.8}
+ .rent-card-link{font-size:11px;margin-top:17px;text-decoration:underline;text-underline-offset:3px}
+ .map-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start;gap:32px}
+ .property-detail{padding:24px;border:1px solid var(--line);border-radius:8px;min-width:0;scroll-margin-top:110px}
+ .property-detail h3{font-size:34px;line-height:1.1}
+ .property-detail .address{font-size:12px}
+ .rent-highlight{padding:19px 0 16px;border-bottom:1px solid var(--line)}
+ .rent-highlight span{display:block}
+ .rent-kind{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--navy);font-weight:650}
+ .rent-highlight strong{display:block;font-size:clamp(25px,3vw,37px);font-weight:650;letter-spacing:-.04em;line-height:1.2;margin:9px 0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+ .rent-scope{font-size:12px;color:var(--muted)}
+ .property-detail .rent-date{font-size:11px;line-height:1.7}
+ .rent-section-title{font:650 12px/1.5 Inter,Arial,sans-serif;margin:24px 0 0}
+ .rents{margin:12px 0 16px}
+ .rents div{gap:6px 14px;flex-wrap:wrap}
+ .rents dt{font-size:12px}
+ .rents dd{font-size:16px;font-variant-numeric:tabular-nums;white-space:normal;overflow-wrap:anywhere}
+ .property-detail .rent-basis{font-size:12px;line-height:1.75}
+ .rent-links{gap:8px 18px;margin-top:14px}
+ .rent-links a,.street-link,.ownership summary,.ownership>a{display:inline-flex;align-items:center;min-height:44px;line-height:1.6}
+ .ownership summary{display:list-item;padding:12px 0}
+ .ownership{padding-top:6px;border-top:1px solid var(--line)}
+ .back-to-rents{display:block;background:none;border:0;border-top:1px solid var(--line);width:100%;text-align:left;min-height:44px;font-size:12px;margin-top:18px;padding:14px 0 0;color:var(--navy)}
+ .map-heading{font-size:27px;line-height:1.2;margin-bottom:16px}
+ .map{border-radius:8px;max-width:100%}
+ .map-reset,.map-rent-link{min-height:44px}
+ .map-rent-link{font:600 12px Inter,Arial,sans-serif;background:transparent;color:var(--navy);border:0;text-decoration:underline;padding:8px 0}
+ .leaflet-popup-content p{font-size:12px;margin:8px 0}
+}
+@media screen and (max-width:1000px),screen and (pointer:coarse){
+ .deck{scroll-snap-type:none}
+ .slide{scroll-snap-stop:normal}
+ .rail{display:none}
+ .js .rv{opacity:1;transform:none;transition:none}
+}
+@media screen and (max-width:1000px){
+ .map-layout{grid-template-columns:minmax(0,1fr)}
+ .map-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .map-pane{margin-top:4px}
+}
+@media screen and (max-width:760px){
+ .slide{min-height:100svh}
+ .production-controls{position:static;order:-1;flex-wrap:wrap;margin-bottom:24px;align-self:flex-start}
+ .production-copy{padding-top:0}
+ .production-copy h2{font-size:clamp(48px,14vw,92px)}
+ .production-credit{position:static;max-width:none;margin-top:28px;font-size:11px}
+ .production-showcase.visual-focus .production-copy{visibility:hidden}
+ .campaign-tools{gap:8px}
+ .campaign-tools button{max-width:100%}
+ .case-evidence summary{min-height:44px;padding:12px 0}
+ .campaign-credit,.hero-credit{font-size:11px}
+ .campaign-kind{font-size:10px}
+ .campaign-browser .tab-list button,.cinema-choices button{font-size:11px;min-height:44px}
+ .campaign-media{aspect-ratio:16/9}
+ .map-choices button{padding:17px}
+ .rent-card-price{font-size:25px}
+ .rent-overview h3{font-size:32px}
+ .property-detail{padding:20px}
+ .property-detail h3{font-size:31px}
+ .rent-highlight strong{font-size:31px}
+ .map-caption{font-size:12px}
+}
+@media screen and (max-width:540px){
+ dialog,#marketing-film{width:calc(100% - 16px - env(safe-area-inset-left) - env(safe-area-inset-right));max-height:calc(100dvh - 16px - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
+ .dialog-head{padding:16px;gap:12px;align-items:flex-start}
+ .dialog-head h2,#marketing-film .dialog-head h2{font-size:26px;line-height:1.1;align-self:center}
+ .neighborhood-body{padding:20px 16px}
+ .map-choices{grid-template-columns:minmax(0,1fr);gap:10px}
+ .map-choices button{padding:18px 20px}
+ .rent-card-price{font-size:28px}
+ .rent-card-scope{margin-top:12px}
+ .rent-card-link{margin-top:12px}
+ .rent-card-name{font-size:16px}
+ .rent-card-basis,.rent-card-address,.rent-card-scope{font-size:12px}
+ .property-detail{padding:18px}
+ .rent-highlight strong{font-size:clamp(24px,7.4vw,33px)}
+ .rents div{display:block;padding:12px 0}
+ .rents dd{margin-top:5px;font-size:18px}
+ .campaign-kind,.campaign-copy,.campaign-tools,.campaign-credit{padding-left:18px;padding-right:18px}
+ .map{height:320px}
+ .cinema-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .cinema-choices button{border-radius:5px;line-height:1.5}
+ .production-steps{font-size:11px}
+}
+@media screen and (max-width:360px){
+ .stat strong{font-size:48px}
+ .case-metrics{gap:12px}
+ .case-metrics strong{font-size:31px}
+ .campaign-heading h2,.campaign-process h2{font-size:38px}
+ .production-controls button{font-size:11px}
+}
+@media screen and (min-width:541px) and (max-width:650px){
+ .rent-card-price{font-size:20px}
+}
 </style></head><body>
 
 <a class="skip" href="#deck">Skip to presentation</a>
@@ -162,7 +280,7 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
 </section>
 
 <section class="slide" id="district" data-t="What This Tells Us">
-  <div class="district-grid"><div><div class="eyebrow rv">12 · What this tells us</div><h2 class="rv d1">A rich neighborhood.<br><em>A new story to tell.</em></h2><div class="insights rv d2"><article class="insight"><h3>Start with a sense of place.</h3><p>The surrounding lofts and residential communities give us a specific neighborhood to introduce.</p></article><article class="insight"><h3>Make the everyday compelling.</h3><p>Public space, hospitality and connection offer inviting themes to explore with Lincoln.</p></article><article class="insight"><h3>Give Holland Park its own identity.</h3><p>Our opportunity is to express Lincoln’s vision in a way that feels distinctive, welcoming and full of possibility.</p></article></div></div><div class="rv d2"><img class="district-photo" src="assets/renderings/hp-9.jpg" alt="Holland Park’s published concept map of its surrounding neighborhood" loading="lazy"><p class="source">Published project map · Conceptual context; walking radii and future connections are not independently verified.</p><div class="actions"><button class="pill" type="button" id="openNeighborhood">Explore the neighborhood research <span aria-hidden="true">↗</span></button></div></div></div>
+  <div class="district-grid"><div><div class="eyebrow rv">12 · What this tells us</div><h2 class="rv d1">A rich neighborhood.<br><em>A new story to tell.</em></h2><div class="insights rv d2"><article class="insight"><h3>Start with a sense of place.</h3><p>The surrounding lofts and residential communities give us a specific neighborhood to introduce.</p></article><article class="insight"><h3>Make the everyday compelling.</h3><p>Public space, hospitality and connection offer inviting themes to explore with Lincoln.</p></article><article class="insight"><h3>Give Holland Park its own identity.</h3><p>Our opportunity is to express Lincoln’s vision in a way that feels distinctive, welcoming and full of possibility.</p></article></div></div><div class="rv d2"><img class="district-photo" src="assets/renderings/hp-9.jpg" alt="Holland Park’s published concept map of its surrounding neighborhood" loading="lazy"><p class="source">Published project map · Conceptual context; walking radii and future connections are not independently verified.</p><div class="actions"><button class="pill" type="button" id="openNeighborhood">See all six rent snapshots &amp; map <span aria-hidden="true">↗</span></button></div></div></div>
   <p class="source rv d3">Our interpretation for discussion. The research appendix includes six nearby properties, source-linked developer/owner context and dated published asking-rent examples.</p>
 </section>
 
@@ -176,11 +294,22 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
 <header class="hud"><a class="wordmark" href="#serhant" aria-label="SERHANT. — return to opening">SERHANT.</a><div class="hud-right"><span class="chapter" id="chapter">Why SERHANT.</span><span class="count" id="count">01 / 14</span><button class="menu-btn" id="menuBtn" aria-label="Open presentation contents" aria-haspopup="dialog"><span></span><span></span><span></span></button></div></header>
 <nav class="rail" id="rail" aria-label="Presentation sections"></nav><nav class="deck-nav" aria-label="Slide navigation"><button id="prev" aria-label="Previous slide">↑</button><button id="next" aria-label="Next slide">↓</button></nav><div class="progress" aria-hidden="true"><i id="progress"></i></div>
 <dialog id="contents" aria-labelledby="contents-title"><div class="dialog-head"><h2 id="contents-title">The conversation</h2><button class="close-dialog" data-close aria-label="Close contents">×</button></div><div class="index-grid" id="indexGrid"></div></dialog>
-<dialog id="neighborhood" aria-labelledby="neighborhood-title"><div class="dialog-head"><h2 id="neighborhood-title">Holland Park &amp; its neighbors</h2><button class="close-dialog" data-close aria-label="Close neighborhood research">×</button></div><div class="neighborhood-body"><div class="map-layout"><div class="map-pane"><div class="map" id="district-map" role="region" aria-label="Map of Holland Park and six nearby residential properties"><p class="map-prompt">Loading the neighborhood map…</p></div><button class="map-reset" id="resetMap">Recenter on Holland Park ↺</button><p class="map-caption">Gold marks Holland Park’s approximate site. Blue marks the six selected properties. Pins show neighborhood locations, not surveyed boundaries or entrances.</p><p class="map-caption" role="status" id="mapStatus"></p></div><div><div class="map-choices" id="mapChoices" aria-label="Choose a nearby property"></div><div class="property-detail" id="propertyDetail" aria-live="polite"></div></div></div><p class="source">Monthly USD asking rents, not achieved rents or a valuation of Holland Park. Dates and fee bases are shown for each property. Availability, fees, terms and concessions can change. Developer, acquisition and leasing roles are distinguished; historical announcements do not independently establish current legal title.</p></div></dialog>
+<dialog id="neighborhood" aria-labelledby="neighborhood-title">
+ <div class="dialog-head"><h2 id="neighborhood-title">Holland Park &amp; its neighbors</h2><button class="close-dialog" data-close aria-label="Close neighborhood research">×</button></div>
+ <div class="neighborhood-body">
+  <div class="rent-overview"><p class="eyebrow">The neighborhood, at a glance</p><h3>Published rents, in one place.</h3><p id="rentOverviewNote">Selected one-bedroom examples · Checked September 21, 2026. Fee bases differ: five cards show published monthly totals; Soho shows advertised starting rent. Select a building for more layouts, source links and developer context.</p></div>
+  <div class="map-choices" id="mapChoices" role="group" aria-label="Choose a nearby property and view its rents" aria-describedby="rentOverviewNote"></div>
+  <div class="map-layout">
+   <div class="property-detail" id="propertyDetail" aria-live="polite" aria-atomic="true"></div>
+   <div class="map-pane"><h3 class="map-heading">Around Holland Park</h3><div class="map" id="district-map" role="region" aria-label="Map of Holland Park and six nearby residential properties"><p class="map-prompt">Loading the neighborhood map…</p></div><button class="map-reset" id="resetMap">Recenter on Holland Park ↺</button><p class="map-caption">Gold marks Holland Park’s approximate site. Blue marks the six selected properties. Pins show neighborhood locations, not surveyed boundaries or entrances.</p><p class="map-caption" role="status" id="mapStatus"></p></div>
+  </div>
+  <p class="source">Monthly USD snapshots of published asking prices. These are selected listings, not a complete inventory, achieved rents or a valuation of Holland Park. Availability, fees, terms and concessions can change. Developer, acquisition and leasing roles are distinguished; historical announcements do not independently establish current legal title.</p>
+ </div>
+</dialog>
 <dialog id="evidence" aria-labelledby="evidence-title"><div class="dialog-head"><h2 id="evidence-title">Sources behind the story</h2><button class="close-dialog" data-close aria-label="Close fact-check notes">×</button></div><div class="evidence-body"><p class="evidence-date">Reviewed September 21, 2026</p>
 <h3>Company numbers</h3><ul><li><b>$6.5B</b> — firmwide closed sales volume, year to date as reported in December 2025.</li><li><b>200%</b> — New Development growth reported for 2025; the letter does not specify the underlying growth measure.</li><li><b>40B+ / 1,400+</b> — reported PR impressions and placements in 2025 YTD. Impressions are not unique people.</li><li><b>10M+</b> — social followers reported in SERHANT.’s June 23, 2026 announcement.</li></ul><p><a href="https://www.serhantannualletter2025.com/" target="_blank" rel="noopener">2025 annual letter ↗</a> · <a href="https://serhant.com/new/blog/serhant-expands-into-houston-dallas-austin-and-san-antonio-as-top-agents-and-independent-brokerages-bring-dollar15-billion-in-combined-sales-volume-at-launch" target="_blank" rel="noopener">June 2026 company announcement ↗</a></p>
 <h3>Project numbers</h3><p>Charlie’s 386 homes and 14,900 SF of amenities come from LCOR’s planned program. One Jones Park’s 75 homes and Columbus House’s 60-home mix are published in SERHANT.’s listing material. The case panels link to the supporting pages and marketing examples.</p><p>Brooklyn Point’s 100-plus unit sales are historical company reporting from December 2021. Quay Tower’s 90%-plus sold milestone is the developers’ September 2024 cumulative project status. 200 Amsterdam’s 112 residences are confirmed by SJP Properties. None of these figures represents a promised Holland Park result.</p>
-<h3>What we have kept out</h3><p>Unexplained traffic-uplift figures from older sales collateral; conflicting Brooklyn Point unit totals; unverified current Hudson House rents; a Holland Park unit count, final entitlement or delivery date; and claims that every sale or creative asset was delivered by SERHANT. alone.</p><p>Nearby-building research is market context. Those six properties are not presented as SERHANT. development assignments. Historical developer announcements are not an independent confirmation of current legal ownership.</p></div></dialog>
+<h3>What we have kept out</h3><p>Unexplained traffic-uplift figures from older sales collateral; conflicting Brooklyn Point unit totals; unverified Hudson House base rents and concession calculations; a Holland Park unit count, final entitlement or delivery date; and claims that every sale or creative asset was delivered by SERHANT. alone.</p><p>Nearby-building research is market context. Those six properties are not presented as SERHANT. development assignments. Historical developer announcements are not an independent confirmation of current legal ownership.</p></div></dialog>
 <dialog id="marketing-film" aria-labelledby="film-title"><div class="dialog-head"><div><p class="cinema-kicker">THE CAMPAIGN CINEMA</p><h2 id="film-title">Brooklyn Point</h2></div><button class="close-dialog" data-close aria-label="Close campaign cinema">×</button></div><div class="cinema-choices" aria-label="Choose a published film"><button data-film-key="brooklyn" aria-pressed="false">Brooklyn Point</button><button data-film-key="quay" aria-pressed="false">Quay Tower</button><button data-film-key="developers" aria-pressed="false">Development reel</button><button data-film-key="studios" aria-pressed="false">Inside Studios</button></div><div class="marketing-player"><video id="marketingVideo" controls playsinline preload="none" aria-label="Selected published SERHANT. film"></video><div id="filmEmbed" class="film-embed" hidden></div><p id="filmDescription" class="cinema-description"></p><p class="source"><a id="filmSource" href="https://serhant.com/developers" target="_blank" rel="noopener">View the original publication ↗</a> · Published work. Historical campaign footage does not imply a currently running ad buy.</p></div></dialog>
 <noscript><style>.tab-list,[data-film],[data-visual-focus],[data-film-key],#openMarketingFilm,.deck-nav,.rail,#menuBtn,#openNeighborhood{display:none}[role=tabpanel][hidden]{display:block!important}</style></noscript>
 
@@ -261,18 +390,50 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
     tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activate(tab,false));tab.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();e.stopPropagation();activate(tabs[n],true)})});
   });
   // Research is an optional appendix so the main presentation leads with the partnership.
-  const properties=[{"id": "radio", "name": "Radio Lofts", "address": "316 15th Street", "coords": [40.73315, -74.0467], "context": "Hudson House Collection · Industrial heritage", "owner": "Acquisition / recapitalization: funds affiliated with SVP, OneIM, RXR and Columbia Property Trust, per their May 2025 announcement.", "ownerSource": "https://www.prnewswire.com/news-releases/strategic-value-partners-oneim-rxr-and-columbia-property-trust-acquire-and-recapitalize-hudson-house-an-829-unit-multifamily-portfolio-in-jersey-city-nj-302455079.html", "angle": "The former Emerson Radio factory is part of the three-building Hudson House collection.", "rents": [], "basis": "Current numeric asking rents could not be verified from the live availability feed. Use the official leasing link for the latest unit-specific quote, lease term, fees and concessions.", "source": "https://www.hudsonhouselofts.com/floor-plans/", "checked": "September 21, 2026"}, {"id": "east", "name": "Hudson House East", "address": "315 15th Street", "coords": [40.7327374, -74.0463548], "context": "Hudson House Collection · Contemporary living", "owner": "Acquisition / recapitalization: funds affiliated with SVP, OneIM, RXR and Columbia Property Trust, per their May 2025 announcement.", "ownerSource": "https://www.prnewswire.com/news-releases/strategic-value-partners-oneim-rxr-and-columbia-property-trust-acquire-and-recapitalize-hudson-house-an-829-unit-multifamily-portfolio-in-jersey-city-nj-302455079.html", "angle": "A residential tower within the Hudson House collection on 15th Street.", "rents": [], "basis": "Current numeric asking rents could not be verified from the live availability feed. Use the official leasing link for the latest unit-specific quote, lease term, fees and concessions.", "source": "https://www.hudsonhouselofts.com/floor-plans/", "checked": "September 21, 2026"}, {"id": "west", "name": "Hudson House West", "address": "325 15th Street", "coords": [40.7329, -74.0471], "context": "Hudson House Collection · A new chapter", "owner": "Acquisition / recapitalization: funds affiliated with SVP, OneIM, RXR and Columbia Property Trust, per their May 2025 announcement.", "ownerSource": "https://www.prnewswire.com/news-releases/strategic-value-partners-oneim-rxr-and-columbia-property-trust-acquire-and-recapitalize-hudson-house-an-829-unit-multifamily-portfolio-in-jersey-city-nj-302455079.html", "angle": "A residential building within the Hudson House collection on 15th Street.", "rents": [], "basis": "Current numeric asking rents could not be verified from the live availability feed. Use the official leasing link for the latest unit-specific quote, lease term, fees and concessions.", "source": "https://www.hudsonhouselofts.com/floor-plans/", "checked": "September 21, 2026"}, {"id": "soho", "name": "Soho Lofts", "address": "273 16th Street", "coords": [40.7330842, -74.0451472], "context": "SoHo West · Resort-style amenities", "owner": "Original developer: Manhattan Building Company. Current leasing site: Veris Residential. Current legal ownership is not independently confirmed.", "ownerSource": "https://www.greystone.com/news/greystone-arranges-30-million-construction-loan-for-the-manhattan-building-companys-80-unit-multifamily-development-in-jersey-city-nj/", "angle": "An infinity-edge pool, coworking, a theater and a Zen garden bring leisure and daily routine together.", "rents": [["Studio from", "$3,175+"], ["1 bed from", "$3,305+"], ["2 beds from", "$4,380+"], ["3 beds from", "$5,390+"]], "basis": "Published starting asking rents. Headline rates do not establish an all-in monthly cost; confirm fees and concessions with leasing.", "source": "https://verisresidential.com/jersey-city-nj-apartments/soho-lofts/", "checked": "September 21, 2026"}, {"id": "cast", "name": "Cast Iron Lofts", "address": "300 Coles Street", "coords": [40.73445, -74.04538], "context": "SoHo West · Industrial character", "owner": "Original developer: Manhattan Building Company, identified by Greystone. Current legal ownership is not independently confirmed.", "ownerSource": "https://www.greystone.com/news/greystone-arranges-30-million-construction-loan-for-the-manhattan-building-companys-80-unit-multifamily-development-in-jersey-city-nj/", "angle": "Two buildings with distinct interior finishes, shared amenities and a published PATH shuttle service.", "rents": [["1 bed · CIL2_05L base", "$3,613–3,838"], ["Published monthly total", "$3,620.14–3,845.14"]], "basis": "Selected 1-bedroom plan. Direct leasing-page snapshot; base rent plus $7.14 in listed monthly fees. Move-in date, lease term and variable charges affect total cost.", "source": "https://castironlofts.com/floorplans/cil2_05l/", "checked": "September 21, 2026"}, {"id": "embankment", "name": "Embankment House", "address": "270 Tenth Street", "coords": [40.7293952, -74.0457094], "context": "Hamilton Park · Neighborhood character", "owner": "Original developer: LeFrak, identified by project architect Poskanzer Skott. Current legal ownership is not independently confirmed.", "ownerSource": "https://poskanzerskott.com/2016/05/18/psas-design-lefraks-embankment-house/", "angle": "A boutique-scale community with industrial-inspired design and shared amenities across Embankment and Revetment House.", "rents": [["1 bed · E-A1 base", "$3,315"], ["Published monthly total", "$3,408"]], "basis": "Embankment E-A1 plan, published 12-month term. Monthly total includes $93 in listed fees; variable and one-time charges may apply.", "source": "https://embankmenthouse.com/floorplans/e-a1/", "checked": "September 21, 2026"}];
+  const properties=[{"id": "radio", "name": "Radio Lofts", "address": "316 15th Street", "coords": [40.73315, -74.0467], "context": "Hudson House Collection · Industrial heritage", "owner": "Acquisition / recapitalization: funds affiliated with SVP, OneIM, RXR and Columbia Property Trust, per their May 2025 announcement.", "ownerSource": "https://www.prnewswire.com/news-releases/strategic-value-partners-oneim-rxr-and-columbia-property-trust-acquire-and-recapitalize-hudson-house-an-829-unit-multifamily-portfolio-in-jersey-city-nj-302455079.html", "angle": "The former Emerson Radio factory is part of the three-building Hudson House collection.", "rents": [["Studio · R519", "$3,255–3,260"], ["1 bed · R216", "$4,220–4,225"], ["2 beds · R317", "$6,305–6,310"], ["3 beds · R418", "$9,510–9,515"]], "basis": "Selected units from the property-supplied RentCafe listing. Figures use the unit rows labeled total monthly cost, including recurring fees reported by the property. Variable, optional and one-time charges may be additional. These are examples, not building-wide starting rents. The official site’s live pricing feed could not be independently retrieved; confirm the current lease quote with leasing. No promotional discount has been calculated.", "source": "https://www.rentcafe.com/apartments/nj/jersey-city/radio-lofts-at-hudson-house/default.aspx", "checked": "September 21, 2026", "sourceName": "RentCafe property listing", "priceKind": "Published monthly total", "summaryLabel": "1 bed · R216", "summaryPrice": "$4,220–4,225", "leasing": "https://www.hudsonhouselofts.com/floor-plans/"}, {"id": "east", "name": "Hudson House East", "address": "315 15th Street", "coords": [40.7327374, -74.0463548], "context": "Hudson House Collection · Contemporary living", "owner": "Acquisition / recapitalization: funds affiliated with SVP, OneIM, RXR and Columbia Property Trust, per their May 2025 announcement.", "ownerSource": "https://www.prnewswire.com/news-releases/strategic-value-partners-oneim-rxr-and-columbia-property-trust-acquire-and-recapitalize-hudson-house-an-829-unit-multifamily-portfolio-in-jersey-city-nj-302455079.html", "angle": "A residential tower within the Hudson House collection on 15th Street.", "rents": [["Studio + flex · 2215", "$3,635–3,645"], ["1 bed · 0912", "$4,428–4,438"], ["2 beds + flex · 1707", "$5,578–5,588"], ["3 beds · 0904", "$7,905–7,915"]], "basis": "Selected units from the property-supplied RentCafe listing. Figures use the unit rows labeled total monthly cost, including recurring fees reported by the property. Variable, optional and one-time charges may be additional. These are examples, not building-wide starting rents. The official site’s live pricing feed could not be independently retrieved; confirm the current lease quote with leasing. No promotional discount has been calculated.", "source": "https://www.rentcafe.com/apartments/nj/jersey-city/hudson-house-lofts/default.aspx", "checked": "September 21, 2026", "sourceName": "RentCafe property listing", "priceKind": "Published monthly total", "summaryLabel": "1 bed · 0912", "summaryPrice": "$4,428–4,438", "leasing": "https://www.hudsonhouselofts.com/floor-plans/"}, {"id": "west", "name": "Hudson House West", "address": "325 15th Street", "coords": [40.7329, -74.0471], "context": "Hudson House Collection · A new chapter", "owner": "Acquisition / recapitalization: funds affiliated with SVP, OneIM, RXR and Columbia Property Trust, per their May 2025 announcement.", "ownerSource": "https://www.prnewswire.com/news-releases/strategic-value-partners-oneim-rxr-and-columbia-property-trust-acquire-and-recapitalize-hudson-house-an-829-unit-multifamily-portfolio-in-jersey-city-nj-302455079.html", "angle": "A residential building within the Hudson House collection on 15th Street.", "rents": [["Studio · W0302", "$3,865–3,870"], ["1 bed · W0903", "$4,700–4,705"], ["2 beds · W1405", "$6,510–6,515"], ["3 beds · W1012", "$7,865–7,870"]], "basis": "Selected units from the property-supplied RentCafe listing. Figures use the unit rows labeled total monthly cost, including recurring fees reported by the property. Variable, optional and one-time charges may be additional. These are examples, not building-wide starting rents. The official site’s live pricing feed could not be independently retrieved; confirm the current lease quote with leasing. No promotional discount has been calculated.", "source": "https://www.rentcafe.com/apartments/nj/jersey-city/hudson-house-west/default.aspx", "checked": "September 21, 2026", "sourceName": "RentCafe property listing", "priceKind": "Published monthly total", "summaryLabel": "1 bed · W0903", "summaryPrice": "$4,700–4,705", "leasing": "https://www.hudsonhouselofts.com/floor-plans/"}, {"id": "soho", "name": "Soho Lofts", "address": "273 16th Street", "coords": [40.7330842, -74.0451472], "context": "SoHo West · Resort-style amenities", "owner": "Original developer: Manhattan Building Company. Current leasing site: Veris Residential. Current legal ownership is not independently confirmed.", "ownerSource": "https://www.greystone.com/news/greystone-arranges-30-million-construction-loan-for-the-manhattan-building-companys-80-unit-multifamily-development-in-jersey-city-nj/", "angle": "An infinity-edge pool, coworking, a theater and a Zen garden bring leisure and daily routine together.", "rents": [["Studio from", "$3,175+"], ["1 bed from", "$3,305+"], ["2 beds from", "$4,380+"], ["3 beds from", "$5,390+"]], "basis": "Published starting asking rents. Headline rates do not establish an all-in monthly cost; confirm fees and concessions with leasing.", "source": "https://verisresidential.com/jersey-city-nj-apartments/soho-lofts/", "checked": "September 21, 2026", "sourceName": "Official Veris leasing page", "priceKind": "Advertised starting rent", "summaryLabel": "1 bed · advertised from", "summaryPrice": "$3,305+"}, {"id": "cast", "name": "Cast Iron Lofts", "address": "300 Coles Street", "coords": [40.73445, -74.04538], "context": "SoHo West · Industrial character", "owner": "Original developer: Manhattan Building Company, identified by Greystone. Current legal ownership is not independently confirmed.", "ownerSource": "https://www.greystone.com/news/greystone-arranges-30-million-construction-loan-for-the-manhattan-building-companys-80-unit-multifamily-development-in-jersey-city-nj/", "angle": "Two buildings with distinct interior finishes, shared amenities and a published PATH shuttle service.", "rents": [["1 bed · CIL2_05L base", "$3,613–3,838"], ["Published monthly total", "$3,620.14–3,845.14"]], "basis": "Selected 1-bedroom plan. Direct leasing-page snapshot; base rent plus $7.14 in listed monthly fees. Move-in date, lease term and variable charges affect total cost.", "source": "https://castironlofts.com/floorplans/cil2_05l/", "checked": "September 21, 2026", "sourceName": "Official Cast Iron leasing page", "priceKind": "Published monthly total", "summaryLabel": "1 bed · CIL2_05L plan", "summaryPrice": "$3,620.14–3,845.14"}, {"id": "embankment", "name": "Embankment House", "address": "270 Tenth Street", "coords": [40.7293952, -74.0457094], "context": "Hamilton Park · Neighborhood character", "owner": "Original developer: LeFrak, identified by project architect Poskanzer Skott. Current legal ownership is not independently confirmed.", "ownerSource": "https://poskanzerskott.com/2016/05/18/psas-design-lefraks-embankment-house/", "angle": "A boutique-scale community with industrial-inspired design and shared amenities across Embankment and Revetment House.", "rents": [["1 bed · E-A1 base", "$3,315"], ["Published monthly total", "$3,408"]], "basis": "Embankment E-A1 plan, published 12-month term. Monthly total includes $93 in listed fees; variable and one-time charges may apply.", "source": "https://embankmenthouse.com/floorplans/e-a1/", "checked": "September 21, 2026", "sourceName": "Official Embankment leasing page", "priceKind": "Published monthly total", "summaryLabel": "1 bed · E-A1 · 12 months", "summaryPrice": "$3,408"}];
   const home=[40.7362,-74.0425];let map=null,mapLoading=null,markers={},tileErrorShown=false;
   const choices=document.getElementById('mapChoices'),detail=document.getElementById('propertyDetail');
   function el(tag,text,cls){const n=document.createElement(tag);if(text)n.textContent=text;if(cls)n.className=cls;return n}
   function sourceLink(text,url){const a=el('a',text);a.href=url;a.target='_blank';a.rel='noopener';return a}
+  function revealProperty(){
+    if(!neighborhood.open)return;
+    const head=neighborhood.querySelector('.dialog-head');
+    const top=detail.getBoundingClientRect().top-neighborhood.getBoundingClientRect().top+neighborhood.scrollTop-head.offsetHeight-20;
+    neighborhood.scrollTo({top:Math.max(0,top),behavior:reduce.matches?'auto':'smooth'});
+    detail.querySelector('h3').focus({preventScroll:true});
+  }
   function selectProperty(id,pan=true){
-    const p=properties.find(p=>p.id===id);if(!p)return;choices.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));detail.replaceChildren(el('h3',p.name),el('p',p.address+' · Jersey City','address'),el('p',p.angle));
-    const ownership=el('details',null,'ownership'),summary=el('summary','Developer / owner context');ownership.append(summary,el('p',p.owner),sourceLink('Context source ↗',p.ownerSource));detail.append(ownership);
-    detail.append(el('p',(p.rents.length?'Published asking-rent snapshot · ':'Availability source checked · ')+p.checked));const rents=el('dl',null,'rents');p.rents.forEach(([label,amount])=>{const row=el('div');row.append(el('dt',label),el('dd',amount));rents.append(row)});detail.append(rents,el('p',p.basis));const links=el('div',null,'actions');links.append(sourceLink('Published availability ↗',p.source),sourceLink('Open street map ↗','https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(p.name+' '+p.address+' Jersey City NJ')));detail.append(links);
+    const p=properties.find(p=>p.id===id);if(!p)return;
+    choices.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));
+    const heading=el('h3',p.name);heading.tabIndex=-1;
+    detail.replaceChildren(heading,el('p',p.address+' · Jersey City','address'));
+    const price=el('div',null,'rent-highlight');
+    price.append(el('span',p.priceKind,'rent-kind'),el('strong',p.summaryPrice||'Contact leasing'),el('span',p.summaryLabel+' · per month','rent-scope'));
+    detail.append(price,el('p','Source: '+p.sourceName+' · Checked '+p.checked,'rent-date'));
+    detail.append(el('h4',p.id==='soho'?'Published starting rents':'Published rent details','rent-section-title'));
+    if(p.rents.length){
+      const rents=el('dl',null,'rents');
+      p.rents.forEach(([label,amount])=>{const row=el('div');row.append(el('dt',label),el('dd',amount));rents.append(row)});
+      detail.append(rents);
+    }else detail.append(el('p','No numeric asking rent is published in the source checked. Request a current quote from leasing.','rent-unavailable'));
+    detail.append(el('p',p.basis,'rent-basis'));
+    const links=el('div',null,'actions rent-links');
+    links.append(sourceLink('View published prices ↗',p.source));
+    if(p.leasing)links.append(sourceLink('Official leasing ↗',p.leasing));
+    detail.append(links,el('p',p.angle));
+    const ownership=el('details',null,'ownership'),summary=el('summary','Developer / owner context');
+    ownership.append(summary,el('p',p.owner),sourceLink('Context source ↗',p.ownerSource));detail.append(ownership);
+    const street=sourceLink('Open street map ↗','https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(p.name+' '+p.address+' Jersey City NJ'));street.className='street-link';detail.append(street);
+    const back=el('button','↑ Back to all six buildings','back-to-rents');back.type='button';back.onclick=()=>{
+      neighborhood.scrollTo({top:0,behavior:reduce.matches?'auto':'smooth'});choices.querySelector('[aria-pressed=true]').focus({preventScroll:true});
+    };detail.append(back);
     if(map&&pan&&markers[id]){map.panTo(p.coords);markers[id].openPopup()}
   }
-  properties.forEach((p,i)=>{const b=el('button',`${i+1} · ${p.name}`);b.type='button';b.dataset.id=p.id;b.onclick=()=>selectProperty(p.id);choices.append(b)});selectProperty(properties[0].id,false);
+  properties.forEach((p,i)=>{
+    const b=el('button');b.type='button';b.dataset.id=p.id;b.setAttribute('aria-controls','propertyDetail');
+    b.append(el('span',`${i+1} · ${p.name}`,'rent-card-name'),el('span',p.address,'rent-card-address'),el('span',p.summaryLabel,'rent-card-scope'),el('strong',p.summaryPrice||'Contact leasing','rent-card-price'),el('span',p.priceKind+' / month','rent-card-basis'),el('span','View rents & context ↗','rent-card-link'));
+    b.onclick=()=>{selectProperty(p.id);revealProperty()};choices.append(b);
+  });selectProperty(properties[0].id,false);
   const mapStatus=document.getElementById('mapStatus');
   function loadMap(){
     if(map){map.invalidateSize();return Promise.resolve()}if(mapLoading)return mapLoading;
@@ -284,11 +445,11 @@ dialog{padding:0;border:0;color:var(--ink);background:white;width:min(1140px,cal
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).on('tileerror',()=>{if(!tileErrorShown){mapStatus.textContent='Some map tiles could not load. Property details and street-map links remain available.';tileErrorShown=true}}).addTo(map);
       const icon=(label,isHome=false)=>L.divIcon({className:'pin'+(isHome?' home':''),html:'<span>'+label+'</span>',iconSize:isHome?[38,38]:[30,30],iconAnchor:isHome?[19,19]:[15,15]});
       L.marker(home,{icon:icon('HP',true),title:'Holland Park — approximate site'}).addTo(map).bindPopup('Holland Park · Approximate site<br>677 Grove Street');
-      properties.forEach((p,i)=>{const pop=el('div');pop.append(el('strong',p.name),el('br'),document.createTextNode(p.address));markers[p.id]=L.marker(p.coords,{icon:icon(i+1),title:p.name}).addTo(map).bindPopup(pop).on('click',()=>selectProperty(p.id,false))});map.invalidateSize();
-    }).catch(()=>{mapStatus.textContent='The interactive map could not load. Select any property for its address, rent context and street-map link.';document.getElementById('district-map').replaceChildren(el('p','Map unavailable. All six properties are listed alongside.','map-prompt'))});
+      properties.forEach((p,i)=>{const pop=el('div');pop.append(el('strong',p.name),el('br'),document.createTextNode(p.address),el('p',p.summaryLabel+': '+p.summaryPrice+' / month'),el('p',p.priceKind));const view=el('button','View rent details ↗','map-rent-link');view.type='button';view.onclick=()=>{selectProperty(p.id,false);revealProperty()};pop.append(view);markers[p.id]=L.marker(p.coords,{icon:icon(i+1),title:p.name}).addTo(map).bindPopup(pop).on('click',()=>selectProperty(p.id,false))});map.invalidateSize();
+    }).catch(()=>{mapStatus.textContent='The interactive map could not load. Select any property for its address, rent context and street-map link.';document.getElementById('district-map').replaceChildren(el('p','Map unavailable. All six properties and their rent snapshots are listed above.','map-prompt'))});
     return mapLoading;
   }
-  document.getElementById('openNeighborhood').onclick=()=>{openDialog(neighborhood);loadMap()};document.getElementById('resetMap').onclick=()=>{if(map)map.setView(home,14)};
+  document.getElementById('openNeighborhood').onclick=()=>{openDialog(neighborhood);neighborhood.scrollTop=0;loadMap()};document.getElementById('resetMap').onclick=()=>{if(map)map.setView(home,14)};
   document.documentElement.classList.add('js');setCurrent(0);requestAnimationFrame(followHash);
 })();
 </script></body></html>
