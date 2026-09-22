@@ -1,9 +1,23 @@
 # Presentation source notes
 
-Reviewed September 21, 2026. Sources support the wording and dates shown in the
+Reviewed September 22, 2026. Sources support the wording and dates shown in the
 presentation. Company and developer reporting is attributed; it is not described
 as independently audited. A historical assignment does not establish a current
 exclusive, completed sellout or Holland Park outcome.
+
+## September 22, 2026 presentation direction
+
+The main slide sequence now leads with branding, filmmaking, development
+marketing experience and the opportunity for a second meeting. Financial-statistic
+slides have been removed from that sequence. The earlier dated source checks
+below remain an audit record, not a new claim that every figure appears in the
+pitch or has been refreshed since its stated verification date.
+
+The New Jersey positioning is affirmative: local project experience alongside
+SERHANT.'s New York launch work and in-house creative services. No claim is made
+that no other New Jersey brokerage has equivalent experience. The Charlie,
+One Jones Park and Columbus House sources establish the specific roles below;
+they do not establish that ID Lab designed those projects' original identities.
 
 ## Company figures and services
 
@@ -14,7 +28,7 @@ exclusive, completed sellout or Holland Park outcome.
 - [New Development](https://serhant.com/new-development) and
   [Development Marketing](https://serhant.com/developers): services and reel.
 - The supplied New Development Marketing Services proposal informs the process.
-  The website's deliverables and measures are a proposed scope for Lincoln.
+  The creative approach is proposed; a Holland Park scope would be agreed with Lincoln.
 
 ## Project examples
 
@@ -68,6 +82,34 @@ exclusive, completed sellout or Holland Park outcome.
 - [SERHANT. project](https://serhant.com/developments/200-amsterdam): imagery.
 - No numerical uplift, specific sale attribution or future television placement
   is claimed.
+
+## Branding and cinematic work added September 22, 2026
+
+- [Official ID Lab portfolio](https://serhant.com/id-lab): the Brooklyn Point
+  board is published under its new-development case and shows a coordinated
+  website, mobile, advertising and collateral presentation. Describe it as
+  SERHANT.'s published marketing work; avoid extrapolating authorship of every
+  historic brand element.
+- The same portfolio specifically identifies **Central Park Tower Penthouse**
+  as a listing-branding case. The identity, print and digital board supports
+  that penthouse campaign; it does not establish an entire-building exclusive
+  or development-wide branding assignment.
+- Page 3 of the supplied `New-Development-Marketing-Proposal-compressed.pdf`
+  explicitly credits the displayed logos as designed in-house. The six selected
+  marks are The Library, Huxley, The Westly, The Huron, Iris Tribeca and
+  100 Vandam. The reproduced crops use the previously rendered supplied page;
+  its surrounding performance metrics are omitted.
+- [December 2021 company letter](https://serhantannualletter2021.com/), ID Lab
+  section: confirms historical full branding and all marketing materials for
+  Jolie, The Library, The Melrose, 11 Greene and Huxley, and a redesigned/launched
+  website for Quay Tower. This supports creative capability rather than a
+  current assignment or independently audited sales result.
+- [Official Quay Tower film](https://www.youtube.com/watch?v=KAcQXV3tWbo),
+  linked from the [SERHANT. project page](https://serhant.com/developments/quay-tower),
+  was published July 14, 2021. Its historical sales-and-marketing credit supports
+  the short cinematic edit. The edit adds no sales, price or current-availability
+  claims. See [MEDIA.md](MEDIA.md) for the four source intervals, asset files and
+  completed video decode checks.
 
 ## Holland Park and neighborhood research
 

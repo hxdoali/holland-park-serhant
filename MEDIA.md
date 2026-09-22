@@ -1,6 +1,6 @@
 # Campaign media register
 
-Reviewed September 21, 2026. These are published campaign and studio materials,
+Reviewed September 22, 2026. These are published campaign and studio materials,
 not generated demonstrations. Historical creative does not establish that an ad
 is currently running. The presentation preserves source links and identifies
 brokerage-wide work separately from individual development work.
@@ -53,11 +53,59 @@ brokerage-wide work separately from individual development work.
 
 ## Quay Tower
 
-- Official film linked from [SERHANT.'s project page](https://serhant.com/developments/quay-tower).
-- [Original YouTube publication](https://www.youtube.com/watch?v=KAcQXV3tWbo).
-- Loaded in a privacy-enhanced YouTube player after the viewer requests it.
-  Closing the cinema removes the player. Existing project photography provides
-  the clickable case-study visual.
+- Official film linked from [SERHANT.'s project page](https://serhant.com/developments/quay-tower):
+  [original YouTube publication](https://www.youtube.com/watch?v=KAcQXV3tWbo),
+  published by SERHANT. July 14, 2021. Its description credits exclusive sales
+  and marketing to SERHANT. New Development.
+- New silent background edit combines four picture-only intervals from that
+  public 1920 × 1080 film, in this order: 00:50.25–00:55.60 (tower aerials),
+  01:08.20–01:13.75 (waterfront/park), 03:15.25–03:20.25 (residence/skyline),
+  and 11:00.50–11:08.75 (resident lounge).
+- Files: assets/campaigns/quay.mp4 (1920 × 1080, 24.19 seconds),
+  quay-mobile.mp4 (960 × 540, 24.23 seconds), and quay.jpg (1920 × 1080,
+  source frame at 00:50.70). Small export-duration differences reflect encoding.
+- Both MP4s passed full decode checks. Both have H.264/yuv420p video, no audio
+  track, and a `moov` atom before `mdat` for progressive playback. Source
+  resolution is retained without upscaling; the mobile export is reduced.
+- This is a presentation edit of historical marketing footage, not evidence of
+  an ad currently running or a current exclusive assignment. The full original
+  film remains available through the user-requested cinema player; closing the
+  cinema removes that player.
+
+## ID Lab branding boards and development identities
+
+Added September 22, 2026: eight actual branding assets, with no generated or
+redrawn marks. The boards use a light background and preserve the complete
+artwork rather than cropping it into building photography.
+
+- **Brooklyn Point:** assets/branding/brooklyn-brand.webp, 3456 × 3456,
+  transparent. [Official ID Lab portfolio](https://serhant.com/id-lab);
+  [original board](https://media-production.lp-cdn.com/media/smjztodca6vrzm1dpymc).
+  The published new-development case shows website, mobile creative, ad and
+  floor-plan collateral. It supports the named marketing role; it does not
+  establish that SERHANT. originated every element of the project's identity.
+- **Central Park Tower Penthouse:** assets/branding/central-park-brand.webp,
+  3456 × 3456, transparent. [Official ID Lab portfolio](https://serhant.com/id-lab);
+  [original board](https://media-production.lp-cdn.com/media/yesy7mjwvj8be5m7mtbl).
+  The source identifies a penthouse listing campaign, including the
+  “The One Above All Else” positioning. It is not represented as an entire-tower
+  branding assignment. Artwork is historical portfolio creative; its embedded
+  language is not presented as a fresh price, availability or ranking claim.
+- **Six development logos:** assets/branding/library-logo.png, huxley-logo.png,
+  westly-logo.png, huron-logo.png, iris-logo.png and vandam-logo.png. These are
+  clean crops of page 3 of the user's supplied
+  `New-Development-Marketing-Proposal-compressed.pdf`, using its existing
+  928 × 1200 page render. That page explicitly states that all displayed logos
+  were designed in-house. The crops preserve the actual marks and omit the
+  surrounding historical performance bubbles. Their native widths are
+  approximately 130 pixels; they are suited to a compact identity collection.
+- [SERHANT.'s December 2021 letter](https://serhantannualletter2021.com/)
+  independently describes full branding and marketing materials for The Library
+  and Huxley, among other projects. The source is evidence of historical
+  creative work, not a claim of a current assignment or future result.
+- The two original publisher images are transparent PNGs served without file
+  extensions. WebP presentation exports retain 3456-pixel dimensions and alpha
+  transparency, at quality 95; no artificial upscaling is used.
 
 ## Outdoor campaign
 
@@ -73,9 +121,9 @@ brokerage-wide work separately from individual development work.
 
 - [One Jones Park launch feature](https://jerseydigs.com/one-jones-park-jersey-city-condos-for-sale/),
   presented by Patrick Southern of SERHANT., September 21, 2026.
-- The gallery pairs this campaign link with official SERHANT. residence imagery
-  already used in the project case. The image is identified as property imagery,
-  not a screenshot or reproduction of a finished ad.
+- The launch feature remains background research in FACTS.md. The concise
+  New Jersey gallery shows official SERHANT. residence photography and the
+  documented marketing role, not a reproduction of the published advertisement.
 - No event attendance, campaign conversion or sales attribution is inferred.
 
 ## Playback and quality
