@@ -32,16 +32,20 @@ off as current. See [FACTS.md](FACTS.md) and the presentation's source links.
 
 ## Controls and accessibility
 
-- Scroll through the presentation; taller sections expand to fit their content.
-- Phones, tablets and touch screens use normal scrolling without forced slide snapping.
+- Each slide occupies exactly one viewport, with no vertical scrolling in the deck.
+- Longer content flows into screen-sized continuation pages on small displays.
+  Previous/next buttons advance pages before changing chapters. Text is retained;
+  phones use native text sizes. Desktop layouts use modest fitting when needed.
 - Safe-area padding and 44-pixel navigation controls accommodate phone screens.
 - The neighborhood dialog starts with six clearly labeled rent cards. Each opens
   unit/plan details above the map on phones, with a return-to-overview button.
 - Rent cards distinguish monthly totals from advertised starting rent; the
   six rent sources are the properties’ own leasing pages. Hudson House figures
   use its official published unit data, before promotional concessions.
-- Left/right arrows or Page Up/Page Down move between sections.
-- Up/down arrows and space retain native scrolling.
+- Arrow keys, Page Up/Page Down and space advance complete screens. Shift-space
+  moves backward. Horizontal touch swipes and mouse wheels also advance screens.
+- Resizing, rotating, loading fonts and switching tabs recalculate page breaks.
+  Tab focus brings controls on continuation pages into view automatically.
 - The contents button or M key opens the index. Escape closes native dialogs.
 - Tabs support left/right arrows, Home and End, with one focusable selected tab.
 - Dialogs provide native modal focus behavior. Deck shortcuts leave links,
@@ -94,3 +98,14 @@ The mobile/rent revision additionally checks all six numeric rent cards, source
 and fee labels, detail/overview focus, popup prices, and interaction under eight
 viewport configurations from 320 to 820 pixels. These are DOM checks with mocked
 geometry, not screenshots or rendered layout tests.
+
+## Viewport fitting verification
+
+Checked September 22, 2026 in isolated headless Chrome: rendered layouts at
+1920×1080, 1440×900, 1280×720, 1024×768, 820×1180, 390×844, 320×568 and 844×390.
+All chapter/tab states, expanded planning/case notes, and every continuation page
+were checked for text outside the viewport. Forward/back traversal, dialog closing,
+fixed deck height and zero deck scrolling passed. Desktop and phone screenshots
+were inspected. These browser checks supersede the earlier DOM-only layout checks;
+physical Safari/iOS devices were not tested. Optional research/source dialogs retain
+their own native scrolling.
