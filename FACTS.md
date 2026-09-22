@@ -87,3 +87,9 @@ exclusive, completed sellout or Holland Park outcome.
 Nearby properties provide district context and are not presented as SERHANT.
 assignments. Asking rents are unit/plan snapshots, not executed rents, market
 averages or a proposed Holland Park rent schedule. Recheck before later meetings.
+
+## Campaign visuals
+
+See [MEDIA.md](MEDIA.md) for the published ads, film sources, excerpt intervals
+and visual credits added to the pitch. Campaign examples distinguish project
+marketing, general production capability and the historical brokerage billboard.

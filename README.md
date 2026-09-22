@@ -1,28 +1,29 @@
 # Holland Park × SERHANT.
 
-A cinematic, 13-section partnership pitch for Lincoln Equities Group.
+A cinematic, 14-section partnership pitch for Lincoln Equities Group.
 
 Live: https://hxdoali.github.io/holland-park-serhant/
 
 ## Story
 
-The first nine sections introduce SERHANT.'s scale, relevant assignments and
+The first ten sections introduce SERHANT.'s scale, relevant assignments and
 proposed development marketing. The closing four bring in Holland Park research
 and invite Lincoln to share its vision in the meeting.
 
-1. Big vision. Meet SERHANT.
+1. Big vision. Meet SERHANT. — with a published development commercial
 2. Company momentum, with dated and scoped figures
 3. Brand audience and reported media exposure
-4. Jersey City and Hoboken: Charlie, One Jones Park, Columbus House
-5. New York: Brooklyn Point, Quay Tower, 200 Amsterdam
-6. Interactive capabilities: ID Lab, Studios, ADX, New Development
-7. Creative direction and the official development marketing reel
-8. Interactive marketing phases, proposed deliverables and measures
-9. Built around Lincoln
-10. What we have learned about Holland Park
-11. Interactive resident-story concepts
-12. What this tells us, with an optional neighborhood map and research appendix
-13. Meeting discussion: vision, milestones and partnership goals
+4. Campaigns in action: development ad, cinematic content, outdoor and local launch
+5. Jersey City and Hoboken: Charlie, One Jones Park, Columbus House
+6. New York: Brooklyn Point, Quay Tower, 200 Amsterdam, with campaign-film access
+7. Interactive capabilities: ID Lab, Studios, ADX, New Development
+8. Inside the production, with a four-film campaign cinema
+9. How the campaign comes together: four visual marketing phases
+10. Built around Lincoln
+11. What we have learned about Holland Park
+12. Interactive resident-story concepts
+13. What this tells us, with a neighborhood map and research appendix
+14. Meeting discussion: vision, milestones and partnership goals
 
 The close is for an in-person meeting. Project cases distinguish the published
 service role, development scale and dated results. The supplied proposal informed
@@ -39,8 +40,10 @@ off as current. See [FACTS.md](FACTS.md) and the presentation's source links.
 - Dialogs provide native modal focus behavior. Deck shortcuts leave links,
   buttons, details, videos and map controls alone.
 - Reduced motion disables automatic film loading and number animation.
-- Films pause off-screen, behind dialogs and in background tabs. The full reel
-  loads only after the viewer opens it and uses native play/pause controls.
+- Films pause off-screen, behind dialogs and in background tabs. The campaign cinema
+  loads films only on request. Native or official YouTube controls handle playback.
+- “Let the visuals lead” hides the talking points while retaining credits and controls.
+- Silent background clips use source-resolution desktop files and smaller mobile versions.
 - Deep links: #serhant, #local-work, #work, #launch and #holland-park.
 
 ## Build and deployment
@@ -57,20 +60,25 @@ neighborhood locations, not property boundaries or entrances.
 
 ## Media
 
-Inter and Instrument Serif are under the SIL Open Font License 1.1.
-Film clips and posters in assets/film/ are existing excerpts from SERHANT.'s
-published New Development material. This revision displays nd-site and nd-studio.
-The older nd-vision inventory headline is not shown.
+See [MEDIA.md](MEDIA.md) for original publications, source resolutions, excerpt
+intervals and attribution. The campaign assets use actual SERHANT./project work.
+No generated footage, mock advertising results or inferred campaign returns are
+presented as evidence.
 
-The six photographs/renderings in assets/projects/ come from the relevant
-LCOR or SERHANT. project/listing pages; captions identify their context.
-Holland Park renderings remain labeled published concepts. The older AI-upscaled
-files in the repository are not used by this presentation.
+The Brooklyn Point background teaser and development marketing montage preserve
+the original files. Other silent excerpts retain the source's 1920-pixel width.
+Mobile versions are 960 pixels wide. On-demand films stream from their original
+publishers. Quay Tower uses its official YouTube film. These external full-film
+players need network access.
+
+Inter and Instrument Serif use the SIL Open Font License 1.1. Holland Park
+renderings remain labeled published concepts. The older AI-upscaled repository
+files are not used in this presentation.
 
 ## Verification
 
-Checked September 21, 2026: HTML/JavaScript structure, local assets, all five tab
-groups, keyboard navigation, dialogs, controlled reel loading, reduced motion,
+Checked September 21, 2026: HTML/JavaScript structure, local assets, silent-media decoding, mobile renditions, all six tab
+groups, keyboard navigation, dialogs, cinema cleanup and lazy loading, reduced motion,
 map error fallback, and seven markers using the actual Leaflet library under
 jsdom. The computer-use browser runtime failed to start, so these checks are not
 a substitute for visual browser/device inspection.
