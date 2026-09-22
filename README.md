@@ -38,7 +38,8 @@ off as current. See [FACTS.md](FACTS.md) and the presentation's source links.
 - The neighborhood dialog starts with six clearly labeled rent cards. Each opens
   unit/plan details above the map on phones, with a return-to-overview button.
 - Rent cards distinguish monthly totals from advertised starting rent; the
-  three Hudson House listings link to property-supplied RentCafe snapshots.
+  six rent sources are the properties’ own leasing pages. Hudson House figures
+  use its official published unit data, before promotional concessions.
 - Left/right arrows or Page Up/Page Down move between sections.
 - Up/down arrows and space retain native scrolling.
 - The contents button or M key opens the index. Escape closes native dialogs.
