@@ -156,3 +156,32 @@ artwork rather than cropping it into building photography.
 - Transitions use two rendered slide layers, a short directional fade, and
   staggered content reveals. The outgoing layer is inert and its videos pause.
   Reduced-motion mode cancels slide and tab animations and image drift.
+
+
+## Distinct identity, creation and activation sequences
+
+Updated September 22, 2026:
+
+- `assets/branding/serhant-logo.svg` is the unchanged vector wordmark loaded
+  from the official SERHANT. website. [Original asset](https://media-production.lp-cdn.com/media/t3b0ii6wdq75vggug8oo).
+  The paper/graphic surround is a presentation composition, not an official
+  brand-guidelines page or a claimed additional campaign. The billboard image
+  now appears only in Presence.
+- The identity-creation chapter has a workboard treatment: studio photograph,
+  Jolie still, published ID Lab board, and the existing official brand-design
+  excerpt. Its steps are Discover, Define, Design and Apply. The later chapter
+  covers public-facing marketing, with different visual examples.
+- `assets/campaigns/jones-digital.png` is a 2160 × 1020 capture of the official
+  [One Jones Park residence listing](https://serhant.com/properties/387-8th-st-unit-2d-jc-downtown-nj-us-07302-260018795)
+  on September 22, 2026. It shows the header and image gallery, without the price
+  section. The surrounding browser frame is presentation design. This is a
+  digital-listing example, not a paid ad or an ID Lab website-authorship claim.
+- `assets/campaigns/tours.mp4` uses 00:35.30–00:40.60 from the original official
+  New Development film: brokers presenting properties. The new
+  `experiences.mp4` uses 00:40.95–00:43.80: the rooftop performance. These are
+  different excerpts, with no added event attendance, conversion or sales claim.
+  The film's original burned-in promotional text remains visible.
+- Both clips have silent H.264/yuv420p 1920 × 1080 exports, 960 × 540 mobile
+  versions, frame-derived posters, and faststart metadata. Their attribution is
+  the [official New Development page](https://serhant.com/new-development).
+  [Original film](https://res.cloudinary.com/luxuryp/videos/f_mp4,vc_h264,w_1920,c_limit/xjwd9qi9xhw39dev6mjt/newdevfilmfinal.mp4).

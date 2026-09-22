@@ -18,7 +18,7 @@ Detailed neighborhood rents remain in an optional appendix.
 2. The Scale Behind the Brand — company metrics over development footage
 3. The Reach Behind the Work — PR metrics over the Studios reel
 4. How We Brand SERHANT. — identity, original content and presence
-5. How We Brand Developments — discover, define, design and launch
+5. Creating the Development Identity — discover, define, design and apply
 6. The Brands We’ve Built — six in-house development identities
 7. Brooklyn Point — ID Lab campaign artwork in a studio setting
 8. Brooklyn Point: Brand to Film — live cinematography and historical sales proof
@@ -27,7 +27,7 @@ Detailed neighborhood rents remain in an optional appendix.
 11. 200 Amsterdam: Sales & Marketing — documented role and project scale
 12. New Jersey: Experience Close to Home — three documented assignments
 13. One Team Across the Launch — ID Lab, Studios, ADX and New Development
-14. Campaigns Across Channels — digital, film, outdoor and events
+14. Bringing the Brand to Market — digital listing, film, tours and experiences
 15. How the Work Comes Together — Plan, Brand, Introduce and Sell
 16. Built Around Lincoln — proposed partnership over Lincoln’s concept
 17. Holland Park: The Resident Story — illustrative creative possibilities
@@ -64,6 +64,10 @@ and sellout framework into a sequence that builds one stage per press.
 The original artwork remains unchanged; embedded historical campaign language is not a current factual claim.
 See [MEDIA.md](MEDIA.md) for asset provenance and [FACTS.md](FACTS.md) for scope.
 All campaign footage and artwork are real published or supplied materials.
+The official wordmark has a presentation-only graphic surround. Presence uses
+the outdoor campaign once. The identity-creation chapter and the public-facing
+campaign chapter use distinct visuals; the latter opens with an actual One
+Jones Park digital listing and includes separate tour and rooftop clips.
 
 ## Controls and accessibility
 
